@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>blog</title>
+  
+  <subtitle>minipc</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-08-22T10:35:49.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Lao hu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>向WIN7 USB安装盘中添加USB3.0驱动</title>
+    <link href="http://yoursite.com/Windows/%E5%90%91WIN7%E5%AE%89%E8%A3%85%E7%9B%98%E4%B8%AD%E6%B7%BB%E5%8A%A0USB3-0%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://yoursite.com/Windows/向WIN7安装盘中添加USB3-0驱动/</id>
+    <published>2019-08-21T07:53:26.000Z</published>
+    <updated>2019-08-22T10:35:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;WIN7原版映像中添加USB3-0驱动程序&quot;&gt;&lt;a href=&quot;#WIN7原版映像中添加USB3-0驱动程序&quot; class=&quot;headerlink&quot; title=&quot;WIN7原版映像中添加USB3.0驱动程序&quot;&gt;&lt;/a&gt;WIN7原版映像中添加USB3.0驱动程序&lt;/
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
+    
+    
+      <category term="Windows|Mini Pc" scheme="http://yoursite.com/tags/Windows-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Clonezilla备份还原系统</title>
+    <link href="http://yoursite.com/Linux/Clonezilla%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://yoursite.com/Linux/Clonezilla备份还原系统/</id>
+    <published>2019-08-16T02:51:51.000Z</published>
+    <updated>2019-08-19T02:56:19.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Clonezilla Download：&lt;a href=&quot;http://clonezilla.nchc.org.tw/clonezilla-live/download/download.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://c
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Clonezilla|Linux|Mini Pc" scheme="http://yoursite.com/tags/Clonezilla-Linux-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>金蝶K/3 Wise v14.0安装配置</title>
+    <link href="http://yoursite.com/Windows/%E9%87%91%E8%9D%B6K3-Wise-v14-0%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/Windows/金蝶K3-Wise-v14-0安装配置/</id>
+    <published>2019-08-14T09:21:01.000Z</published>
+    <updated>2019-08-15T01:44:49.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;主机：QOTOM Q300P&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 R2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;%E9%87%91%E8%9D%B6K3-Wise-v14-0%E5%AE%
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
+    
+    
+      <category term="K3|Windows|Mini Pc" scheme="http://yoursite.com/tags/K3-Windows-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QOTOM Install SQLServer 2008R2</title>
+    <link href="http://yoursite.com/Windows/Install-SQLServer-2008R2/"/>
+    <id>http://yoursite.com/Windows/Install-SQLServer-2008R2/</id>
+    <published>2019-08-14T03:26:26.000Z</published>
+    <updated>2019-08-14T04:17:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;准备安装环境&quot;&gt;&lt;a href=&quot;#准备安装环境&quot; class=&quot;headerlink&quot; title=&quot;准备安装环境&quot;&gt;&lt;/a&gt;准备安装环境&lt;/h3&gt;&lt;p&gt;系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5&lt;/
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
+    
+    
+      <category term="Windows Server|SQLServer" scheme="http://yoursite.com/tags/Windows-Server-SQLServer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QOTOM Install Windows Server 2008 r2 Datacenter</title>
+    <link href="http://yoursite.com/Windows/Install-Windows-Server-2008-r2-Datacenter/"/>
+    <id>http://yoursite.com/Windows/Install-Windows-Server-2008-r2-Datacenter/</id>
+    <published>2019-08-14T01:45:22.000Z</published>
+    <updated>2019-08-16T01:38:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h3&gt;&lt;p&gt;硬件：&lt;a href=&quot;http://www.qotom.com/product/59.html&quot; target=&quot;_blank&quot; rel=
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
+    
+    
+      <category term="Windows Server" scheme="http://yoursite.com/tags/Windows-Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Red Hat更换Centos6源</title>
+    <link href="http://yoursite.com/Linux/RedHat7%E6%9B%B4%E6%8D%A2Centos6%E6%BA%90/"/>
+    <id>http://yoursite.com/Linux/RedHat7更换Centos6源/</id>
+    <published>2019-07-31T02:53:56.000Z</published>
+    <updated>2019-07-31T03:19:21.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RedHat使用自带的yum源是需要注册的，不想注册的可以替换本地源使用&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工控机型号：&lt;/strong&gt; &lt;em&gt;&lt;a href=&quot;http://www.qotom.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;QOT
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Red Hat" scheme="http://yoursite.com/tags/Linux-Red-Hat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pfsense设置系统重启任务</title>
+    <link href="http://yoursite.com/FreeBSD/Pfsense%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%87%8D%E5%90%AF%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://yoursite.com/FreeBSD/Pfsense设置系统重启任务/</id>
+    <published>2019-07-23T02:50:34.000Z</published>
+    <updated>2019-07-23T03:37:46.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Pfsense本身没有自动重启系统的选项，需要通过pfsense的计划任务实现系统重启&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;进入pfsense GUI中，转到&lt;strong&gt;System &amp;gt; Package Manager&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="FreeBSD" scheme="http://yoursite.com/categories/FreeBSD/"/>
+    
+    
+      <category term="Pfsense|Firewall|Mini Pc" scheme="http://yoursite.com/tags/Pfsense-Firewall-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 18.04配置serial console</title>
+    <link href="http://yoursite.com/Linux/Ubuntu-18-04%E9%85%8D%E7%BD%AEserial-console/"/>
+    <id>http://yoursite.com/Linux/Ubuntu-18-04配置serial-console/</id>
+    <published>2019-07-22T01:59:33.000Z</published>
+    <updated>2019-07-23T03:34:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Ubuntu串口控制台登录&quot;&gt;&lt;a href=&quot;#Ubuntu串口控制台登录&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu串口控制台登录&quot;&gt;&lt;/a&gt;Ubuntu串口控制台登录&lt;/h3&gt;&lt;p&gt;电脑硬件：&lt;a href=&quot;http://www.q
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Mini Pc" scheme="http://yoursite.com/tags/Linux-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10 Remote Ubuntu18.04</title>
+    <link href="http://yoursite.com/Linux/Win10-Remote-Ubuntu18-04/"/>
+    <id>http://yoursite.com/Linux/Win10-Remote-Ubuntu18-04/</id>
+    <published>2019-07-19T02:13:13.000Z</published>
+    <updated>2019-07-23T03:34:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Ubuntu设置&quot;&gt;&lt;a href=&quot;#Ubuntu设置&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu设置&quot;&gt;&lt;/a&gt;Ubuntu设置&lt;/h3&gt;&lt;p&gt;系统版本：Ubuntu 18.04.2 LTS&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开设置，修
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Mini Pc" scheme="http://yoursite.com/tags/Linux-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenWrt X86 分区扩容</title>
+    <link href="http://yoursite.com/OpenWrt/OpenWrt-X86-%E5%88%86%E5%8C%BA%E6%89%A9%E5%AE%B9/"/>
+    <id>http://yoursite.com/OpenWrt/OpenWrt-X86-分区扩容/</id>
+    <published>2019-07-03T02:45:15.000Z</published>
+    <updated>2019-07-18T08:01:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;OpenWrt-X86-%E5%88%86%E5%8C%BA%E6%89%A9%E5%AE%B9/000.png&quot; alt=&quot;minipc&quot;&gt;&lt;/p&gt;
+&lt;p&gt;硬件情况：K500G6 X86&lt;a href=&quot;http://www.kansung.cn/&quot; 
+      
+    
+    </summary>
+    
+      <category term="OpenWrt" scheme="http://yoursite.com/categories/OpenWrt/"/>
+    
+    
+      <category term="OpenWrt|LEDE|Linux" scheme="http://yoursite.com/tags/OpenWrt-LEDE-Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Read CPU Type and Temperature</title>
+    <link href="http://yoursite.com/Linux/Linux-Read-CPU-Temperature/"/>
+    <id>http://yoursite.com/Linux/Linux-Read-CPU-Temperature/</id>
+    <published>2019-06-29T08:37:08.000Z</published>
+    <updated>2019-08-21T07:40:28.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​       前段时间利用Superio获取到了CPU风扇速度，并且利用Superio读取到了CPU的温度(Intel PCIE)，但通过sensors命令对比，发现封装的CPU温度和核心温度有误差，于是想通过代码获取下温度，来测试下是否正确。在网上查找了很多资料，这里记
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Mini Pc" scheme="http://yoursite.com/tags/Linux-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Superio Read CPU FAN RPM</title>
+    <link href="http://yoursite.com/Linux/Linux-Superio-CPU-FAN/"/>
+    <id>http://yoursite.com/Linux/Linux-Superio-CPU-FAN/</id>
+    <published>2019-06-26T10:33:52.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​        之前写了一篇Linux下利用Superio控制GPIO的教程，这次继续利用Superio读取CPU风扇转速，CPU风扇属于环境控制器（EC），内置在IT8786E-I中，包括五个电压输入，三个温度传感器输入，五个FAN转速计输入和五组先进的风扇控制器。 E
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Mini Pc|SuperIO" scheme="http://yoursite.com/tags/Linux-Mini-Pc-SuperIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>X86 Linux ITE SuperIO GPIO Control</title>
+    <link href="http://yoursite.com/Linux/Linux-SuperIO-Control/"/>
+    <id>http://yoursite.com/Linux/Linux-SuperIO-Control/</id>
+    <published>2019-06-05T07:28:43.000Z</published>
+    <updated>2019-08-21T07:40:08.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Superio概述&quot;&gt;&lt;a href=&quot;#Superio概述&quot; class=&quot;headerlink&quot; title=&quot;Superio概述&quot;&gt;&lt;/a&gt;Superio概述&lt;/h3&gt;&lt;p&gt;​        Super I/O芯片也叫I/O芯片。在486以上档次的主板上都有
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Mini Pc|SuperIO" scheme="http://yoursite.com/tags/Linux-Mini-Pc-SuperIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESXi6.7安装ROS软路由-设置网卡桥接</title>
+    <link href="http://yoursite.com/VMware-EXSI/ESXi6-7%E5%AE%89%E8%A3%85ROS%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+    <id>http://yoursite.com/VMware-EXSI/ESXi6-7安装ROS软路由/</id>
+    <published>2019-06-04T10:33:45.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;RouterOS介绍&quot;&gt;&lt;a href=&quot;#RouterOS介绍&quot; class=&quot;headerlink&quot; title=&quot;RouterOS介绍&quot;&gt;&lt;/a&gt;RouterOS介绍&lt;/h4&gt;&lt;p&gt;MikroTik RouterOS是一种路由操作系统，是基于Linux核心开
+      
+    
+    </summary>
+    
+      <category term="VMware EXSI" scheme="http://yoursite.com/categories/VMware-EXSI/"/>
+    
+    
+      <category term="Mini Pc|ESXI|ROS" scheme="http://yoursite.com/tags/Mini-Pc-ESXI-ROS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下常用压缩命令</title>
+    <link href="http://yoursite.com/Linux/Linux%E4%B8%8B%E5%B8%B8%E7%94%A8%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/Linux/Linux下常用压缩命令/</id>
+    <published>2019-05-27T01:57:41.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;记录一些Linux下常用的解压缩命令，以便查找&lt;/p&gt;
+&lt;h3 id=&quot;tar格式&quot;&gt;&lt;a href=&quot;#tar格式&quot; class=&quot;headerlink&quot; title=&quot;tar格式&quot;&gt;&lt;/a&gt;tar格式&lt;/h3&gt;&lt;p&gt;解包：&lt;code&gt;$ tar xvf FileName
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|Ubuntu" scheme="http://yoursite.com/tags/Linux-Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Liunx学习笔记 实现一个misc设备驱动</title>
+    <link href="http://yoursite.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAmisc%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://yoursite.com/Linux/Linux驱动学习笔记-实现一个misc设备驱动/</id>
+    <published>2019-05-16T07:08:24.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;系统环境如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|drive|Mini Pc" scheme="http://yoursite.com/tags/Linux-drive-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记(实现一个带read,write,ioctl的字符设备驱动)</title>
+    <link href="http://yoursite.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://yoursite.com/Linux/Linux驱动学习笔记-实现一个字符设备驱动/</id>
+    <published>2019-05-10T09:33:41.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|drive|Mini Pc" scheme="http://yoursite.com/tags/Linux-drive-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习笔记（编译一个hello world模块)</title>
+    <link href="http://yoursite.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BC%96%E8%AF%91%E4%B8%80%E4%B8%AAhello-world%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/Linux/Linux驱动学习笔记-编译一个hello-world模块/</id>
+    <published>2019-05-07T09:19:21.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近看了篇编写Linux驱动的文章，觉得不错，于是自己动手试了试，这里记录一下以便以后查阅&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux|drive|Mini Pc" scheme="http://yoursite.com/tags/Linux-drive-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 安装使用Wine-4.0</title>
+    <link href="http://yoursite.com/Linux/Ubuntu-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Wine-4-0/"/>
+    <id>http://yoursite.com/Linux/Ubuntu-安装使用Wine-4-0/</id>
+    <published>2019-05-05T09:59:03.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;Ubuntu-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Wine-4-0/001.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Wine-介绍&quot;&gt;&lt;a href=&quot;#Wine-介绍&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu|Linux|Mini Pc" scheme="http://yoursite.com/tags/Ubuntu-Linux-Mini-Pc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QOTOM MiniPc Window Server 2008 r2 I211AT网卡驱动安装</title>
+    <link href="http://yoursite.com/Windows/Window-Server-2008-r2-I211AT%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/Windows/Window-Server-2008-r2-I211AT网卡驱动安装/</id>
+    <published>2019-04-30T03:27:41.000Z</published>
+    <updated>2019-07-16T10:55:31.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;*&lt;em&gt;型号：Q350P Mini Pc *&lt;/em&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;Window-Server-2008-r2-I211AT%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85/q350p.p
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
+    
+    
+      <category term="Windows|Mini Pc" scheme="http://yoursite.com/tags/Windows-Mini-Pc/"/>
+    
+  </entry>
+  
+</feed>
