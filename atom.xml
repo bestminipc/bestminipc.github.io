@@ -179,7 +179,7 @@
     <link href="http://minipc.netlify.com/posts/49274/"/>
     <id>http://minipc.netlify.com/posts/49274/</id>
     <published>2019-07-23T02:50:34.000Z</published>
-    <updated>2019-08-26T11:50:28.965Z</updated>
+    <updated>2019-08-26T15:26:55.821Z</updated>
     
     <summary type="html">
     
@@ -197,7 +197,7 @@
       <category term="FreeBSD" scheme="http://minipc.netlify.com/categories/FreeBSD/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+      <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
     
       <category term="Pfsense" scheme="http://minipc.netlify.com/tags/Pfsense/"/>
     
@@ -264,7 +264,7 @@
     <link href="http://minipc.netlify.com/posts/3221e6f0/"/>
     <id>http://minipc.netlify.com/posts/3221e6f0/</id>
     <published>2019-07-03T02:45:15.000Z</published>
-    <updated>2019-08-26T11:49:48.567Z</updated>
+    <updated>2019-08-26T15:26:09.473Z</updated>
     
     <summary type="html">
     
@@ -279,7 +279,7 @@
       <category term="OpenWrt" scheme="http://minipc.netlify.com/categories/OpenWrt/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+      <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
     
       <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
     
@@ -371,7 +371,7 @@
     <link href="http://minipc.netlify.com/posts/1cf14ed3/"/>
     <id>http://minipc.netlify.com/posts/1cf14ed3/</id>
     <published>2019-06-04T10:33:45.000Z</published>
-    <updated>2019-08-26T11:41:14.646Z</updated>
+    <updated>2019-08-26T15:27:43.949Z</updated>
     
     <summary type="html">
     
@@ -385,11 +385,11 @@
       <category term="VMware EXSI" scheme="http://minipc.netlify.com/categories/VMware-EXSI/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="ESXI" scheme="http://minipc.netlify.com/tags/ESXI/"/>
     
       <category term="ROS" scheme="http://minipc.netlify.com/tags/ROS/"/>
+    
+      <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
     
   </entry>
   

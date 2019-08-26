@@ -82,7 +82,7 @@
         <category>FreeBSD</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
+        <tag>Router</tag>
         <tag>Pfsense</tag>
         <tag>Firewall</tag>
       </tags>
@@ -120,7 +120,7 @@
         <category>OpenWrt</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Router</tag>
         <tag>OpenWrt</tag>
         <tag>LEDE</tag>
       </tags>
@@ -171,9 +171,9 @@
         <category>VMware EXSI</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>ESXI</tag>
         <tag>ROS</tag>
+        <tag>Router</tag>
       </tags>
   </entry>
   <entry>
@@ -360,7 +360,7 @@
         <category>FreeBSD</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
+        <tag>Router</tag>
         <tag>Pfsense</tag>
         <tag>Firewall</tag>
       </tags>
@@ -373,7 +373,7 @@
         <category>FreeBSD</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
+        <tag>Router</tag>
         <tag>Pfsense</tag>
         <tag>Firewall</tag>
       </tags>
@@ -386,7 +386,7 @@
         <category>FreeBSD</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
+        <tag>Router</tag>
         <tag>Pfsense</tag>
         <tag>Firewall</tag>
       </tags>
@@ -424,7 +424,7 @@
         <category>OpenWrt</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Router</tag>
         <tag>OpenWrt</tag>
         <tag>LEDE</tag>
       </tags>
@@ -437,7 +437,7 @@
         <category>OpenWrt</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Router</tag>
         <tag>OpenWrt</tag>
         <tag>LEDE</tag>
       </tags>
@@ -450,7 +450,7 @@
         <category>OpenWrt</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>Router</tag>
         <tag>OpenWrt</tag>
         <tag>LEDE</tag>
       </tags>
