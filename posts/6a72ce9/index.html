@@ -1,0 +1,333 @@
+<!DOCTYPE html><html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="baidu-site-verification" content="yWZESrEf8C"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="Ubuntu|Linux,"><link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml"><meta name="description" content="PC：Ubuntu 18.04.1，开发板：STM32F103C8T6 使用交叉编译器：gcc-arm-none-eabi 1apt-get install gcc-arm-none-eabi  安装完成后输入arm-none-eabi- 然后按tab键看到很多文件 说明安装成功了详细可以看我另两篇博文 下载stm32固件库www.st.com/zh 下载，并解压（~/stm32/codes/st"><meta name="keywords" content="Ubuntu|Linux"><meta property="og:type" content="article"><meta property="og:title" content="Linux使用STM官方库开发"><meta property="og:url" content="http://minipc.netlify.com/posts/6a72ce9/index.html"><meta property="og:site_name" content="Blog"><meta property="og:description" content="PC：Ubuntu 18.04.1，开发板：STM32F103C8T6 使用交叉编译器：gcc-arm-none-eabi 1apt-get install gcc-arm-none-eabi  安装完成后输入arm-none-eabi- 然后按tab键看到很多文件 说明安装成功了详细可以看我另两篇博文 下载stm32固件库www.st.com/zh 下载，并解压（~/stm32/codes/st"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="http://minipc.netlify.com/posts/6a72ce9/version.png"><meta property="og:updated_time" content="2019-07-16T10:55:31.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Linux使用STM官方库开发"><meta name="twitter:description" content="PC：Ubuntu 18.04.1，开发板：STM32F103C8T6 使用交叉编译器：gcc-arm-none-eabi 1apt-get install gcc-arm-none-eabi  安装完成后输入arm-none-eabi- 然后按tab键看到很多文件 说明安装成功了详细可以看我另两篇博文 下载stm32固件库www.st.com/zh 下载，并解压（~/stm32/codes/st"><meta name="twitter:image" content="http://minipc.netlify.com/posts/6a72ce9/version.png"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Pisces",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!0,scrollpercent:!0,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><link rel="canonical" href="http://minipc.netlify.com/posts/6a72ce9/"><title>Linux使用STM官方库开发 | Blog</title><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136338630-2"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136338630-2")</script></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Blog</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">MINI PC</h1></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br> 公益404</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/6a72ce9/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Lao hu"><meta itemprop="description" content><meta itemprop="image" content="/images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Blog"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">Linux使用STM官方库开发</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T10:24:54+08:00">2019-01-11</time> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i></span> <span class="post-meta-item-text">更新于&#58;</span> <time title="更新于" itemprop="dateModified" datetime="2019-07-16T18:55:31+08:00">2019-07-16</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/单片机/" itemprop="url" rel="index"><span itemprop="name">单片机</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/posts/6a72ce9/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/6a72ce9/" itemprop="commentCount"></span></a></span> <span class="post-meta-divider">|</span><span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数<span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">1.5k</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">8</span></div></div></header><div class="post-body" itemprop="articleBody"><h4 id="PC：Ubuntu-18-04-1，开发板：STM32F103C8T6"><a href="#PC：Ubuntu-18-04-1，开发板：STM32F103C8T6" class="headerlink" title="PC：Ubuntu 18.04.1，开发板：STM32F103C8T6"></a>PC：Ubuntu 18.04.1，开发板：STM32F103C8T6</h4><p><img src="/posts/6a72ce9/version.png" alt="version"></p><p>使用交叉编译器：gcc-arm-none-eabi</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install gcc-arm-none-eabi</span><br></pre></td></tr></table></figure><p>安装完成后输入arm-none-eabi- 然后按tab键看到很多文件 说明安装成功了<br>详细可以看我另两篇博文</p><p><strong>下载stm32固件库</strong><br><a href="http://www.st.com/zh" target="_blank" rel="noopener">www.st.com/zh</a> 下载，并解压（~/stm32/codes/stm_project）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@tiger:~/stm32/codes# ls</span><br><span class="line">en.stsw-stm32054.zip</span><br></pre></td></tr></table></figure><p><strong>创建目录</strong><br>libs目录放stm32固件库，src放用户源码，inc放用户头文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@tiger:~/stm32/codes/stm_project# ls</span><br><span class="line">inc  libs  src</span><br></pre></td></tr></table></figure><p><strong>创建Makefile.common</strong><br>在主目录下创建Makefile.common文件，这个是通用Makefile文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"># include Makefile</span><br><span class="line"> </span><br><span class="line">#This file is included in the general Makefile, the libs Makefile and the src Makefile</span><br><span class="line">#Different optimize settings for library and source files can be realized by using arguments</span><br><span class="line">#Compiler optimize settings:</span><br><span class="line"># -O0 no optimize, reduce compilation time and make debugging produce the expected results (default).</span><br><span class="line"># -O1 optimize, reduce code size and execution time, without much increase of compilation time.</span><br><span class="line"># -O2 optimize, reduce code execution time compared to ‘O1’, increase of compilation time.</span><br><span class="line"># -O3 optimize, turns on all optimizations, further increase of compilation time.</span><br><span class="line"># -Os optimize for size, enables all ‘-O2’ optimizations that do not typically increase code size and other code size optimizations.</span><br><span class="line">#Recommended optimize settings for release version: -O3</span><br><span class="line">#Recommended optimize settings for debug version: -O0</span><br><span class="line">#Valid parameters :</span><br><span class="line"># OptLIB=0 --&gt; optimize library files using the -O0 setting</span><br><span class="line"># OptLIB=1 --&gt; optimize library files using the -O1 setting</span><br><span class="line"># OptLIB=2 --&gt; optimize library files using the -O2 setting</span><br><span class="line"># OptLIB=3 --&gt; optimize library files using the -O3 setting</span><br><span class="line"># OptLIB=s --&gt; optimize library files using the -Os setting</span><br><span class="line"># OptSRC=0 --&gt; optimize source files using the -O0 setting</span><br><span class="line"># OptSRC=1 --&gt; optimize source files using the -O1 setting</span><br><span class="line"># OptSRC=2 --&gt; optimize source files using the -O2 setting</span><br><span class="line"># OptSRC=3 --&gt; optimize source files using the -O3 setting</span><br><span class="line"># OptSRC=s --&gt; optimize source files using the -Os setting</span><br><span class="line"># all --&gt; build all</span><br><span class="line"># libs --&gt; build libs only</span><br><span class="line"># src --&gt; build src only</span><br><span class="line"># clean --&gt; clean project</span><br><span class="line"># tshow --&gt; show optimize settings</span><br><span class="line">#Example:</span><br><span class="line"># make OptLIB=3 OptSRC=0 all tshow</span><br><span class="line"> </span><br><span class="line">TOP=$(shell readlink -f &quot;$(dir $(lastword $(MAKEFILE_LIST)))&quot;)</span><br><span class="line">PROGRAM=main</span><br><span class="line">LIBDIR=$(TOP)/libs</span><br><span class="line"> </span><br><span class="line">#Adust the following line to the library in use</span><br><span class="line">#=========add by hch 根据你的库不同,调整这个地方的库目录地址====================#</span><br><span class="line">STMLIB=$(LIBDIR)/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries</span><br><span class="line">#=========add by hch 根据你的stm32芯片型号容量不同,修改这个地方的TypeOfMCU=======#</span><br><span class="line">#Adjust TypeOfMCU in use, see CMSIS file &quot;stm32f10x.h&quot;</span><br><span class="line">#STM32F103RBT (128KB FLASH, 20KB RAM) --&gt; STM32F10X_MD</span><br><span class="line">#TypeOfMCU=STM32F10X_MD</span><br><span class="line">#STM32F103RET (512KB FLASH, 64KB RAM) --&gt; STM32F10X_HD</span><br><span class="line">#STM32F103ZET (512KB FLASH, 64KB RAM) --&gt; STM32F10X_HD:</span><br><span class="line">#============================================================================#</span><br><span class="line">TypeOfMCU=STM32F10X_MD</span><br><span class="line">#============================================================================#</span><br><span class="line">TC=arm-none-eabi</span><br><span class="line">CC=$(TC)-gcc</span><br><span class="line">LD=$(TC)-ld -v</span><br><span class="line">OBJCOPY=$(TC)-objcopy</span><br><span class="line">AR=$(TC)-ar</span><br><span class="line">GDB=$(TC)-gdb</span><br><span class="line">INCLUDE=-I$(TOP)/inc</span><br><span class="line">INCLUDE+=-I$(STMLIB)/CMSIS/CM3/CoreSupport</span><br><span class="line">INCLUDE+=-I$(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x</span><br><span class="line">INCLUDE+=-I$(STMLIB)/STM32F10x_StdPeriph_Driver/inc</span><br><span class="line">COMMONFLAGS=-g -mcpu=cortex-m3 -mthumb</span><br><span class="line">COMMONFLAGSlib=$(COMMONFLAGS)</span><br><span class="line">#Commands for general Makefile and src Makefile</span><br><span class="line">ifeq ($(OptSRC),0)</span><br><span class="line">  COMMONFLAGS+=-O0</span><br><span class="line">  InfoTextSrc=src (no optimize, -O0)</span><br><span class="line">else ifeq ($(OptSRC),1)</span><br><span class="line">  COMMONFLAGS+=-O1</span><br><span class="line">  InfoTextSrc=src (optimize time+ size+, -O1)</span><br><span class="line">else ifeq ($(OptSRC),2)</span><br><span class="line">  COMMONFLAGS+=-O2</span><br><span class="line">  InfoTextSrc=src (optimize time++ size+, -O2)</span><br><span class="line">else ifeq ($(OptSRC),s)</span><br><span class="line">   &amp;nbsp;COMMONFLAGS+=-Os</span><br><span class="line">   InfoTextSrc=src (optimize size++, -Os)</span><br><span class="line">else</span><br><span class="line">  COMMONFLAGS+=-O3</span><br><span class="line">  InfoTextSrc=src (full optimize, -O3)</span><br><span class="line">endif</span><br><span class="line">CFLAGS+=$(COMMONFLAGS) -Wall -Werror $(INCLUDE)</span><br><span class="line">CFLAGS+=-D $(TypeOfMCU)</span><br><span class="line">CFLAGS+=-D VECT_TAB_FLASH</span><br><span class="line"> </span><br><span class="line">#Commands for libs Makefile</span><br><span class="line">ifeq ($(OptLIB),0)</span><br><span class="line">  COMMONFLAGSlib+=-O0</span><br><span class="line">  InfoTextLib=libs (no optimize, -O0)</span><br><span class="line">else ifeq ($(OptLIB),1)</span><br><span class="line">  COMMONFLAGSlib+=-O1</span><br><span class="line">  InfoTextLib=libs (optimize time+ size+, -O1)</span><br><span class="line">else ifeq ($(OptLIB),2)</span><br><span class="line">  COMMONFLAGSlib+=-O2</span><br><span class="line">  InfoTextLib=libs (optimize time++ size+, -O2)</span><br><span class="line">else ifeq ($(OptLIB),s)</span><br><span class="line">  COMMONFLAGSlib+=-Os</span><br><span class="line">  InfoTextLib=libs (optimize size++, -Os)</span><br><span class="line">else</span><br><span class="line">  COMMONFLAGSlib+=-O3</span><br><span class="line">  InfoTextLib=libs (full optimize, -O3)</span><br><span class="line">endif</span><br><span class="line">CFLAGSlib+=$(COMMONFLAGSlib) -Wall -Werror $(INCLUDE)</span><br><span class="line">CFLAGSlib+=-D $(TypeOfMCU)</span><br><span class="line">CFLAGSlib+=-D VECT_TAB_FLASH</span><br></pre></td></tr></table></figure><p><strong>编译固件库</strong></p><p>1.首先编译固件库，将固件库编译成静态库，应用程序可以直接使用.</p><p>2.下载startup.c，路径：<em>stm_project/libs/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/</em></p><p><em>CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/</em></p><p>3.编写Makefile文件，路径：<em>stm_project/libs/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/</em></p><p>STM32F10x_StdPeriph_Driver/src</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">include ../../../../../Makefile.common</span><br><span class="line"></span><br><span class="line">LIBS+=libstm32.a</span><br><span class="line">CFLAGSlib+=-c</span><br><span class="line">  </span><br><span class="line">all: $(LIBS)</span><br><span class="line"></span><br><span class="line">libstm32.a:</span><br><span class="line">	@echo -n &quot;Building $@ ...&quot;</span><br><span class="line">	cd $(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/ &amp;&amp; \</span><br><span class="line">		$(CC) $(CFLAGSlib) system_stm32f10x.c</span><br><span class="line">	cd $(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm &amp;&amp; \</span><br><span class="line">		$(CC) $(CFLAGSlib) startup.c</span><br><span class="line">	cd $(STMLIB)/STM32F10x_StdPeriph_Driver/src &amp;&amp; \</span><br><span class="line">		$(CC) $(CFLAGSlib) *.c \</span><br><span class="line">		-D&quot;assert_param(expr)=((void)0)&quot;</span><br><span class="line">	$(AR) cr $(LIBDIR)/$@ \</span><br><span class="line">	$(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.o \</span><br><span class="line">	$(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup.o \</span><br><span class="line">	$(STMLIB)/STM32F10x_StdPeriph_Driver/src/*.o</span><br><span class="line">	@echo &quot;done.&quot;</span><br><span class="line"></span><br><span class="line">.PHONY: clean</span><br><span class="line">  </span><br><span class="line">clean:</span><br><span class="line">	rm -f $(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.o</span><br><span class="line">	rm -f $(STMLIB)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/startup/arm/startup.o</span><br><span class="line">	rm -f $(STMLIB)/STM32F10x_StdPeriph_Driver/src/*.o</span><br><span class="line">	rm -f $(LIBDIR)/$(LIBS)</span><br></pre></td></tr></table></figure><p><strong>建立ld文件</strong><br>项目根目录建立linker.ld文件，根据芯片的内存以及flash容量<br>下面是文件需要修改的地方</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">MEMORY &#123;</span><br><span class="line">	/*Adust LENGTH to RAMsize of target MCU:*/</span><br><span class="line">	/*STM32F103RBT --&gt; 20K*/</span><br><span class="line">	RAM (RWX) : ORIGIN = 0x20000000 , LENGTH = 20K</span><br><span class="line">	/*STM32F103RET --&gt; 64K*/</span><br><span class="line">	/*STM32F103ZET --&gt; 64K*/</span><br><span class="line">	/*RAM (RWX) : ORIGIN = 0x20000000 , LENGTH = 64K*/</span><br><span class="line">	EXTSRAM (RWX) : ORIGIN = 0x68000000 , LENGTH = 0</span><br><span class="line">	/*Adust LENGTH to (FLASHsize - FeePROMsize) of target MCU:*/</span><br><span class="line">	/*STM32F103RBT --&gt; 126K*/</span><br><span class="line">	/*FLASH (RX) : ORIGIN = 0x08000000 , LENGTH = 126K*/</span><br><span class="line">	/*STM32F103RET --&gt; 508K*/</span><br><span class="line">	/*FLASH (RX) : ORIGIN = 0x08000000 , LENGTH = 508K*/</span><br><span class="line">	/*STM32F103ZET --&gt; 508K*/</span><br><span class="line">	FLASH (RX) : ORIGIN = 0x08000000 , LENGTH = 508K</span><br><span class="line">	/*Adust ORIGIN to (0x08000000 + (FLASHsize-FeePROMsize)) of target MCU*/</span><br><span class="line">	/*and adust LENGTH to FeePROMsize allocated:*/</span><br><span class="line">	/*STM32F103RBT --&gt; 0x08000000+126K, 2K*/</span><br><span class="line">	EEMUL (RWX) : ORIGIN = 0x08000000+126K, LENGTH = 2K</span><br><span class="line">	/*STM32F103RET --&gt; 0x08000000+508K, 4K*/</span><br><span class="line">	/*EEMUL (RWX) : ORIGIN = 0x08000000+508K, LENGTH = 4K*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>编译用户文件</strong><br>将用户应用程序也编译成静态库<br>~/stm32/codes/stm_project/src/Makefile</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">include ../Makefile.common</span><br><span class="line"></span><br><span class="line">LIBS+=app.a</span><br><span class="line">CFLAGSlib+=-c</span><br><span class="line"></span><br><span class="line">all: $(LIBS)</span><br><span class="line"></span><br><span class="line">app.a:</span><br><span class="line">	@echo -n &quot;Building $@ ...&quot;</span><br><span class="line">	$(CC) $(CFLAGSlib) *.c</span><br><span class="line">	$(AR) cr $@ *.o</span><br><span class="line">	@echo &quot;done.&quot;</span><br><span class="line"></span><br><span class="line">.PHONY: clean</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">	rm -f *.o</span><br><span class="line">	rm -f $(LIBS)</span><br></pre></td></tr></table></figure><p><strong>建立主Makefile</strong><br>在主目录下，建立主Makefile文件<br>将固件库和用户应用程序编译成可执行文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">include Makefile.common</span><br><span class="line">LDFLAGS=$(COMMONFLAGS) -fno-exceptions -ffunction-sections -fdata-sections -L$(LIBDIR) -nostartfiles -Wl,--gc-sections,-Tlinker.ld</span><br><span class="line">  </span><br><span class="line">LDLIBS+=-lm</span><br><span class="line">LDLIBS+=-lstm32</span><br><span class="line">  </span><br><span class="line">STARTUP=startup.c</span><br><span class="line">  </span><br><span class="line">all: libs src</span><br><span class="line">	$(CC) -o $(PROGRAM).elf $(LDFLAGS) \</span><br><span class="line">		-Wl,--whole-archive \</span><br><span class="line">		src/app.a \</span><br><span class="line">		-Wl,--no-whole-archive \</span><br><span class="line">		$(LDLIBS)</span><br><span class="line">	$(OBJCOPY) -O ihex $(PROGRAM).elf $(PROGRAM).hex</span><br><span class="line">	$(OBJCOPY) -O binary $(PROGRAM).elf $(PROGRAM).bin</span><br><span class="line">	arm-none-eabi-readelf -a $(PROGRAM).elf &gt; $(PROGRAM).info_elf</span><br><span class="line">	arm-none-eabi-size -d -B -t $(PROGRAM).elf &gt; $(PROGRAM).info_size</span><br><span class="line">	arm-none-eabi-objdump -S $(PROGRAM).elf &gt; $(PROGRAM).info_code</span><br><span class="line">	arm-none-eabi-nm -t d -S --size-sort -s $(PROGRAM).elf &gt; $(PROGRAM).info_symbol</span><br><span class="line">  </span><br><span class="line">.PHONY: libs src clean</span><br><span class="line">  </span><br><span class="line">libs:</span><br><span class="line">	$(MAKE) -C libs/STM32F10x_StdPeriph_Lib_V3.5.0/Libraries/STM32F10x_StdPeriph_Driver/src</span><br><span class="line">src:</span><br><span class="line">	$(MAKE) -C src</span><br><span class="line">clean:</span><br><span class="line">	rm -f $(PROGRAM).elf $(PROGRAM).hex $(PROGRAM).bin $(PROGRAM).info_elf $(PROGRAM).info_size</span><br><span class="line">	rm -f $(PROGRAM).info_code</span><br><span class="line">	rm -f $(PROGRAM).info_symbol</span><br></pre></td></tr></table></figure><p><strong>根目录执行make生成二进制文件</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@tiger:~/stm32/codes/stm_project# ls</span><br><span class="line">inc   linker.ld  main.elf  main.info_code  main.info_size    Makefile         src</span><br><span class="line">libs  main.bin   main.hex  main.info_elf   main.info_symbol  Makefile.common</span><br></pre></td></tr></table></figure><p><strong>loadbin烧写程序OK，输入r复位，g运行程序</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">J-Link&gt;loadbin /home/hch/stm32/codes/stm_project/main.bin 0x8000000</span><br><span class="line"></span><br><span class="line">**************************</span><br><span class="line">WARNING: T-bit of XPSR is 0 but should be 1. Changed to 1.</span><br><span class="line">**************************</span><br><span class="line"></span><br><span class="line">Downloading file [/home/hch/stm32/codes/stm_project/main.bin]...</span><br><span class="line">Comparing flash   [100%] Done.</span><br><span class="line">Erasing flash     [100%] Done.</span><br><span class="line">Programming flash [100%] Done.</span><br><span class="line">Verifying flash   [100%] Done.</span><br><span class="line">J-Link: Flash download: Bank 0 @ 0x08000000: 1 range affected (5120 bytes)</span><br><span class="line">J-Link: Flash download: Total time needed: 0.281s (Prepare: 0.025s, Compare: 0.004s, Erase: 0.111s, Program: 0.135s, Verify: 0.000s, Restore: 0.003s)</span><br><span class="line">O.K.</span><br><span class="line">J-Link&gt;r</span><br><span class="line">Reset delay: 0 ms</span><br><span class="line">Reset type NORMAL: Resets core &amp; peripherals via SYSRESETREQ &amp; VECTRESET bit.</span><br><span class="line">Reset: Halt core after reset via DEMCR.VC_CORERESET.</span><br><span class="line">Reset: Reset device via AIRCR.SYSRESETREQ.</span><br><span class="line">J-Link&gt;g</span><br></pre></td></tr></table></figure><p>项目源代码：<a href="https://github.com/huchanghui123/stm32_linux.git" target="_blank" rel="noopener">https://github.com/huchanghui123/stm32_linux.git</a></p></div><footer class="post-footer"><div class="post-tags"> <a href="/tags/Ubuntu-Linux/" rel="tag"># Ubuntu|Linux</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/posts/79c57df1/" rel="next" title="Linux下编译、烧写RT-Rhread，基于STM32单片机"><i class="fa fa-chevron-left"></i> Linux下编译、烧写RT-Rhread，基于STM32单片机</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/posts/49536858/" rel="prev" title="OpenWrt RTL8211AE 无线网卡设置">OpenWrt RTL8211AE 无线网卡设置<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div><div><div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div></div></div><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Lao hu"><p class="site-author-name" itemprop="name">Lao hu</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">40</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">6</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">20</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/bestminipc" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="mailto:hch4691294@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i> E-Mail</a></span><span class="links-of-author-item"><a href="https://twitter.com/Tiger37465911" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i> Twitter</a></span><span class="links-of-author-item"><a href="https://www.facebook.com/sha.na.733" target="_blank" title="Facebook"><i class="fa fa-fw fa-facebook"></i> Facebook</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PC：Ubuntu-18-04-1，开发板：STM32F103C8T6"><span class="nav-number">1.</span> <span class="nav-text">PC：Ubuntu 18.04.1，开发板：STM32F103C8T6</span></a></li></ol></div></div></section><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span><span class="with-love"><i class="fa fa-id-card"></i></span> <span class="author" itemprop="copyrightHolder">Lao hu</span></div><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i> 访问人数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span><span class="site-pv"><i class="fa fa-eye"></i> 总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'AplNwfEj0DF33tX3E3skfLiJ-gzGzoHsz',
+        appKey: 'EUh1nnNPsseuLLynbUogISA1',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script><script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script type="text/javascript" src="/js/src/clipboard.min.js"></script><script type="text/javascript" src="/js/src/clipboard-use.js"></script></body></html>
