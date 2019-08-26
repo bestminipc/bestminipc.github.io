@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Clonezilla备份还原系统]]></title>
+    <url>%2Fposts%2F3390c071%2F</url>
+    <content type="text"><![CDATA[Clonezilla Download 制作USB启动盘 第一种方法（未测试） 下载ISO镜像，使用UltraISO写入镜像 第二种方法（未测试） 下载USB类型zip包 USB格式化为FAT32，至少200MB 解压zip到U盘根目录 以管理员身份执行 F:\utils\win32\makeboot.bat（makeboot.bat必须在U盘上执行） 第三种方法 使用tuxboot工具 下载地址：http://tuxboot.nchc.org.tw/ 备份系统到U盘 从U盘启动，选择Clonezilla live (default settings)，进入再生龙 在使用语言菜单中选择“zh_CN.UTF-8Chinese(Simplified)|简体中文” 处理键盘映射的策略，选择“不修改键盘映射” 选定模式菜单，选择“使用再生龙 选定备份/恢复的模式，选择“device-image硬盘/分区[存到/来自]镜像文件” 挂载再生龙镜像文件的目录，选择模式“local_dev使用本机的分区（如：硬盘，随身盘） 注意：如果要将备份的镜像存储到再生龙工具U盘或是准备恢复的镜像存储在再生龙工具U盘中，请选择“Skip 使用现有的/home/partimage（可写装置如硬盘/随身盘）” 此时再生龙会提示如果你的镜像存储盘是U盘，请将U盘连接到主板上并且等待5秒钟后按回车键，再生龙会挂载U盘如果存储镜像的存储盘是已经连接到主板上的硬盘，可以直接按回车键 选择镜像存放或读取镜像的设备，此时要清楚存储盘的盘符，我这里是/dev/sdc 在该存储盘的设备中选择镜像存放或读取的具体目录，一般选择根目录“/”，我的盘是空盘，没有显示，选择“初学者模式” 选择备份/恢复的模式，这里菜单中有两种模式 “savedisk 存储本机硬盘为镜像文件”，此模式是将目标盘进行整盘备份 “saveparts 存储本机分区为镜像文件”，此模式是对目标盘的某个分区进行备份 再生龙整盘备份功能：选择“savedisk”后，输入一个名称来存放所要备份硬盘的镜像文件 选择要备份的磁盘 我备份的系统是Windows，跳过检查 检查镜像是否能被还原，不对镜像加密 按提示操作，按y继续 备份系统中… 备份完成，按Enter键进行关机或重启 还原系统到硬盘 插入保存有再生龙镜像的USB，系统会检测到Clonezilla映像，按TAB键选择DONE，按ENTER键继续 选择初学者模式 选择“restoredisk”后，再生龙会自动列出存储盘的整盘镜像文件 选取所需要的镜像文件 接下来选择目的硬盘准备进行恢复，按回车键继续，然后按两次y进行还原 还原系统中… 还原完成后选择关机或重启 至此结束!]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Clonezilla|Linux|Mini Pc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[向WIN7 USB安装盘中添加USB3.0驱动]]></title>
     <url>%2Fposts%2F3911%2F</url>
     <content type="text"><![CDATA[WIN7原版映像中添加USB3.0驱动程序​ 最新发现用rufus制作的原版win7 USB启动盘，在某些板子上安装系统时，无法识别到键盘鼠标，导致无法进行安装，百度了一下发现是原版的win7镜像没有集成USB3.0的驱动，然后如今的电脑主板基本是XHCI主控（以前是EHCI的），这一变动导致在安装Win7的过程中会出现USB接口失灵的状况，所以在安装时无法识别键盘、鼠标、U盘。这样我们就只能在映像文件中添加usb3.0驱动了。 百度后发现实现方法不少 使用UltraISO提取出镜像的boot.wim，install.wim，然后打开powershell，用dism命令将驱动合入wim映像 使用dism++程序为映像添加驱动 使用intel官方工具win7-usb3.0-creator添加驱动（官网已下架） 使用技嘉WindowsImageTool（感觉最好用） 这里只介绍第四种，前面的方法请自行百度. 使用WindowsImageTool添加USB3.0驱动 先下载工具：https://www.gigabyte.cn/Motherboard/GA-Z170X-Gaming-G1-rev-10#utility 制作WIN7 USB启动盘 使用管理员权限启动WindowsImageTool.exe，选择制作号的USB启动盘 点击start开始制作，大概7分半钟制作完成 重新将U盘插入主板开机选择USB，进入WIN7安装界面后鼠标能够正常移动，安装过程完美。]]></content>

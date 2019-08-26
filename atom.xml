@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-08-22T10:35:49.000Z</updated>
+  <updated>2019-08-26T07:25:10.995Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Clonezilla备份还原系统</title>
+    <link href="http://minipc.netlify.com/posts/3390c071/"/>
+    <id>http://minipc.netlify.com/posts/3390c071/</id>
+    <published>2019-08-26T04:32:53.000Z</published>
+    <updated>2019-08-26T07:25:10.995Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://clonezilla.nchc.org.tw/clonezilla-live/download/download.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Clonezilla Download&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
+    
+    
+      <category term="Clonezilla|Linux|Mini Pc" scheme="http://minipc.netlify.com/tags/Clonezilla-Linux-Mini-Pc/"/>
+    
+  </entry>
   
   <entry>
     <title>向WIN7 USB安装盘中添加USB3.0驱动</title>
@@ -459,31 +483,6 @@
         &lt;p&gt;*&lt;em&gt;型号：Q350P Mini Pc *&lt;/em&gt; &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/posts/412022ec/q350p.png&quot; alt=&quot;009&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 r2 Enterprise&lt;
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Windows|Mini Pc" scheme="http://minipc.netlify.com/tags/Windows-Mini-Pc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QOTOM MiniPc Windows Server 2016 驱动安装</title>
-    <link href="http://minipc.netlify.com/posts/73f08017/"/>
-    <id>http://minipc.netlify.com/posts/73f08017/</id>
-    <published>2019-04-26T03:23:09.000Z</published>
-    <updated>2019-07-16T10:55:31.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;硬件：QOTOM Q515G6 Mini Pc&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;系统：windows server 2016 180天试用版&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;windows server 2016 180天试用版 &amp;lt;&lt;a
       
     
     </summary>
