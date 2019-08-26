@@ -1,5 +1,5 @@
+http://minipc.netlify.com/Linux/Clonezilla备份还原/
 http://minipc.netlify.com/Windows/向WIN7安装盘中添加USB3-0驱动/
-http://minipc.netlify.com/Linux/Clonezilla备份还原系统/
 http://minipc.netlify.com/Windows/金蝶K3-Wise-v14-0安装配置/
 http://minipc.netlify.com/Windows/Install-SQLServer-2008R2/
 http://minipc.netlify.com/Windows/Install-Windows-Server-2008-r2-Datacenter/
