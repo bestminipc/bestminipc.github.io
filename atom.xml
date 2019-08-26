@@ -18,8 +18,8 @@
   
   <entry>
     <title>向WIN7 USB安装盘中添加USB3.0驱动</title>
-    <link href="http://minipc.netlify.com/Windows/%E5%90%91WIN7%E5%AE%89%E8%A3%85%E7%9B%98%E4%B8%AD%E6%B7%BB%E5%8A%A0USB3-0%E9%A9%B1%E5%8A%A8"/>
-    <id>http://minipc.netlify.com/Windows/向WIN7安装盘中添加USB3-0驱动</id>
+    <link href="http://minipc.netlify.com/Windows/%E5%90%91WIN7%E5%AE%89%E8%A3%85%E7%9B%98%E4%B8%AD%E6%B7%BB%E5%8A%A0USB3-0%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://minipc.netlify.com/Windows/向WIN7安装盘中添加USB3-0驱动/</id>
     <published>2019-08-21T07:53:26.000Z</published>
     <updated>2019-08-22T10:35:49.000Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>Clonezilla备份还原系统</title>
-    <link href="http://minipc.netlify.com/Linux/Clonezilla%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F"/>
-    <id>http://minipc.netlify.com/Linux/Clonezilla备份还原系统</id>
+    <link href="http://minipc.netlify.com/Linux/Clonezilla%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://minipc.netlify.com/Linux/Clonezilla备份还原系统/</id>
     <published>2019-08-16T02:51:51.000Z</published>
     <updated>2019-08-26T02:58:04.075Z</updated>
     
@@ -64,8 +64,8 @@
   
   <entry>
     <title>金蝶K/3 Wise v14.0安装配置</title>
-    <link href="http://minipc.netlify.com/Windows/%E9%87%91%E8%9D%B6K3-Wise-v14-0%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"/>
-    <id>http://minipc.netlify.com/Windows/金蝶K3-Wise-v14-0安装配置</id>
+    <link href="http://minipc.netlify.com/Windows/%E9%87%91%E8%9D%B6K3-Wise-v14-0%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://minipc.netlify.com/Windows/金蝶K3-Wise-v14-0安装配置/</id>
     <published>2019-08-14T09:21:01.000Z</published>
     <updated>2019-08-15T01:44:49.000Z</updated>
     
@@ -75,7 +75,7 @@
       
         &lt;p&gt;&lt;strong&gt;主机：QOTOM Q300P&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 R2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Windows/001.png&quot; 
+&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Windows/金蝶K3-Wise
       
     
     </summary>
@@ -89,8 +89,8 @@
   
   <entry>
     <title>QOTOM Install SQLServer 2008R2</title>
-    <link href="http://minipc.netlify.com/Windows/Install-SQLServer-2008R2"/>
-    <id>http://minipc.netlify.com/Windows/Install-SQLServer-2008R2</id>
+    <link href="http://minipc.netlify.com/Windows/Install-SQLServer-2008R2/"/>
+    <id>http://minipc.netlify.com/Windows/Install-SQLServer-2008R2/</id>
     <published>2019-08-14T03:26:26.000Z</published>
     <updated>2019-08-14T04:17:28.000Z</updated>
     
@@ -112,8 +112,8 @@
   
   <entry>
     <title>QOTOM Install Windows Server 2008 r2 Datacenter</title>
-    <link href="http://minipc.netlify.com/Windows/Install-Windows-Server-2008-r2-Datacenter"/>
-    <id>http://minipc.netlify.com/Windows/Install-Windows-Server-2008-r2-Datacenter</id>
+    <link href="http://minipc.netlify.com/Windows/Install-Windows-Server-2008-r2-Datacenter/"/>
+    <id>http://minipc.netlify.com/Windows/Install-Windows-Server-2008-r2-Datacenter/</id>
     <published>2019-08-14T01:45:22.000Z</published>
     <updated>2019-08-16T01:38:03.000Z</updated>
     
@@ -135,8 +135,8 @@
   
   <entry>
     <title>Red Hat更换Centos6源</title>
-    <link href="http://minipc.netlify.com/Linux/RedHat7%E6%9B%B4%E6%8D%A2Centos6%E6%BA%90"/>
-    <id>http://minipc.netlify.com/Linux/RedHat7更换Centos6源</id>
+    <link href="http://minipc.netlify.com/Linux/RedHat7%E6%9B%B4%E6%8D%A2Centos6%E6%BA%90/"/>
+    <id>http://minipc.netlify.com/Linux/RedHat7更换Centos6源/</id>
     <published>2019-07-31T02:53:56.000Z</published>
     <updated>2019-07-31T03:19:21.000Z</updated>
     
@@ -159,8 +159,8 @@
   
   <entry>
     <title>Pfsense设置系统重启任务</title>
-    <link href="http://minipc.netlify.com/FreeBSD/Pfsense%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%87%8D%E5%90%AF%E4%BB%BB%E5%8A%A1"/>
-    <id>http://minipc.netlify.com/FreeBSD/Pfsense设置系统重启任务</id>
+    <link href="http://minipc.netlify.com/FreeBSD/Pfsense%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E9%87%8D%E5%90%AF%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://minipc.netlify.com/FreeBSD/Pfsense设置系统重启任务/</id>
     <published>2019-07-23T02:50:34.000Z</published>
     <updated>2019-07-23T03:37:46.000Z</updated>
     
@@ -186,8 +186,8 @@
   
   <entry>
     <title>Ubuntu 18.04配置serial console</title>
-    <link href="http://minipc.netlify.com/Linux/Ubuntu-18-04%E9%85%8D%E7%BD%AEserial-console"/>
-    <id>http://minipc.netlify.com/Linux/Ubuntu-18-04配置serial-console</id>
+    <link href="http://minipc.netlify.com/Linux/Ubuntu-18-04%E9%85%8D%E7%BD%AEserial-console/"/>
+    <id>http://minipc.netlify.com/Linux/Ubuntu-18-04配置serial-console/</id>
     <published>2019-07-22T01:59:33.000Z</published>
     <updated>2019-07-23T03:34:28.000Z</updated>
     
@@ -209,8 +209,8 @@
   
   <entry>
     <title>Win10 Remote Ubuntu18.04</title>
-    <link href="http://minipc.netlify.com/Linux/Win10-Remote-Ubuntu18-04"/>
-    <id>http://minipc.netlify.com/Linux/Win10-Remote-Ubuntu18-04</id>
+    <link href="http://minipc.netlify.com/Linux/Win10-Remote-Ubuntu18-04/"/>
+    <id>http://minipc.netlify.com/Linux/Win10-Remote-Ubuntu18-04/</id>
     <published>2019-07-19T02:13:13.000Z</published>
     <updated>2019-07-23T03:34:28.000Z</updated>
     
@@ -234,8 +234,8 @@
   
   <entry>
     <title>OpenWrt X86 分区扩容</title>
-    <link href="http://minipc.netlify.com/OpenWrt/OpenWrt-X86-%E5%88%86%E5%8C%BA%E6%89%A9%E5%AE%B9"/>
-    <id>http://minipc.netlify.com/OpenWrt/OpenWrt-X86-分区扩容</id>
+    <link href="http://minipc.netlify.com/OpenWrt/OpenWrt-X86-%E5%88%86%E5%8C%BA%E6%89%A9%E5%AE%B9/"/>
+    <id>http://minipc.netlify.com/OpenWrt/OpenWrt-X86-分区扩容/</id>
     <published>2019-07-03T02:45:15.000Z</published>
     <updated>2019-07-18T08:01:58.000Z</updated>
     
@@ -243,8 +243,8 @@
     
       
       
-        &lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/OpenWrt/000.png&quot; alt=&quot;minipc&quot;&gt;&lt;/p&gt;
-&lt;p&gt;硬件情况：K500G6 X86&lt;a href=&quot;http://www.kansung.cn/&quot; target=&quot;_blank&quot; rel=
+        &lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/OpenWrt/OpenWrt-X86-分区扩容/000.png&quot; alt=&quot;minipc&quot;&gt;&lt;/p&gt;
+&lt;p&gt;硬件情况：K500G6 X86&lt;a href=&quot;http://www.kansung.cn/&quot; tar
       
     
     </summary>
@@ -258,8 +258,8 @@
   
   <entry>
     <title>Linux Read CPU Type and Temperature</title>
-    <link href="http://minipc.netlify.com/Linux/Linux-Read-CPU-Temperature"/>
-    <id>http://minipc.netlify.com/Linux/Linux-Read-CPU-Temperature</id>
+    <link href="http://minipc.netlify.com/Linux/Linux-Read-CPU-Temperature/"/>
+    <id>http://minipc.netlify.com/Linux/Linux-Read-CPU-Temperature/</id>
     <published>2019-06-29T08:37:08.000Z</published>
     <updated>2019-08-21T07:40:28.000Z</updated>
     
@@ -281,8 +281,8 @@
   
   <entry>
     <title>Linux Superio Read CPU FAN RPM</title>
-    <link href="http://minipc.netlify.com/Linux/Linux-Superio-CPU-FAN"/>
-    <id>http://minipc.netlify.com/Linux/Linux-Superio-CPU-FAN</id>
+    <link href="http://minipc.netlify.com/Linux/Linux-Superio-CPU-FAN/"/>
+    <id>http://minipc.netlify.com/Linux/Linux-Superio-CPU-FAN/</id>
     <published>2019-06-26T10:33:52.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -304,8 +304,8 @@
   
   <entry>
     <title>X86 Linux ITE SuperIO GPIO Control</title>
-    <link href="http://minipc.netlify.com/Linux/Linux-SuperIO-Control"/>
-    <id>http://minipc.netlify.com/Linux/Linux-SuperIO-Control</id>
+    <link href="http://minipc.netlify.com/Linux/Linux-SuperIO-Control/"/>
+    <id>http://minipc.netlify.com/Linux/Linux-SuperIO-Control/</id>
     <published>2019-06-05T07:28:43.000Z</published>
     <updated>2019-08-21T07:40:08.000Z</updated>
     
@@ -327,8 +327,8 @@
   
   <entry>
     <title>ESXi6.7安装ROS软路由-设置网卡桥接</title>
-    <link href="http://minipc.netlify.com/VMware-EXSI/ESXi6-7%E5%AE%89%E8%A3%85ROS%E8%BD%AF%E8%B7%AF%E7%94%B1"/>
-    <id>http://minipc.netlify.com/VMware-EXSI/ESXi6-7安装ROS软路由</id>
+    <link href="http://minipc.netlify.com/VMware-EXSI/ESXi6-7%E5%AE%89%E8%A3%85ROS%E8%BD%AF%E8%B7%AF%E7%94%B1/"/>
+    <id>http://minipc.netlify.com/VMware-EXSI/ESXi6-7安装ROS软路由/</id>
     <published>2019-06-04T10:33:45.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -350,8 +350,8 @@
   
   <entry>
     <title>Linux下常用压缩命令</title>
-    <link href="http://minipc.netlify.com/Linux/Linux%E4%B8%8B%E5%B8%B8%E7%94%A8%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"/>
-    <id>http://minipc.netlify.com/Linux/Linux下常用压缩命令</id>
+    <link href="http://minipc.netlify.com/Linux/Linux%E4%B8%8B%E5%B8%B8%E7%94%A8%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4/"/>
+    <id>http://minipc.netlify.com/Linux/Linux下常用压缩命令/</id>
     <published>2019-05-27T01:57:41.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -374,8 +374,8 @@
   
   <entry>
     <title>Liunx学习笔记 实现一个misc设备驱动</title>
-    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAmisc%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8"/>
-    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-实现一个misc设备驱动</id>
+    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AAmisc%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-实现一个misc设备驱动/</id>
     <published>2019-05-16T07:08:24.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -398,8 +398,8 @@
   
   <entry>
     <title>Linux学习笔记(实现一个带read,write,ioctl的字符设备驱动)</title>
-    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8"/>
-    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-实现一个字符设备驱动</id>
+    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8/"/>
+    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-实现一个字符设备驱动/</id>
     <published>2019-05-10T09:33:41.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -407,8 +407,7 @@
     
       
       
-        &lt;h3 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Linux/000.png&quot; alt=&quot;000&quot;&gt;&lt;/p&gt;
-&lt;
+        &lt;h3 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Linux/Linux驱动学习笔记-实现一个字符设备驱动/00
       
     
     </summary>
@@ -422,8 +421,8 @@
   
   <entry>
     <title>Linux学习笔记（编译一个hello world模块)</title>
-    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BC%96%E8%AF%91%E4%B8%80%E4%B8%AAhello-world%E6%A8%A1%E5%9D%97"/>
-    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-编译一个hello-world模块</id>
+    <link href="http://minipc.netlify.com/Linux/Linux%E9%A9%B1%E5%8A%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%BC%96%E8%AF%91%E4%B8%80%E4%B8%AAhello-world%E6%A8%A1%E5%9D%97/"/>
+    <id>http://minipc.netlify.com/Linux/Linux驱动学习笔记-编译一个hello-world模块/</id>
     <published>2019-05-07T09:19:21.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -446,8 +445,8 @@
   
   <entry>
     <title>Ubuntu 安装使用Wine-4.0</title>
-    <link href="http://minipc.netlify.com/Linux/Ubuntu-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Wine-4-0"/>
-    <id>http://minipc.netlify.com/Linux/Ubuntu-安装使用Wine-4-0</id>
+    <link href="http://minipc.netlify.com/Linux/Ubuntu-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Wine-4-0/"/>
+    <id>http://minipc.netlify.com/Linux/Ubuntu-安装使用Wine-4-0/</id>
     <published>2019-05-05T09:59:03.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -455,8 +454,8 @@
     
       
       
-        &lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Linux/001.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Wine-介绍&quot;&gt;&lt;a href=&quot;#Wine-介绍&quot; class=&quot;headerlink&quot; title=&quot;Wine 介绍&quot;&gt;&lt;/a&gt;W
+        &lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Linux/Ubuntu-安装使用Wine-4-0/001.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Wine-介绍&quot;&gt;&lt;a href=&quot;#Wine-介绍&quot; class=&quot;headerlink&quot; t
       
     
     </summary>
@@ -470,8 +469,8 @@
   
   <entry>
     <title>QOTOM MiniPc Window Server 2008 r2 I211AT网卡驱动安装</title>
-    <link href="http://minipc.netlify.com/Windows/Window-Server-2008-r2-I211AT%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"/>
-    <id>http://minipc.netlify.com/Windows/Window-Server-2008-r2-I211AT网卡驱动安装</id>
+    <link href="http://minipc.netlify.com/Windows/Window-Server-2008-r2-I211AT%E7%BD%91%E5%8D%A1%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85/"/>
+    <id>http://minipc.netlify.com/Windows/Window-Server-2008-r2-I211AT网卡驱动安装/</id>
     <published>2019-04-30T03:27:41.000Z</published>
     <updated>2019-07-16T10:55:31.000Z</updated>
     
@@ -480,8 +479,8 @@
       
       
         &lt;p&gt;*&lt;em&gt;型号：Q350P Mini Pc *&lt;/em&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Windows/q350p.png&quot; alt=&quot;009&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 r
+&lt;p&gt;&lt;img src=&quot;//minipc.netlify.com/Windows/Window-Server-2008-r2-I211AT网卡驱动安装/q350p.png&quot; alt=&quot;009&quot;&gt;&lt;/p&gt;
+
       
     
     </summary>
