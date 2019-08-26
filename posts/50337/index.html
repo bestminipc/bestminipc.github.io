@@ -1,4 +1,1055 @@
-<!DOCTYPE html><html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><script src="/lib/pace/pace.min.js?v=1.0.2"></script><link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="baidu-site-verification" content="yWZESrEf8C"><link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="Windows,SQLServer,"><link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml"><meta name="description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏"><meta name="keywords" content="Windows,SQLServer"><meta property="og:type" content="article"><meta property="og:title" content="QOTOM Install SQLServer 2008R2"><meta property="og:url" content="http://minipc.netlify.com/posts/50337/index.html"><meta property="og:site_name" content="Blog"><meta property="og:description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/001.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/002.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/003.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/004.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/005.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/006.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/007.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/008.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/009.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/010.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/011.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/012.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/013.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/014.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/015.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/016.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/017.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/018.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/019.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/020.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/021.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/022.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/023.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/024.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/025.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/026.png"><meta property="og:image" content="http://minipc.netlify.com/posts/50337/027.png"><meta property="og:updated_time" content="2019-08-26T11:53:38.299Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="QOTOM Install SQLServer 2008R2"><meta name="twitter:description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏"><meta name="twitter:image" content="http://minipc.netlify.com/posts/50337/001.png"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Pisces",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!0,scrollpercent:!0,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><link rel="canonical" href="http://minipc.netlify.com/posts/50337/"><title>QOTOM Install SQLServer 2008R2 | Blog</title><script async src="https://www.googletagmanager.com/gtag/js?id=UA-136338630-2"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-136338630-2")</script></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Blog</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">MINI PC</h1></div><div class="site-nav-toggle"> <button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br> 首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br> 关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br> 标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br> 分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br> 归档</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br> 公益404</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br> 搜索</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i></span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"> <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/50337/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Lao hu"><meta itemprop="description" content><meta itemprop="image" content="/images/avatar.png"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Blog"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">QOTOM Install SQLServer 2008R2</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T11:26:26+08:00">2019-08-14</time> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-calendar-check-o"></i></span> <span class="post-meta-item-text">更新于&#58;</span> <time title="更新于" itemprop="dateModified" datetime="2019-08-26T19:53:38+08:00">2019-08-26</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/posts/50337/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/posts/50337/" itemprop="commentCount"></span></a></span> <span class="post-meta-divider">|</span><span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数<span class="busuanzi-value" id="busuanzi_value_page_pv"></span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">489</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">1</span></div></div></header><div class="post-body" itemprop="articleBody"><h3 id="准备安装环境"><a href="#准备安装环境" class="headerlink" title="准备安装环境"></a>准备安装环境</h3><p>系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5</p><p><img src="/posts/50337/001.png" alt="1565753447053"></p><p>SQLServer 2008R2下载地址：<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">https://msdn.itellyou.cn/</a></p><p><img src="/posts/50337/002.png" alt="1565753591153"></p><h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><ol><li><p>双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定</p><p><img src="/posts/50337/003.png" alt="1565753827721"></p></li><li><p>弹出sql server安装中心界面，点击左侧栏目“安装”</p><p><img src="/posts/50337/004.png" alt="1565753866216"></p></li><li><p>点击右边栏目的“全新安装或向现有安装添加功能”</p><p><img src="/posts/50337/005.png" alt="1565753901072"></p></li><li><p>“安装程序正在处理当前操作，请稍后”等一会，下面安装过程中很多次都弹出sql server安装中心主界面可以不用管</p><p><img src="/posts/50337/006.png" alt="1565753946733"></p></li><li><p>然后会弹出一个会话框“安装程序支持规则”，检查正常，点击确定</p><p><img src="/posts/50337/007.png" alt="1565753985123"></p></li><li><p>选择输入产品密钥（默认），并输入密钥，点击下一步</p><p><img src="/posts/50337/008.png" alt="1565754062505"></p></li><li><p>勾选：我接受许可条款，并点击下一步</p><p><img src="/posts/50337/009.png" alt="1565754140771"></p></li><li><p>点击安装</p><p><img src="/posts/50337/010.png" alt="1565754163350"></p></li><li><p>检测出现防火墙警告，关闭防火墙重新运行即可，然后下一步</p><p><img src="/posts/50337/011.png" alt="1565754194190"></p></li><li><p>选中SQL Server 功能安装（默认），并点击下一步</p><p><img src="/posts/50337/012.png" alt="1565754221790"></p></li><li><p>功能选择：点击全选按钮，（共享功能目录看个人意愿是否需要修改到其他盘）</p><p><img src="/posts/50337/013.png" alt="1565755527162"></p></li><li><p>点击下一步</p><p><img src="/posts/50337/014.png" alt="1565755565607"></p></li><li><p>实例配置，使用系统默认</p><p><img src="/posts/50337/015.png" alt="1565755593412"></p></li><li><p>点击下一步</p><p><img src="/posts/50337/016.png" alt="1565755629143"></p></li><li><p>服务器配置：点击对所有SqlServer服务使用相同的账户，使用第一个（NT AUTHORITY\NEWORK SERVICE），不用输密码，点击确定</p><p><img src="/posts/50337/017.png" alt="1565755651673"></p></li><li><p>数据库引擎配置：这里附张图（密码自己输入，左下角点击添加用户后，稍等一下，可能需要一两秒，之后下一步就行）</p><p><img src="/posts/50337/018.png" alt="1565755748790"></p></li><li><p>Analysis Services配置 （也是添加当前用户，下一步）</p><p><img src="/posts/50337/019.png" alt="1565755772603"></p></li><li><p>Reporting Services配置，直接下一步</p><p><img src="/posts/50337/020.png" alt="1565755796969"></p></li><li><p>错误报告，直接下一步</p><p><img src="/posts/50337/021.png" alt="1565755826235"></p></li><li><p>安装配置规则，下一步</p><p><img src="/posts/50337/022.png" alt="1565755853395"></p></li><li><p>点击安装</p><p><img src="/posts/50337/023.png" alt="1565755889324"></p></li><li><p>安装中…(这里要等一会，十几分钟)</p><p><img src="/posts/50337/024.png" alt="1565755915691"></p></li><li><p>安装完成，点击关闭</p><p><img src="/posts/50337/025.png" alt="1565755933748"></p></li></ol><h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><ol><li><p>在Windows开始菜单中，打开数据库管理工具，连接</p><p><img src="/posts/50337/026.png" alt="1565756002585"></p></li><li><p>新建数据库就可以使用了</p><p><img src="/posts/50337/027.png" alt="1565756018602"></p></li></ol></div><footer class="post-footer"><div class="post-tags"><a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a><a href="/tags/SQLServer/" rel="tag"><i class="fa fa-tag"></i> SQLServer</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/posts/4175/" rel="next" title="QOTOM Install Windows Server 2008 r2 Datacenter"><i class="fa fa-chevron-left"></i> QOTOM Install Windows Server 2008 r2 Datacenter</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"> <a href="/posts/22963/" rel="prev" title="金蝶K/3 Wise v14.0安装配置">金蝶K/3 Wise v14.0安装配置<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div><div><div style="text-align:center;color:#ccc;font-size:14px">------ 本文结束------</div></div></div><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap"> 文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap"> 站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"> <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Lao hu"><p class="site-author-name" itemprop="name">Lao hu</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"> <a href="/archives/"><span class="site-state-item-count">40</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"> <a href="/categories/index.html"><span class="site-state-item-count">7</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"> <a href="/tags/index.html"><span class="site-state-item-count">24</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/bestminipc" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i> GitHub</a></span><span class="links-of-author-item"><a href="mailto:hch4691294@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i> E-Mail</a></span><span class="links-of-author-item"><a href="https://twitter.com/Tiger37465911" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i> Twitter</a></span><span class="links-of-author-item"><a href="https://www.facebook.com/sha.na.733" target="_blank" title="Facebook"><i class="fa fa-fw fa-facebook"></i> Facebook</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装环境"><span class="nav-number">1.</span> <span class="nav-text">准备安装环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装过程"><span class="nav-number">2.</span> <span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">3.</span> <span class="nav-text">使用数据库</span></a></li></ol></div></div></section><script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script><script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script><div class="widget-wrap"><h3 class="widget-title">Tag Cloud</h3><div id="myCanvasContainer" class="widget tagcloud"><canvas width="250" height="200" id="resCanvas" style=""><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clonezilla/">Clonezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESXI/">ESXI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EXSI/">EXSI</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firewall/">Firewall</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeBSD/">FreeBSD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeNAS/">FreeNAS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/K3/">K3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LEDE/">LEDE</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/">Mini PC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-Pc/">Mini Pc</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pfsense/">Pfsense</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS/">ROS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Red-Hat/">Red Hat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Router/">Router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLServer/">SQLServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SuperIO/">SuperIO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/">Unix</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drive/">drive</a><span class="tag-list-count">3</span></li></ul></canvas></div></div><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2019</span><span class="with-love"><i class="fa fa-id-card"></i></span> <span class="author" itemprop="copyrightHolder">Lao hu</span></div><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div><div class="busuanzi-count"><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i> 访问人数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span><span class="site-pv"><i class="fa fa-eye"></i> 总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script><script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="yWZESrEf8C">
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Windows,SQLServer,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏">
+<meta name="keywords" content="Windows,SQLServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QOTOM Install SQLServer 2008R2">
+<meta property="og:url" content="http://minipc.netlify.com/posts/50337/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/001.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/002.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/003.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/004.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/005.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/006.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/007.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/008.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/009.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/010.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/011.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/012.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/013.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/014.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/015.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/016.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/017.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/018.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/019.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/020.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/021.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/022.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/023.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/024.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/025.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/026.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/50337/027.png">
+<meta property="og:updated_time" content="2019-08-26T11:53:38.299Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QOTOM Install SQLServer 2008R2">
+<meta name="twitter:description" content="准备安装环境系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5  SQLServer 2008R2下载地址：https://msdn.itellyou.cn/  安装过程 双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定   弹出sql server安装中心界面，点击左侧栏">
+<meta name="twitter:image" content="http://minipc.netlify.com/posts/50337/001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+  <link rel="canonical" href="http://minipc.netlify.com/posts/50337/">
+
+
+
+
+
+  <title>QOTOM Install SQLServer 2008R2 | Blog</title>
+  
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136338630-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-136338630-2');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">MINI PC</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/50337/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lao hu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">QOTOM Install SQLServer 2008R2</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T11:26:26+08:00">
+                2019-08-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T19:53:38+08:00">
+                2019-08-26
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/50337/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/50337/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  489
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="准备安装环境"><a href="#准备安装环境" class="headerlink" title="准备安装环境"></a>准备安装环境</h3><p>系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5</p>
+<p><img src="/posts/50337/001.png" alt="1565753447053"></p>
+<p>SQLServer 2008R2下载地址：<a href="https://msdn.itellyou.cn/" target="_blank" rel="noopener">https://msdn.itellyou.cn/</a></p>
+<p><img src="/posts/50337/002.png" alt="1565753591153"></p>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><ol>
+<li><p>双击下载好的安装文件setup.exe (需要.NET Framework 3.5 SP1，系统会自行安装) ，点击确定</p>
+<p><img src="/posts/50337/003.png" alt="1565753827721"></p>
+</li>
+<li><p>弹出sql server安装中心界面，点击左侧栏目“安装”</p>
+<p><img src="/posts/50337/004.png" alt="1565753866216"></p>
+</li>
+<li><p>点击右边栏目的“全新安装或向现有安装添加功能”</p>
+<p><img src="/posts/50337/005.png" alt="1565753901072"></p>
+</li>
+<li><p>“安装程序正在处理当前操作，请稍后”等一会，下面安装过程中很多次都弹出sql server安装中心主界面可以不用管</p>
+<p><img src="/posts/50337/006.png" alt="1565753946733"></p>
+</li>
+<li><p>然后会弹出一个会话框“安装程序支持规则”，检查正常，点击确定</p>
+<p><img src="/posts/50337/007.png" alt="1565753985123"></p>
+</li>
+<li><p>选择输入产品密钥（默认），并输入密钥，点击下一步</p>
+<p><img src="/posts/50337/008.png" alt="1565754062505"></p>
+</li>
+<li><p>勾选：我接受许可条款，并点击下一步</p>
+<p><img src="/posts/50337/009.png" alt="1565754140771"></p>
+</li>
+<li><p>点击安装</p>
+<p><img src="/posts/50337/010.png" alt="1565754163350"></p>
+</li>
+<li><p>检测出现防火墙警告，关闭防火墙重新运行即可，然后下一步</p>
+<p><img src="/posts/50337/011.png" alt="1565754194190"></p>
+</li>
+<li><p>选中SQL  Server 功能安装（默认），并点击下一步</p>
+<p><img src="/posts/50337/012.png" alt="1565754221790"></p>
+</li>
+<li><p>功能选择：点击全选按钮，（共享功能目录看个人意愿是否需要修改到其他盘）</p>
+<p><img src="/posts/50337/013.png" alt="1565755527162"></p>
+</li>
+<li><p>点击下一步</p>
+<p><img src="/posts/50337/014.png" alt="1565755565607"></p>
+</li>
+<li><p>实例配置，使用系统默认</p>
+<p><img src="/posts/50337/015.png" alt="1565755593412"></p>
+</li>
+<li><p>点击下一步</p>
+<p><img src="/posts/50337/016.png" alt="1565755629143"></p>
+</li>
+<li><p>服务器配置：点击对所有SqlServer服务使用相同的账户，使用第一个（NT AUTHORITY\NEWORK SERVICE），不用输密码，点击确定</p>
+<p><img src="/posts/50337/017.png" alt="1565755651673"></p>
+</li>
+<li><p>数据库引擎配置：这里附张图（密码自己输入，左下角点击添加用户后，稍等一下，可能需要一两秒，之后下一步就行）</p>
+<p><img src="/posts/50337/018.png" alt="1565755748790"></p>
+</li>
+<li><p>Analysis Services配置 （也是添加当前用户，下一步）</p>
+<p><img src="/posts/50337/019.png" alt="1565755772603"></p>
+</li>
+<li><p>Reporting Services配置，直接下一步</p>
+<p><img src="/posts/50337/020.png" alt="1565755796969"></p>
+</li>
+<li><p>错误报告，直接下一步</p>
+<p><img src="/posts/50337/021.png" alt="1565755826235"></p>
+</li>
+<li><p>安装配置规则，下一步</p>
+<p><img src="/posts/50337/022.png" alt="1565755853395"></p>
+</li>
+<li><p>点击安装</p>
+<p><img src="/posts/50337/023.png" alt="1565755889324"></p>
+</li>
+<li><p>安装中…(这里要等一会，十几分钟)</p>
+<p><img src="/posts/50337/024.png" alt="1565755915691"></p>
+</li>
+<li><p>安装完成，点击关闭</p>
+<p><img src="/posts/50337/025.png" alt="1565755933748"></p>
+</li>
+</ol>
+<h3 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h3><ol>
+<li><p>在Windows开始菜单中，打开数据库管理工具，连接</p>
+<p><img src="/posts/50337/026.png" alt="1565756002585"></p>
+</li>
+<li><p>新建数据库就可以使用了</p>
+<p><img src="/posts/50337/027.png" alt="1565756018602"></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+          
+            <a href="/tags/SQLServer/" rel="tag"><i class="fa fa-tag"></i> SQLServer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/4175/" rel="next" title="QOTOM Install Windows Server 2008 r2 Datacenter">
+                <i class="fa fa-chevron-left"></i> QOTOM Install Windows Server 2008 r2 Datacenter
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/22963/" rel="prev" title="金蝶K/3 Wise v14.0安装配置">
+                金蝶K/3 Wise v14.0安装配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+
+
+    
+  </div>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Lao hu">
+            
+              <p class="site-author-name" itemprop="name">Lao hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bestminipc" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:hch4691294@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/Tiger37465911" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/sha.na.733" target="_blank" title="Facebook">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备安装环境"><span class="nav-number">1.</span> <span class="nav-text">准备安装环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装过程"><span class="nav-number">2.</span> <span class="nav-text">安装过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据库"><span class="nav-number">3.</span> <span class="nav-text">使用数据库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+			<h3 class="widget-title">Tag Cloud</h3>
+			<div id="myCanvasContainer" class="widget tagcloud">
+				<canvas width="250" height="200" id="resCanvas" style="width=100%">
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clonezilla/">Clonezilla</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ESXI/">ESXI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/EXSI/">EXSI</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Firewall/">Firewall</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeBSD/">FreeBSD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FreeNAS/">FreeNAS</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/K3/">K3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LEDE/">LEDE</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-PC/">Mini PC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mini-Pc/">Mini Pc</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenWrt/">OpenWrt</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pfsense/">Pfsense</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ROS/">ROS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Red-Hat/">Red Hat</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Router/">Router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQLServer/">SQLServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SuperIO/">SuperIO</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/">Unix</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/drive/">drive</a><span class="tag-list-count">3</span></li></ul>
+				</canvas>
+			</div>
+		</div>
+		
+		
+		
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-id-card"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lao hu</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item=>{
@@ -15,7 +1066,13 @@
         guest_info:guest,
         pageSize:'10' || 10,
     });
-  </script><script type="text/javascript">
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
     var isXml = true;
@@ -330,4 +1387,46 @@
         onPopupClose();
       }
     });
-  </script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script type="text/javascript" src="/js/src/clipboard.min.js"></script><script type="text/javascript" src="/js/src/clipboard-use.js"></script><script type="text/javascript" src="/js/src/clicklove.js"></script></body></html>
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- ����鸴�ƹ��� -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+  <!-- ҳ����С���� -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+</body>
+</html>
