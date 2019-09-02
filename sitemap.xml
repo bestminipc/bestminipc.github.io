@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bestminipc.github.io/posts/412022ec/</loc>
+    
+    <lastmod>2019-09-02T03:33:42.669Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bestminipc.github.io/posts/735f53da/</loc>
+    
+    <lastmod>2019-09-02T03:33:31.647Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bestminipc.github.io/posts/1cf14ed3/</loc>
     
     <lastmod>2019-08-26T15:27:43.949Z</lastmod>
@@ -107,13 +121,6 @@
   </url>
   
   <url>
-    <loc>http://bestminipc.github.io/posts/412022ec/</loc>
-    
-    <lastmod>2019-08-26T11:53:03.987Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://bestminipc.github.io/posts/21b893a7/</loc>
     
     <lastmod>2019-08-26T11:52:17.633Z</lastmod>
@@ -180,13 +187,6 @@
     <loc>http://bestminipc.github.io/posts/18969901/</loc>
     
     <lastmod>2019-08-26T11:46:22.453Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bestminipc.github.io/posts/735f53da/</loc>
-    
-    <lastmod>2019-08-26T11:46:08.006Z</lastmod>
     
   </url>
   
@@ -296,13 +296,6 @@
   </url>
   
   <url>
-    <loc>http://bestminipc.github.io/categories/index-1.html</loc>
-    
-    <lastmod>2019-04-04T08:50:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://bestminipc.github.io/categories/index.html</loc>
     
     <lastmod>2019-04-04T08:50:52.000Z</lastmod>
@@ -311,6 +304,13 @@
   
   <url>
     <loc>http://bestminipc.github.io/tags/index-1.html</loc>
+    
+    <lastmod>2019-04-04T08:50:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bestminipc.github.io/categories/index-1.html</loc>
     
     <lastmod>2019-04-04T08:50:52.000Z</lastmod>
     
