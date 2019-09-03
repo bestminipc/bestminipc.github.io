@@ -98,15 +98,15 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="开发环境QOTOM工控电脑，Visual Studio 2017，OpenHardwareMonitor开源库 OpenHardwareMonitor: https://github.com/openhardwaremonitor/openhardwaremonitor 新建项目OpenHardwareMonitor源代码中有两个程序集：OpenHardwareMonitor和OpenHardwa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/c#getcputemp01.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/c#getcputemp02.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/c#getcputemp03.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/c#getcputemp04.png">
-<meta property="og:updated_time" content="2019-09-03T03:24:28.088Z">
+<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/getcputemp01.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/getcputemp02.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/getcputemp03.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/cd4df5e5/getcputemp04.png">
+<meta property="og:updated_time" content="2019-09-03T04:09:09.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#获取CPU温度">
 <meta name="twitter:description" content="开发环境QOTOM工控电脑，Visual Studio 2017，OpenHardwareMonitor开源库 OpenHardwareMonitor: https://github.com/openhardwaremonitor/openhardwaremonitor 新建项目OpenHardwareMonitor源代码中有两个程序集：OpenHardwareMonitor和OpenHardwa">
-<meta name="twitter:image" content="http://minipc.netlify.com/posts/cd4df5e5/c#getcputemp01.png">
+<meta name="twitter:image" content="http://minipc.netlify.com/posts/cd4df5e5/getcputemp01.png">
 
 
 
@@ -390,7 +390,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-03T11:24:28+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-03T12:09:09+08:00">
                 2019-09-03
               </time>
             
@@ -497,14 +497,14 @@
 <h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p>OpenHardwareMonitor源代码中有两个程序集：OpenHardwareMonitor和OpenHardwareMonitorLib</p>
 <p>OpenHardwareMonitor是一个winform程序，OpenHardwareMonitorLib是一个类库，运行时生成OpenHardwareMonitorLib.DLL这个动态链接库，而我们要实现CPU温度信息的获取，就是要引用这个DLL</p>
 <p>OpenHardwareMonitor界面如下图：</p>
-<p><img src="/posts/cd4df5e5/c#getcputemp01.png" alt="1567411564273"></p>
+<p><img src="/posts/cd4df5e5/getcputemp01.png" alt="1567411564273"></p>
 <p>OpenHardwareMonitor能获取的传感器还是很多的，因为本人也不是很了解这个库，这里只简单介绍下如何获取CPU温度</p>
 <ol>
 <li><p>本地新建一个WinFrom项目，将生成的OpenHardwareMonitorLib.dll拷贝到新建项目的debug目录下</p>
-<p><img src="/posts/cd4df5e5/c#getcputemp02.png" alt="1567413654685"></p>
+<p><img src="/posts/cd4df5e5/getcputemp02.png" alt="1567413654685"></p>
 </li>
 <li><p>右键项目添加引用，浏览指定的dll文件</p>
-<p><img src="/posts/cd4df5e5/c#getcputemp03.png" alt="1567414076624"></p>
+<p><img src="/posts/cd4df5e5/getcputemp03.png" alt="1567414076624"></p>
 </li>
 <li><p>然后引用OpenHardwareMonitor.Hardware这个命名空间，继承IVisitor这个接口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">using OpenHardwareMonitor.Hardware;</span><br><span class="line"></span><br><span class="line">public class UpdateVisitor : IVisitor</span><br><span class="line">&#123;</span><br><span class="line">public void VisitComputer(IComputer computer)</span><br><span class="line">&#123;</span><br><span class="line">computer.Traverse(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void VisitHardware(IHardware hardware)</span><br><span class="line">&#123;</span><br><span class="line">hardware.Update();</span><br><span class="line">foreach (IHardware subHardware in hardware.SubHardware)</span><br><span class="line">subHardware.Accept(this);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void VisitSensor(ISensor sensor) &#123; &#125;</span><br><span class="line"></span><br><span class="line">public void VisitParameter(IParameter parameter) &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -519,7 +519,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;requestedExecutionLevel level=&quot;requireAdministrator&quot; uiAccess=&quot;false&quot; /&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>运行结果，这里只调用了一次，可以做成多线程，500毫秒读一次</p>
-<p><img src="/posts/cd4df5e5/c#getcputemp04.png" alt="1567475505609"></p>
+<p><img src="/posts/cd4df5e5/getcputemp04.png" alt="1567475505609"></p>
 </li>
 </ol>
 
