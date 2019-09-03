@@ -98,20 +98,20 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="硬件：QOTOM Q515G6 Mini Pc 系统：windows server 2016 180天试用版 windows server 2016 180天试用版 &amp;lt;https://www.microsoft.com/zh-cn/evalcenter/evaluate-windows-server-2016 Windows Server安装完成启动后，发现设备管理器很多设备没有驱动  首先">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws01.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws00.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws02.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws03.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws04.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws05.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws06.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws07.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws08.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws01.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws00.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws02.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws03.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws04.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws05.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws06.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws07.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/73f08017/ws08.png">
 <meta property="og:updated_time" content="2019-08-26T11:53:15.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QOTOM MiniPc Windows Server 2016 驱动安装">
 <meta name="twitter:description" content="硬件：QOTOM Q515G6 Mini Pc 系统：windows server 2016 180天试用版 windows server 2016 180天试用版 &amp;lt;https://www.microsoft.com/zh-cn/evalcenter/evaluate-windows-server-2016 Windows Server安装完成启动后，发现设备管理器很多设备没有驱动  首先">
-<meta name="twitter:image" content="http://minipc.netlify.com/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws01.png">
+<meta name="twitter:image" content="http://minipc.netlify.com/posts/73f08017/ws01.png">
 
 
 
@@ -501,34 +501,34 @@
 <p><strong>系统：windows server 2016 180天试用版</strong></p>
 <p>windows server 2016 180天试用版 &lt;<a href="https://www.microsoft.com/zh-cn/evalcenter/evaluate-windows-server-2016" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/evalcenter/evaluate-windows-server-2016</a></p>
 <p>Windows Server安装完成启动后，发现设备管理器很多设备没有驱动</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws01.png" alt="ws01"></p>
+<p><img src="/posts/73f08017/ws01.png" alt="ws01"></p>
 <p>首先更新网卡驱动，Q515G6 网卡使用的是Intel I211AT网卡芯片，下载Windows-Server版网卡驱动：<a href="https://github.com/FerdinandvHagen/I211AT-Windows-Server-2016" target="_blank" rel="noopener">https://github.com/FerdinandvHagen/I211AT-Windows-Server-2016</a></p>
 <p>打开Powershell终端，输入以下命令，可禁用驱动程序强制签名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set LOADOPTIONS DISABLE_INTEGRITY_CHECKS</span><br><span class="line">bcdedit /set TESTSIGNING ON</span><br><span class="line">bcdedit /set NOINTEGRITYCHECKS ON</span><br></pre></td></tr></table></figure>
 
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws00.png" alt="ws00"></p>
+<p><img src="/posts/73f08017/ws00.png" alt="ws00"></p>
 <p>然后重启电脑，将下载好的驱动放在C盘根目录，开始安装驱动</p>
 <ol>
 <li><p>右击网卡设备——&gt;更新驱动</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws02.png" alt="ws02"></p>
+<p><img src="/posts/73f08017/ws02.png" alt="ws02"></p>
 </li>
 <li><p>选择下载好的驱动文件夹</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws03.png" alt="ws03"></p>
+<p><img src="/posts/73f08017/ws03.png" alt="ws03"></p>
 </li>
 <li><p>点击Next，选择第二项</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws04.png" alt="ws04"></p>
+<p><img src="/posts/73f08017/ws04.png" alt="ws04"></p>
 </li>
 <li><p>驱动安装成功</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws05.png" alt="ws05"></p>
+<p><img src="/posts/73f08017/ws05.png" alt="ws05"></p>
 </li>
 <li><p>依次安装其他网卡驱动程序，注意网卡序号跟接口位置并不匹配，我这里网卡1绑定的是4号</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws06.png" alt="ws06"></p>
+<p><img src="/posts/73f08017/ws06.png" alt="ws06"></p>
 </li>
 <li><p>至此，6个网卡都可以正常使用了，接下来更新系统</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws07.png" alt="ws07"></p>
+<p><img src="/posts/73f08017/ws07.png" alt="ws07"></p>
 </li>
 <li><p>更新系统过程中会安装一些其他驱动，感叹号终于全不见了</p>
-<p><img src="/posts/73f08017/QOTOM-MiniPc-Windows-Server-2016-%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%5Cws08.png" alt="ws08"></p>
+<p><img src="/posts/73f08017/ws08.png" alt="ws08"></p>
 </li>
 <li><p>最后将校验驱动签名的功能打开</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /set LOADOPTIONS ENABLE_INTEGRITY_CHECKS</span><br><span class="line">bcdedit /set TESTSIGNING OFF</span><br><span class="line">bcdedit /set NOINTEGRITYCHECKS OFF</span><br></pre></td></tr></table></figure>
