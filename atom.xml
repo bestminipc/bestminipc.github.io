@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-08-26T11:37:47.701Z</updated>
+  <updated>2019-09-03T02:32:41.751Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#获取CPU温度</title>
+    <link href="http://minipc.netlify.com/posts/cd4df5e5/"/>
+    <id>http://minipc.netlify.com/posts/cd4df5e5/</id>
+    <published>2019-09-03T02:05:01.000Z</published>
+    <updated>2019-09-03T02:32:41.751Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;开发环境&quot;&gt;&lt;a href=&quot;#开发环境&quot; class=&quot;headerlink&quot; title=&quot;开发环境&quot;&gt;&lt;/a&gt;开发环境&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://www.qotom.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="C#" scheme="http://minipc.netlify.com/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>Clonezilla备份还原系统</title>
@@ -36,11 +61,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -63,9 +88,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -90,9 +115,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -224,9 +249,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -251,11 +276,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -306,9 +331,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -331,9 +356,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
@@ -358,9 +383,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
@@ -515,38 +540,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Ubuntu" scheme="http://minipc.netlify.com/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QOTOM MiniPc Window Server 2008 r2 I211AT网卡驱动安装</title>
-    <link href="http://minipc.netlify.com/posts/412022ec/"/>
-    <id>http://minipc.netlify.com/posts/412022ec/</id>
-    <published>2019-04-30T03:27:41.000Z</published>
-    <updated>2019-09-02T03:33:42.669Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;*&lt;em&gt;型号：Q350P Mini Pc *&lt;/em&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/posts/412022ec/q350p.png&quot; alt=&quot;009&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 r2 Enterprise&lt;
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
