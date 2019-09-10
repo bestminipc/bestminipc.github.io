@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-09-06T01:51:58.807Z</updated>
+  <updated>2019-09-10T03:13:42.632Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux禁用CPU省电提升系统性能</title>
+    <link href="http://minipc.netlify.com/posts/6740782c/"/>
+    <id>http://minipc.netlify.com/posts/6740782c/</id>
+    <published>2019-09-10T03:10:51.000Z</published>
+    <updated>2019-09-10T03:13:42.632Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;转载：[&lt;a href=&quot;http://www.jyguagua.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;勤奋的小青蛙&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;为了提升CPU性能，我们要禁用CPU省电状态。&lt;/p&gt;
+&lt;p&gt;我们强烈推荐禁用CPU的省电模式，
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>C#获取CPU温度</title>
@@ -88,9 +113,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -115,9 +140,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -276,11 +301,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -517,34 +542,6 @@
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="drive" scheme="http://minipc.netlify.com/tags/drive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 安装使用Wine-4.0</title>
-    <link href="http://minipc.netlify.com/posts/7a7278d/"/>
-    <id>http://minipc.netlify.com/posts/7a7278d/</id>
-    <published>2019-05-05T09:59:03.000Z</published>
-    <updated>2019-08-26T11:52:06.060Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/posts/7a7278d/001.png&quot; alt=&quot;001&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Wine-介绍&quot;&gt;&lt;a href=&quot;#Wine-介绍&quot; class=&quot;headerlink&quot; title=&quot;Wine 介绍&quot;&gt;&lt;/a&gt;Wine 介绍&lt;/h3&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="Ubuntu" scheme="http://minipc.netlify.com/tags/Ubuntu/"/>
     
   </entry>
   
