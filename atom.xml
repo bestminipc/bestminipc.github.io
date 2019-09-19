@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-09-10T03:13:42.632Z</updated>
+  <updated>2019-09-19T09:50:31.337Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Use USB Install Windows Server 2003 R2</title>
+    <link href="http://minipc.netlify.com/posts/dcc09a6a/"/>
+    <id>http://minipc.netlify.com/posts/dcc09a6a/</id>
+    <published>2019-09-19T09:37:33.000Z</published>
+    <updated>2019-09-19T09:50:31.337Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;MINIPC型号：&lt;a href=&quot;http://www.qotom.com/product/30.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;QOTOM Q100N&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/dcc09a6a/w
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux禁用CPU省电提升系统性能</title>
     <link href="http://minipc.netlify.com/posts/6740782c/"/>
     <id>http://minipc.netlify.com/posts/6740782c/</id>
     <published>2019-09-10T03:10:51.000Z</published>
-    <updated>2019-09-10T03:13:42.632Z</updated>
+    <updated>2019-09-10T03:14:05.010Z</updated>
     
     <summary type="html">
     
@@ -506,32 +532,6 @@
       
         &lt;h3 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/posts/f38e199/000.png&quot; alt=&quot;000&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;字符设备基
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="drive" scheme="http://minipc.netlify.com/tags/drive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux学习笔记（编译一个hello world模块)</title>
-    <link href="http://minipc.netlify.com/posts/392a68e4/"/>
-    <id>http://minipc.netlify.com/posts/392a68e4/</id>
-    <published>2019-05-07T09:19:21.000Z</published>
-    <updated>2019-08-26T11:45:10.417Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最近看了篇编写Linux驱动的文章，觉得不错，于是自己动手试了试，这里记录一下以便以后查阅&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1
       
     
     </summary>
