@@ -8,8 +8,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +56,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +68,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -142,9 +142,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>Mini Pc</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -279,8 +279,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -291,8 +291,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -311,7 +311,7 @@
   <entry>
     <title><![CDATA[ESXi6.7 安装群晖NAS/LEDE路由系统]]></title>
     <url>%2Fposts%2Fe303e8c3%2F</url>
-    <content type="text"><![CDATA[安装环境6网工控迷你PC一台，CPU 3865U（支持VT-d） 东芝 60G mSATA（已安装了ESXI6.7、LEDE X86），安装方法可以参考我上一篇文章 一块500G 2.5寸HDD （硬盘直通） 黑群晖引导链接： https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ 提取码: s7z9 虚拟机安装步骤 首先将下载的.img引导文件使用StarWindConverter转换为ESXI可用的.vmdk文件备用 打开StarWind点击local file——&gt;选择下载好的lede镜像文件——&gt;选择ESX SERVER IMAGE 新建ESXI虚机：选择linux、Red Hat Enterprise Linux 7 (64 位)，然后下一步 CPU和内存按实际情况修改（1G够了），按顺序删除默认硬盘、SCSI控制器、CD/DVD驱动器，修改网卡为E1000e后点下一步后保存 然后点击左侧存储——&gt;数据存储浏览器——&gt;选择目录DSM——&gt;上传转换的镜像文件（两个会自动合并） 接下来做硬盘直通，用ssh连上ESXI（设置打开ESXi Shell：Troubleshooting Mode Options 选项卡第二项 Enable SSH） 接好硬盘后ESXi要重启下才能识别到硬盘，然后分别复制下面的磁盘路径 打开Putty连接ESXi，在控制台输入vmkfstools -z 路径1 路径2/xxx.vmdk，如果没错误提示就说明直通成功了 进入数据存储——&gt;数据存储浏览器，刚刚直通的vmdk就可以看到了 返回虚拟机，编辑设置，添加现有硬盘，分别选择DSM6.2.1目录下的synoboot镜像和根目录的wd_hdd，然后保存 打开DSM虚拟机，准备初始化 打开虚拟机，出现如下界面，说明已经正常启动 可以输入http://find.synologt.com搜索 在LEDE中查看DHCP也可以知道具体的ip地址，可直接访问 群晖NAS安装 进入安装界面后点击立即安装，勾选提示，点击确定 等待下载安装，会有十分钟的倒计时等待，一般到6-7分钟就可以访问地址了 进入系统安装界面，根据提示进行相关设置完成黑群晖的安装 配置完成后进入系统，已经最新新版黑群晖 有多个磁盘的话可以使用minipcie转sata，经测试也可以正常直通 但不能识别成固态硬盘，具体原因未知… 本教程到此结束！]]></content>
+    <content type="text"><![CDATA[安装环境工控迷你PC一台，CPU 3865U（支持VT-d） 东芝 60G mSATA（已安装了ESXI6.7、LEDE X86），安装方法可以参考我上一篇文章 一块500G 2.5寸HDD （硬盘直通） 黑群晖引导链接： https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ 提取码: s7z9 虚拟机安装步骤 首先将下载的.img引导文件使用StarWindConverter转换为ESXI可用的.vmdk文件备用 打开StarWind点击local file——&gt;选择下载好的lede镜像文件——&gt;选择ESX SERVER IMAGE 新建ESXI虚机：选择linux、Red Hat Enterprise Linux 7 (64 位)，然后下一步 CPU和内存按实际情况修改（1G够了），按顺序删除默认硬盘、SCSI控制器、CD/DVD驱动器，修改网卡为E1000e后点下一步后保存 然后点击左侧存储——&gt;数据存储浏览器——&gt;选择目录DSM——&gt;上传转换的镜像文件（两个会自动合并） 接下来做硬盘直通，用ssh连上ESXI（设置打开ESXi Shell：Troubleshooting Mode Options 选项卡第二项 Enable SSH） 接好硬盘后ESXi要重启下才能识别到硬盘，然后分别复制下面的磁盘路径 打开Putty连接ESXi，在控制台输入vmkfstools -z 路径1 路径2/xxx.vmdk，如果没错误提示就说明直通成功了 进入数据存储——&gt;数据存储浏览器，刚刚直通的vmdk就可以看到了 返回虚拟机，编辑设置，添加现有硬盘，分别选择DSM6.2.1目录下的synoboot镜像和根目录的wd_hdd，然后保存 打开DSM虚拟机，准备初始化 打开虚拟机，出现如下界面，说明已经正常启动 可以输入http://find.synologt.com搜索 在LEDE中查看DHCP也可以知道具体的ip地址，可直接访问 群晖NAS安装 进入安装界面后点击立即安装，勾选提示，点击确定 等待下载安装，会有十分钟的倒计时等待，一般到6-7分钟就可以访问地址了 进入系统安装界面，根据提示进行相关设置完成黑群晖的安装 配置完成后进入系统，已经是最新版群晖 有多个磁盘的话可以使用minipcie转sata，经测试也可以正常直通 但不能识别成固态硬盘，具体原因未知… 本教程到此结束！]]></content>
       <categories>
         <category>VMware EXSI</category>
       </categories>
@@ -330,9 +330,9 @@
         <category>VMware EXSI</category>
       </categories>
       <tags>
+        <tag>Router</tag>
         <tag>Mini Pc</tag>
         <tag>EXSI</tag>
-        <tag>Router</tag>
       </tags>
   </entry>
   <entry>
@@ -428,7 +428,7 @@
   <entry>
     <title><![CDATA[QOTOM MINIPC 在Ubuntu下支持GPIO的方法]]></title>
     <url>%2Fposts%2F4227225b%2F</url>
-    <content type="text"><![CDATA[QOTOM 迷你电脑 Ubuntu下支持GPIO的方法 电脑硬件型号：Q350P 问题：本人在使用在QOTOM迷你电脑时，发现安装ubuntu后，不能识别到GPIO。 cat /sys/kernel/debug/gpio 为空，原因未知，但肯定跟硬件体系有关，这里通过安装驱动的方式尝试解决 1.准备源代码12345cd /usr/srcroot@tiger:/usr/src# lslinux-4.19.23 linux-headers-4.15.0-45linux-headers-4.15.0-43 linux-headers-4.15.0-45-genericlinux-headers-4.15.0-43-generic 这里存放了系统内核源代码，linux-4.19.23是我单独下载的，这里使用4.19.23，直接使用系统自带的内核代码应该也是可以的。 下载地址：https://www.kernel.org/ 2.配置内核12root@tiger:/# cd usr/src/linux-4.19.23/root@tiger:/usr/src/linux-4.19.23# make menuconfig *Device Drivers * GPIO Support Port-mapped I/O GPIO drivers 通过GPIO说明书发现GPIO由TI8786E-1芯片处理，对IT87xx设置为[*] 然后save-&gt;Exit 3.编译并安装内核编译内核，具体编译方法可以参见另一篇博文《Ubuntu 18.04 上编译Linux内核》 1root@tiger:/usr/src/linux-4.19.23# make -j4 编译结束后，执行安装 12make modules_installmake install 因为我已经生成新的内核启动项了，这里直接重启就行了 1root@tiger:/usr/src/linux-4.19.23#shutdown -r now 4.验证结果新的内核已经能够识别到GPIO 在用户空间通过sysfs接口访问gpio正常 /sys/class/gpio使用说明:参考https://blog.csdn.net/u010871058/article/details/65648593 12345678910111213141516171、gpio_operation 通过/sys/文件接口操作IO端口 GPIO到文件系统的映射。2、控制GPIO的目录位于/sys/class/gpio。3、/sys/class/gpio/export 文件用于通知系统需要导出控制的GPIO引脚编号。4、/sys/class/gpio/unexport 用于通知系统取消导出。5、/sys/class/gpio/gpiochipX目录保存系统中GPIO寄存器的信息，包括每个寄存器控制引脚的起始编号base，寄存器名称label，引脚总数ngpio，导出一个引脚的操作步骤。6、首先计算此引脚编号，引脚编号 = 控制引脚的寄存器基数 + 控制引脚寄存器位数。7、向/sys/class/gpio/export写入此编号，比如12号引脚，echo 12 &gt; /sys/class/gpio/export，命令成功后生成/sys/class/gpio/gpio12目录，如果没有出现相应的目录，说明此引脚不可导出。8、direction文件，定义输入输出方向，可以通过下面命令定义为输出,direction接受的参数：in, out, high, low；high/low同时设置方向为输出。9、value文件是端口的数值，为1或0。 测试GPIO:通过查看说明书，得知使用的GPIO端口为80-87 1.找到对应的gpio编号 12345678910cat /sys/kernel/debug/gpio... gpio-504 (it87_gp80 ) gpio-505 (it87_gp81 ) gpio-506 (it87_gp82 ) gpio-507 (it87_gp83 ) gpio-508 (it87_gp84 ) gpio-509 (it87_gp85 ) gpio-510 (it87_gp86 ) gpio-511 (it87_gp87 ) 2.使用gp87端口，设置输出模式为输出 12root@tiger:/sys/class/gpio# echo 511 &gt; export root@tiger:/sys/class/gpio# echo out &gt; it87_gp87/direction 3.测试led 高电平熄灭 1root@tiger:/sys/class/gpio# echo 1 &gt; it87_gp87/value 低电平点亮 1root@tiger:/sys/class/gpio# echo 0 &gt; it87_gp87/value 附上测试脚本，led闪烁100次 12345678910111213#!bin/shCOUNTER=1echo 511 &gt; /sys/class/gpio/exportecho out &gt; /sys/class/gpio/it87_gp87/directionwhile [ &quot;$COUNTER&quot; -lt 100 ]; do echo &quot;gpio test ...:$COUNTER&quot; echo 1 &gt; /sys/class/gpio/it87_gp87/value sleep 0.3 echo 0 &gt; /sys/class/gpio/it87_gp87/value sleep 0.3 COUNTER=$(($COUNTER+1))done 最终效果图 简单方法：如果系统原始内核已经存在该驱动，直接加载驱动就可以了 insmod gpio_xxx.ko 永久生效：install -p -m 644 xxx.ko]]></content>
+    <content type="text"><![CDATA[QOTOM 迷你电脑 Ubuntu下支持GPIO的方法 电脑硬件型号：Q350P 问题：在使用在QOTOM Q350P迷你电脑时，发现安装ubuntu后，不能识别到GPIO。 cat /sys/kernel/debug/gpio 为空，这里通过安装驱动的方式尝试解决。 1.准备源代码12345cd /usr/srcroot@tiger:/usr/src# lslinux-4.19.23 linux-headers-4.15.0-45linux-headers-4.15.0-43 linux-headers-4.15.0-45-genericlinux-headers-4.15.0-43-generic 这里存放了系统内核源代码，linux-4.19.23是我单独下载的，这里使用4.19.23，直接使用系统自带的内核代码应该也是可以的。 下载地址：https://www.kernel.org/ 2.配置内核12root@tiger:/# cd usr/src/linux-4.19.23/root@tiger:/usr/src/linux-4.19.23# make menuconfig *Device Drivers * GPIO Support Port-mapped I/O GPIO drivers 通过GPIO说明书发现GPIO由TI8786E-1芯片处理，对IT87xx设置为[*] 然后save-&gt;Exit 3.编译并安装内核编译内核，具体编译方法可以参见另一篇博文《Ubuntu 18.04 上编译Linux内核》 1root@tiger:/usr/src/linux-4.19.23# make -j4 编译结束后，执行安装 12make modules_installmake install 因为我已经生成新的内核启动项了，这里直接重启就行了 1root@tiger:/usr/src/linux-4.19.23#shutdown -r now 4.验证结果新的内核已经能够识别到GPIO 在用户空间通过sysfs接口访问gpio正常 /sys/class/gpio使用说明:参考https://blog.csdn.net/u010871058/article/details/65648593 12345678910111213141516171、gpio_operation 通过/sys/文件接口操作IO端口 GPIO到文件系统的映射。2、控制GPIO的目录位于/sys/class/gpio。3、/sys/class/gpio/export 文件用于通知系统需要导出控制的GPIO引脚编号。4、/sys/class/gpio/unexport 用于通知系统取消导出。5、/sys/class/gpio/gpiochipX目录保存系统中GPIO寄存器的信息，包括每个寄存器控制引脚的起始编号base，寄存器名称label，引脚总数ngpio，导出一个引脚的操作步骤。6、首先计算此引脚编号，引脚编号 = 控制引脚的寄存器基数 + 控制引脚寄存器位数。7、向/sys/class/gpio/export写入此编号，比如12号引脚，echo 12 &gt; /sys/class/gpio/export，命令成功后生成/sys/class/gpio/gpio12目录，如果没有出现相应的目录，说明此引脚不可导出。8、direction文件，定义输入输出方向，可以通过下面命令定义为输出,direction接受的参数：in, out, high, low；high/low同时设置方向为输出。9、value文件是端口的数值，为1或0。 测试GPIO:通过查看说明书，得知使用的GPIO端口为80-87 1.找到对应的gpio编号 12345678910cat /sys/kernel/debug/gpio... gpio-504 (it87_gp80 ) gpio-505 (it87_gp81 ) gpio-506 (it87_gp82 ) gpio-507 (it87_gp83 ) gpio-508 (it87_gp84 ) gpio-509 (it87_gp85 ) gpio-510 (it87_gp86 ) gpio-511 (it87_gp87 ) 2.使用gp87端口，设置输出模式为输出 12root@tiger:/sys/class/gpio# echo 511 &gt; export root@tiger:/sys/class/gpio# echo out &gt; it87_gp87/direction 3.测试led 高电平熄灭 1root@tiger:/sys/class/gpio# echo 1 &gt; it87_gp87/value 低电平点亮 1root@tiger:/sys/class/gpio# echo 0 &gt; it87_gp87/value 附上测试脚本，led闪烁100次 12345678910111213#!bin/shCOUNTER=1echo 511 &gt; /sys/class/gpio/exportecho out &gt; /sys/class/gpio/it87_gp87/directionwhile [ &quot;$COUNTER&quot; -lt 100 ]; do echo &quot;gpio test ...:$COUNTER&quot; echo 1 &gt; /sys/class/gpio/it87_gp87/value sleep 0.3 echo 0 &gt; /sys/class/gpio/it87_gp87/value sleep 0.3 COUNTER=$(($COUNTER+1))done 最终效果图 简单方法：如果系统原始内核已经存在该驱动，直接加载驱动就可以了 insmod gpio_xxx.ko 永久生效：install -p -m 644 xxx.ko]]></content>
       <categories>
         <category>Linux</category>
       </categories>
