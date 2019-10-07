@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-09-19T09:50:57.771Z</updated>
+  <updated>2019-10-07T03:40:01.728Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux系统下简单实现一个Watchdog</title>
+    <link href="http://minipc.netlify.com/posts/fe902d45/"/>
+    <id>http://minipc.netlify.com/posts/fe902d45/</id>
+    <published>2019-10-07T03:36:21.000Z</published>
+    <updated>2019-10-07T03:40:01.728Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the 
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="WatchDog" scheme="http://minipc.netlify.com/tags/WatchDog/"/>
+    
+  </entry>
   
   <entry>
     <title>Use USB Install Windows Server 2003 R2</title>
@@ -36,9 +61,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -112,11 +137,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -139,9 +164,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -166,9 +191,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -300,9 +325,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -327,11 +352,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -382,9 +407,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -407,9 +432,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
@@ -434,9 +459,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
@@ -506,32 +531,6 @@
       
         &lt;p&gt;系统环境如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="drive" scheme="http://minipc.netlify.com/tags/drive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux学习笔记(实现一个带read,write,ioctl的字符设备驱动)</title>
-    <link href="http://minipc.netlify.com/posts/f38e199/"/>
-    <id>http://minipc.netlify.com/posts/f38e199/</id>
-    <published>2019-05-10T09:33:41.000Z</published>
-    <updated>2019-08-26T11:45:32.110Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/posts/f38e199/000.png&quot; alt=&quot;000&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;字符设备基
       
     
     </summary>

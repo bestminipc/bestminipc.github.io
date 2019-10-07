@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux系统下简单实现一个Watchdog]]></title>
+    <url>%2Fposts%2Ffe902d45%2F</url>
+    <content type="text"><![CDATA[定义看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程序发生死循环，或者说程序跑飞。 基本原理看门狗是一种监控系统的运行状况的手段，通过软硬件结合的方式实现对系统运行状况的监控。稳定运行的软件会在执行完特定指令后进行喂狗，若在一定周期内看门狗没有收到来自软件的喂狗信号，则认为系统故障，会进入中断处理程序或强制系统复位。系统上电后根据不同的工作模式可以选择使能看门狗的时机，若看门狗被使能则计数器开始计数，如果在设定的时间内没有及时喂狗则会发生看门狗超时。 看门狗主要由寄存器、计数器和狗叫模块构成，通过寄存器对看门狗进行基本设置，计数器计算狗叫时间，狗叫模块决定看门狗超时后发出的中断或复位方式。 Q300P 自带硬件看门狗，由SuperIO芯片提供，这里简单实现一下看门狗的复位功能，只需要对看门狗的配置寄存器组和数据寄存器组进行操作。 WDTCTRL:Watch Dog Timer Control Register (Index=71h, Default=00h) 控制寄存器，主要是设置中断，这里不涉及 WDTCONF:Watch Dog Timer Configuration Register (Index=72h, Default=001s0000b) 配置寄存器 Bit6 or Bit4设置为1即可开启看门狗功能，这里使用Bit6脉冲信号 ![WDT](E:/备份教程/教程/watch_dog/watch dog 01.png) WDTVALLSB:Watch Dog Timer Time-out Value (LSB) Register (Index=73h, Default=38h) 低位数据寄存器 WDTVALMSB:Watch Dog Timer Time-out Value (MSB) Register (Index=74h, Default=00h) 高位数据寄存器 流程进入IO配置——&gt;选择逻辑设备——&gt;设置看门狗配置寄存器——&gt;设置看门狗数据寄存器（循环） 核心代码12345678910111213141516171819202122232425262728293031323334/* IO Ports */#define REG 0x2e#define VAL 0x2f/* Logical device Numbers LDN */#define LDNREG 0x07#define GPIOLND 0x07//superio enteroutb(0x87, REG);outb(0x01, REG);outb(0x55, REG);outb(0x55, REG);//select logic deviceoutb(LDNREG, REG);outb(GPIOLND, VAL);//WDT Output through KRST (pulse) Enableoutb(0x72, REG);outb(0xC0, VAL);//WDT Timer-out Value (feed dog)outb(0x73, REG);outb(0x1e, VAL);//1e:30soutb(0x74, REG);outb(0x00, VAL);//Close WDT//outb(0x72, REG);//outb(0x80, VAL);//exit superiooutb(0x02, REG);outb(0x02, VAL); 执行以上代码，如果在超时时间内没有进行喂狗，WDT将会自动产生一个复位信号，重启电脑 完整代码地址：https://github.com/huchanghui123/Watch-Dog-Linux]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>WatchDog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Use USB Install Windows Server 2003 R2]]></title>
     <url>%2Fposts%2Fdcc09a6a%2F</url>
     <content type="text"><![CDATA[MINIPC型号：QOTOM Q100N 准备好WS2003系统镜像 cn_win_srv_2003_r2_enterprise_x64_with_sp2_vl_cd1_X13-47314.iso（系统包） cn_win_srv_2003_r2_enterprise_x64_with_sp2_vl_cd2_X13-35321.iso（补丁包） WinSetupFromUSB下载地址：http://www.winsetupfromusb.com/downloads/ 制作U盘启动器 运行WinSetupFromUSB，选择U盘 点击RMPrepUSB设置引导方式 3 BootOption栏目中选择XP/BartPE bootable[NTLDR]，在4 Filesystem and overrides中选择NTFS和Boot as HDD，然后点击6 Prepare Drive 写入引导文件，出现控制台，点击确定 完成后，窗口自动返回RMPrepUSB界面，点击exit退出 指定系统安装文件路径，先将iso装载到虚拟光驱(H:) 点击GO，开始制作 安装系统 插入U盘，BIOS设置启动项HDD第一，USB第二；开机按F11选择U盘启动 选择First part of Windows 2003 sp2 x64 … 选择需要安装系统的硬盘 然后格式化后会自动将安装程序复制到硬盘 重启后自动进入windows server安装界面 后续按提示输入就可以了 cd2 可以用ultraISO工具写入U盘，然后在windows server2003中浏览U盘安装 安装至此完成！]]></content>
@@ -8,8 +20,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -43,9 +55,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
-        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +68,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +80,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -130,8 +142,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -142,9 +154,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +180,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -180,8 +192,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -193,8 +205,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -266,8 +278,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -279,8 +291,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -291,8 +303,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -331,8 +343,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>Router</tag>
         <tag>EXSI</tag>
+        <tag>Router</tag>
       </tags>
   </entry>
   <entry>
@@ -433,8 +445,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
