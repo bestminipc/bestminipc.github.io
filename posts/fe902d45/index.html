@@ -98,10 +98,12 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="定义看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-07T05:35:39.303Z">
+<meta property="og:image" content="http://minipc.netlify.com/posts/fe902d45/watch_dog_01.png">
+<meta property="og:updated_time" content="2019-10-07T05:45:02.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统下简单实现一个Watchdog">
 <meta name="twitter:description" content="定义看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程">
+<meta name="twitter:image" content="http://minipc.netlify.com/posts/fe902d45/watch_dog_01.png">
 
 
 
@@ -385,7 +387,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-07T13:35:39+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-07T13:45:02+08:00">
                 2019-10-07
               </time>
             
@@ -450,7 +452,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  728
+                  721
                 </span>
               
 
@@ -494,7 +496,7 @@
 <p><strong>WDTCTRL:</strong>Watch Dog Timer Control Register (Index=71h, Default=00h)  控制寄存器，主要是设置中断，这里不涉及</p>
 <p><strong>WDTCONF:</strong>Watch Dog Timer Configuration Register (Index=72h, Default=001s0000b)  配置寄存器</p>
 <p>Bit6 or Bit4设置为1即可开启看门狗功能，这里使用Bit6脉冲信号</p>
-<p>![WDT](watchdog-linux/watch dog 01.png)</p>
+<p><img src="/posts/fe902d45/watch_dog_01.png" alt="WDT"></p>
 <p><strong>WDTVALLSB:</strong>Watch Dog Timer Time-out Value (LSB) Register (Index=73h, Default=38h) 低位数据寄存器</p>
 <p><strong>WDTVALMSB:</strong>Watch Dog Timer Time-out Value (MSB) Register (Index=74h, Default=00h)  高位数据寄存器</p>
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>进入IO配置——&gt;选择逻辑设备——&gt;设置看门狗配置寄存器——&gt;设置看门狗数据寄存器（循环喂狗）</p>
