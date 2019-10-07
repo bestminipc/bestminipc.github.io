@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-07T03:40:01.728Z</updated>
+  <updated>2019-10-07T04:09:52.963Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://minipc.netlify.com/posts/fe902d45/"/>
     <id>http://minipc.netlify.com/posts/fe902d45/</id>
     <published>2019-10-07T03:36:21.000Z</published>
-    <updated>2019-10-07T03:40:01.728Z</updated>
+    <updated>2019-10-07T04:09:52.963Z</updated>
     
     <summary type="html">
     
@@ -137,11 +137,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -325,9 +325,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -354,9 +354,9 @@
     
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -407,9 +407,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -432,9 +432,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
@@ -459,9 +459,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     

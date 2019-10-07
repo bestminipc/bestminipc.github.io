@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="定义看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-07T03:40:01.728Z">
+<meta property="og:updated_time" content="2019-10-07T04:09:52.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux系统下简单实现一个Watchdog">
 <meta name="twitter:description" content="定义看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程">
@@ -385,7 +385,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-07T11:40:01+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-07T12:09:52+08:00">
                 2019-10-07
               </time>
             
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  731
+                  734
                 </span>
               
 
@@ -490,14 +490,14 @@
         <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>看门狗，又叫watchdog timer，是一个定时器电路，一般有一个输入，叫喂狗(kicking the dog/service the dog），一个输出到MCU的RST端，MCU正常工作的时候，每隔一段时间输出一个信号到喂狗端，给 WDT清零，如果超过规定的时间不喂狗（一般在程序跑飞时），WDT定时超过，就会给出一个复位信号到MCU，使MCU复位。防止MCU死机. 看门狗的作用就是防止程序发生死循环，或者说程序跑飞。</p>
 <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>看门狗是一种监控系统的运行状况的手段，通过软硬件结合的方式实现对系统运行状况的监控。稳定运行的软件会在执行完特定指令后进行喂狗，若在一定周期内看门狗没有收到来自软件的喂狗信号，则认为系统故障，会进入中断处理程序或强制系统复位。系统上电后根据不同的工作模式可以选择使能看门狗的时机，若看门狗被使能则计数器开始计数，如果在设定的时间内没有及时喂狗则会发生看门狗超时。</p>
 <p>看门狗主要由寄存器、计数器和狗叫模块构成，通过寄存器对看门狗进行基本设置，计数器计算狗叫时间，狗叫模块决定看门狗超时后发出的中断或复位方式。</p>
-<p>Q300P 自带硬件看门狗，由SuperIO芯片提供，这里简单实现一下看门狗的复位功能，只需要对看门狗的配置寄存器组和数据寄存器组进行操作。</p>
+<p><a href="http://www.qotom.com/" target="_blank" rel="noopener">QOTOM</a> <a href="http://www.qotom.com/product/57.html" target="_blank" rel="noopener">Q300P</a>自带硬件看门狗，由SuperIO芯片提供，这里简单实现一下看门狗的复位功能，只需要对看门狗的配置寄存器组和数据寄存器组进行操作。</p>
 <p><strong>WDTCTRL:</strong>Watch Dog Timer Control Register (Index=71h, Default=00h)  控制寄存器，主要是设置中断，这里不涉及</p>
 <p><strong>WDTCONF:</strong>Watch Dog Timer Configuration Register (Index=72h, Default=001s0000b)  配置寄存器</p>
 <p>Bit6 or Bit4设置为1即可开启看门狗功能，这里使用Bit6脉冲信号</p>
 <p>![WDT](E:/备份教程/教程/watch_dog/watch dog 01.png)</p>
 <p><strong>WDTVALLSB:</strong>Watch Dog Timer Time-out Value (LSB) Register (Index=73h, Default=38h) 低位数据寄存器</p>
 <p><strong>WDTVALMSB:</strong>Watch Dog Timer Time-out Value (MSB) Register (Index=74h, Default=00h)  高位数据寄存器</p>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>进入IO配置——&gt;选择逻辑设备——&gt;设置看门狗配置寄存器——&gt;设置看门狗数据寄存器（循环）</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>进入IO配置——&gt;选择逻辑设备——&gt;设置看门狗配置寄存器——&gt;设置看门狗数据寄存器（循环喂狗）</p>
 <h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/* IO Ports */</span><br><span class="line">#define REG             0x2e</span><br><span class="line">#define VAL             0x2f</span><br><span class="line">/* Logical device Numbers LDN */</span><br><span class="line">#define LDNREG          0x07</span><br><span class="line">#define GPIOLND         0x07</span><br><span class="line"></span><br><span class="line">//superio enter</span><br><span class="line">outb(0x87, REG);</span><br><span class="line">outb(0x01, REG);</span><br><span class="line">outb(0x55, REG);</span><br><span class="line">outb(0x55, REG);</span><br><span class="line"></span><br><span class="line">//select logic device</span><br><span class="line">outb(LDNREG, REG);</span><br><span class="line">outb(GPIOLND, VAL);</span><br><span class="line"></span><br><span class="line">//WDT Output through KRST (pulse) Enable</span><br><span class="line">outb(0x72, REG);</span><br><span class="line">outb(0xC0, VAL);</span><br><span class="line"></span><br><span class="line">//WDT Timer-out Value (feed dog)</span><br><span class="line">outb(0x73, REG);</span><br><span class="line">outb(0x1e, VAL);//1e:30s</span><br><span class="line">outb(0x74, REG);</span><br><span class="line">outb(0x00, VAL);</span><br><span class="line"></span><br><span class="line">//Close WDT</span><br><span class="line">//outb(0x72, REG);</span><br><span class="line">//outb(0x80, VAL);</span><br><span class="line"></span><br><span class="line">//exit superio</span><br><span class="line">outb(0x02, REG);</span><br><span class="line">outb(0x02, VAL);</span><br></pre></td></tr></table></figure>
 
 <p>执行以上代码，如果在超时时间内没有进行喂狗，WDT将会自动产生一个复位信号，重启电脑</p>
