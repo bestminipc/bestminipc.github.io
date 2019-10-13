@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-07T05:45:02.075Z</updated>
+  <updated>2019-10-13T02:39:44.370Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WinRing0如何使用</title>
+    <link href="http://minipc.netlify.com/posts/b67a6f8b/"/>
+    <id>http://minipc.netlify.com/posts/b67a6f8b/</id>
+    <published>2019-10-13T02:18:19.000Z</published>
+    <updated>2019-10-13T02:39:44.370Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;WinRing0-介绍&quot;&gt;&lt;a href=&quot;#WinRing0-介绍&quot; class=&quot;headerlink&quot; title=&quot;WinRing0 介绍&quot;&gt;&lt;/a&gt;WinRing0 介绍&lt;/h3&gt;&lt;p&gt;WinRing0 是一个完全免费开源的组件( BSD License
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="WinRing0" scheme="http://minipc.netlify.com/tags/WinRing0/"/>
+    
+      <category term="c#" scheme="http://minipc.netlify.com/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux系统下简单实现一个Watchdog</title>
@@ -515,32 +542,6 @@
     
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Liunx学习笔记 实现一个misc设备驱动</title>
-    <link href="http://minipc.netlify.com/posts/dd97f106/"/>
-    <id>http://minipc.netlify.com/posts/dd97f106/</id>
-    <published>2019-05-16T07:08:24.000Z</published>
-    <updated>2019-08-26T11:45:21.520Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;系统环境如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="drive" scheme="http://minipc.netlify.com/tags/drive/"/>
     
   </entry>
   
