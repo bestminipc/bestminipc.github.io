@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-13T02:39:44.370Z</updated>
+  <updated>2019-10-15T06:07:55.761Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Ubuntu下使用脚本打包QT程序</title>
+    <link href="http://minipc.netlify.com/posts/929948af/"/>
+    <id>http://minipc.netlify.com/posts/929948af/</id>
+    <published>2019-10-15T05:52:06.000Z</published>
+    <updated>2019-10-15T06:07:55.761Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Ubuntu版本：18.04&lt;/p&gt;
+&lt;p&gt;QT版本：5.7.0&lt;/p&gt;
+&lt;p&gt;例如程序名为GPIO-TEST&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;找个目录创建文件夹用来存放打包的程序，&lt;code&gt;/zdisk/MY_GPIO-TEST&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="QT" scheme="http://minipc.netlify.com/tags/QT/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WinRing0如何使用</title>
     <link href="http://minipc.netlify.com/posts/b67a6f8b/"/>
     <id>http://minipc.netlify.com/posts/b67a6f8b/</id>
     <published>2019-10-13T02:18:19.000Z</published>
-    <updated>2019-10-13T02:39:44.370Z</updated>
+    <updated>2019-10-13T02:40:16.035Z</updated>
     
     <summary type="html">
     
@@ -518,30 +549,6 @@
       <category term="ROS" scheme="http://minipc.netlify.com/tags/ROS/"/>
     
       <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux下常用压缩命令</title>
-    <link href="http://minipc.netlify.com/posts/735f53da/"/>
-    <id>http://minipc.netlify.com/posts/735f53da/</id>
-    <published>2019-05-27T01:57:41.000Z</published>
-    <updated>2019-09-02T03:33:31.647Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;记录一些Linux下常用的解压缩命令，以便查找&lt;/p&gt;
-&lt;h3 id=&quot;tar格式&quot;&gt;&lt;a href=&quot;#tar格式&quot; class=&quot;headerlink&quot; title=&quot;tar格式&quot;&gt;&lt;/a&gt;tar格式&lt;/h3&gt;&lt;p&gt;解包：&lt;code&gt;$ tar xvf FileName
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
