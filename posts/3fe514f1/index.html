@@ -90,13 +90,13 @@
 
 
 
-<meta name="description" content="​    本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。 SMB介绍 ​    Server Message Block - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协">
+<meta name="description" content="=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 ===========================================================================">
 <meta name="keywords" content="Mini Pc,Unix,FreeNAS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeNAS 创建SMB共享">
 <meta property="og:url" content="http://minipc.netlify.com/posts/3fe514f1/index.html">
 <meta property="og:site_name" content="Laohu Blog">
-<meta property="og:description" content="​    本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。 SMB介绍 ​    Server Message Block - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协">
+<meta property="og:description" content="=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 ===========================================================================">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image001.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image002.png">
@@ -112,10 +112,10 @@
 <meta property="og:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image012.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image013.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image014.png">
-<meta property="og:updated_time" content="2019-08-26T11:42:48.256Z">
+<meta property="og:updated_time" content="2019-10-17T03:17:18.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeNAS 创建SMB共享">
-<meta name="twitter:description" content="​    本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。 SMB介绍 ​    Server Message Block - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协">
+<meta name="twitter:description" content="=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 ===========================================================================">
 <meta name="twitter:image" content="http://minipc.netlify.com/posts/3fe514f1/clip_image001.png">
 
 
@@ -400,8 +400,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T19:42:48+08:00">
-                2019-08-26
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-17T11:17:18+08:00">
+                2019-10-17
               </time>
             
           </span>
@@ -502,7 +502,12 @@
       
 
       
-        <p>​    本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。</p>
+        <p>===========================================================================</p>
+<p>《<a href="https://bestminipc.github.io/posts/575cc893/" target="_blank" rel="noopener">FreeNAS如何安装</a>》</p>
+<p>《<a href="https://bestminipc.github.io/posts/98bad996/" target="_blank" rel="noopener">FreeNAS-创建和删除卷</a>》</p>
+<p>《<a href="https://bestminipc.github.io/posts/3fe514f1/" target="_blank" rel="noopener">FreeNAS-创建SMB共享</a>》</p>
+<p>===========================================================================</p>
+<p>​    本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。</p>
 <p><strong>SMB介绍</strong></p>
 <p>​    <strong>Server Message Block</strong> - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协议。它只是系统之间通信的一种方式（协议），并不是一款特殊的软件。</p>
 <p>​    SMB 协议被设计成为允许计算机通过本地局域网（LAN）在远程主机上读写文件。远程主机上通过 SMB 协议开放访问的目录称为 <code>共享文件夹</code>。</p>

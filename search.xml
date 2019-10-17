@@ -57,8 +57,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -92,9 +92,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -105,8 +105,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +117,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -179,8 +179,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +191,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +217,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -229,8 +229,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -242,8 +242,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -315,8 +315,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -328,8 +328,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -340,8 +340,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -387,7 +387,7 @@
   <entry>
     <title><![CDATA[FreeNAS 创建SMB共享]]></title>
     <url>%2Fposts%2F3fe514f1%2F</url>
-    <content type="text"><![CDATA[​ 本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。 SMB介绍 ​ Server Message Block - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协议。它只是系统之间通信的一种方式（协议），并不是一款特殊的软件。 ​ SMB 协议被设计成为允许计算机通过本地局域网（LAN）在远程主机上读写文件。远程主机上通过 SMB 协议开放访问的目录称为 共享文件夹。 第一部分：新建账户与指定数据集权限​ 本教程主要介绍带基本身份验证的 SMB 共享，即只有输入正确的用户名和密码才可以访问共享目录。 ​ 新建账户的过程非常简单，浏览器访问 WebGUI 管理界面，如下图所示，依次点击 “Account” 账户图标，在账户选项卡中点击 “Users” 选项按钮，然后再点击下方的 “Add User” 添加用户按钮。 下面分别介绍每一选项： User ID:用户ID，在Unix 世界，每一个用户都有一个唯一的ID号，系统会自动生成，我们不用理会，高级用户可以根据需要进行修改。 Username:用户名，必填，不多解释，这一步我们要创建的就是这个东西。不能使用中文，建议英文或英文+数字，不能使用符号。 Create a new primary group for the user:创建同名主用户组，这一项默认是勾选的，在本教程中，我们保持勾选。如果取消勾选，则需要在下一项的列表中，为此用户选择一个主用户组。 Primary Group:主用户组，只有取消了上一项的勾选，这一项才可以进行选择。出于安全原因，如果wheel是用户的主用户组，FreeBSD不会授予该用户su权限。 Create Home Directory In:创建主目录的位置，默认值为 /nonexistent 意为不创建主目录。此处我们保持默认，不需修改。 Shell:命令行，指定要使用的命令行。此处保持默认，不需修改。 Full Name:用户全名，必填，通常在这里填写用户的全名，建议填写英文。 E-mail:用户的电子邮箱，选填。 Password:用户密码，必填，不多解释，给用户设置一个密码，访问共享目录时就是用这个密码进行身份验证。 Password confirmation:确认密码，必填，与上一项输入的密码必须一致。 Disable password login:禁用密码登陆，此处不要勾选。 Lock user:锁定用户，此处不要勾选。当选中时，将禁止用户登录。 Permit Sudo:允许用户使用sudo命令，此处不要勾选。 Microsoft Account:微软账号，如果用户将从Windows 8或更高系统连接，则选中此框。此处可以勾选。 SSH Public Key:SSH公钥，此处不需设置。 Auxiliary groups:辅用户组，此处需要设置。类Unix系统中，每一个用户必须属于一个主用户组，同时可以属于零到多个辅用户组。 这里，我们创建一个名为laohu的用户，密码为123456。 ​ 填写完毕后，点击窗口左下角的 “OK” 确定按钮，用户创建成功后，可以看到，新添加的用户 laohu 已经显示在用户列表中了。 ​ 用户创建成功，接下来设置用于 SMB 共享的数据集。点击 WebGUI 界面上的 “Storage” 存储图标，切换到存储选项卡。系统已经在卷下创建了一个同名的数据集，如下图。你可以直接使用这个数据集用作 SMB 共享，也可以在该数据集下面创建新的数据集，此处为了便于演示，我们直接使用这个名为 myStor 的数据集。 ​ 点选 myStor 数据集，然后点击下方的第一个图标按钮 “Change Permissions” 修改权限，随即弹出如下图所示的修改数据集权限的窗口。此处，我们只需要在 Owner(user)所有者和 Owner(group)所有者组的下拉菜单中选择 laohu 即可，点击 “Change” 确定按钮使设置生效。注：Mode 是详细的权限设定，默认为所有者拥有读写和执行权限，所有者组具有读和执行权限，其他用户和组拥有读和执行权限。现在不用管它，保持默认即可。 简单介绍下各个选项: Apply Owner (user): 应用所有者(用户)。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到数据集所有者(用户)。 Owner (user): 数据集所有者(用户)。从下拉菜单选择数据集的所有者(用户)。 Apply Owner (group): 应用所有者(用户组)。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到数据集所有者(用户组)。 Apply Mode: 应用模式。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到模式。 Mode: 权限模式。仅适用于Unix或Mac，如果下一项权限类型选择Windows，将不可设定具体权限。 Permission Type: 权限类型。可以选择Unix、Mac或Windows ; 请选择与访问卷/数据集的客户端类型相匹配的操作系统。 Set permission recursively: 设置递归权限。如果选中，权限也将应用于卷/数据集的子目录。 到这里，第一部分的操作就完成了，接下来开始创建 SMB 共享。 第二部分：创建共享并启动SMB服务在 WebGUI 管理界面中点击 “Sharing” 共享图标，打开共享列表界面。点击切换到 Windows (SMB) 共享列表。 点击 “Add Windows (SMB) Share” 添加 SMB 共享按钮，弹出如下所示窗口。 我们只需填写以下两项即可： Path：是存储路径，点击右侧的 “Browse” 浏览按钮，找到此共享需要使用的数据集，此处我们选择与卷同名的 myStor 数据集。 Name：共享名称，随意设置，此处设置的名称会显示在共享目录中。图中设置的共享名为 music。 ​ 设置好以后，点击 “OK” 确定按钮后系统会弹出下图所示的提示：是否启用 SMB 服务？我们点击 “Yes” 确定按钮。此时，SMB共享创建完成，系统也自动帮我们启动了 SMB 服务。 第三部分：访问测试 SMB 共享​ 经过前两个部分的设置，SMB 共享就正式创建好了，接下来让我们一起测试一下，看看是否可以正常访问共享目录。此处我们以 Windows 10 系统为例进行演示。 ​ 在测试之前，请首先确认，测试机是否与 FreeNAS 服务器位于同一局域网的相同网段。在本例中，我的 Windows 10 系统 IP 地址为 192.168.1.110，FreeNAS 服务器的 IP 地址为 192.168.1.250。可以看到，他们处于相同的 192.168.1.x 网段。 注：Win10确保SMB 1.0文件共享支持选中，不然可能会找不到freeNAS ​ 双击打开 Windows 10 系统桌面上的“计算机”，在左侧找到并点击“网络”，此时右侧会显示出同一局域网中的所有开放共享的设备。可以看到，FreeNAS 就在其中。注：如果你点击网络后，右侧没有显示任何共享设备，在窗口上方弹出了一个黄色的提示框，询问你是否启用网络发现，请点击提示框，确认启用网络共享和发现服务。 输入正确的用户名密码即可访问共享目录。 如果找不到设备，也可以在文件夹路径栏直接输入\\192.168.1.250访问 输入正确的账号密码后，可以看到我们在创建 SMB 共享时设置的 test 目录。 建立测试文件，测试共享目录 平均传输速度113MB/s，速度不错。 以上就是在FreeNAS中创建SMB共享教程。 参考：https://www.getnas.com/2015/01/20/freenas-the-first-cifs/]]></content>
+    <content type="text"><![CDATA[=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 =========================================================================== ​ 本教程以 FreeNAS 11.2 版本为例创建 SMB 共享，虽然在界面上与 FreeNAS 11.2 之前的版本略有差异，但原理和过程完全一致，权当抛砖引玉，敬请举一反三。为了便于理解，本文将创建 SMB 共享的过程分成以下三个部分。 SMB介绍 ​ Server Message Block - SMB，即服务(器)消息块，是 IBM 公司在 80 年代中期发明的一种文件共享协议。它只是系统之间通信的一种方式（协议），并不是一款特殊的软件。 ​ SMB 协议被设计成为允许计算机通过本地局域网（LAN）在远程主机上读写文件。远程主机上通过 SMB 协议开放访问的目录称为 共享文件夹。 第一部分：新建账户与指定数据集权限​ 本教程主要介绍带基本身份验证的 SMB 共享，即只有输入正确的用户名和密码才可以访问共享目录。 ​ 新建账户的过程非常简单，浏览器访问 WebGUI 管理界面，如下图所示，依次点击 “Account” 账户图标，在账户选项卡中点击 “Users” 选项按钮，然后再点击下方的 “Add User” 添加用户按钮。 下面分别介绍每一选项： User ID:用户ID，在Unix 世界，每一个用户都有一个唯一的ID号，系统会自动生成，我们不用理会，高级用户可以根据需要进行修改。 Username:用户名，必填，不多解释，这一步我们要创建的就是这个东西。不能使用中文，建议英文或英文+数字，不能使用符号。 Create a new primary group for the user:创建同名主用户组，这一项默认是勾选的，在本教程中，我们保持勾选。如果取消勾选，则需要在下一项的列表中，为此用户选择一个主用户组。 Primary Group:主用户组，只有取消了上一项的勾选，这一项才可以进行选择。出于安全原因，如果wheel是用户的主用户组，FreeBSD不会授予该用户su权限。 Create Home Directory In:创建主目录的位置，默认值为 /nonexistent 意为不创建主目录。此处我们保持默认，不需修改。 Shell:命令行，指定要使用的命令行。此处保持默认，不需修改。 Full Name:用户全名，必填，通常在这里填写用户的全名，建议填写英文。 E-mail:用户的电子邮箱，选填。 Password:用户密码，必填，不多解释，给用户设置一个密码，访问共享目录时就是用这个密码进行身份验证。 Password confirmation:确认密码，必填，与上一项输入的密码必须一致。 Disable password login:禁用密码登陆，此处不要勾选。 Lock user:锁定用户，此处不要勾选。当选中时，将禁止用户登录。 Permit Sudo:允许用户使用sudo命令，此处不要勾选。 Microsoft Account:微软账号，如果用户将从Windows 8或更高系统连接，则选中此框。此处可以勾选。 SSH Public Key:SSH公钥，此处不需设置。 Auxiliary groups:辅用户组，此处需要设置。类Unix系统中，每一个用户必须属于一个主用户组，同时可以属于零到多个辅用户组。 这里，我们创建一个名为laohu的用户，密码为123456。 ​ 填写完毕后，点击窗口左下角的 “OK” 确定按钮，用户创建成功后，可以看到，新添加的用户 laohu 已经显示在用户列表中了。 ​ 用户创建成功，接下来设置用于 SMB 共享的数据集。点击 WebGUI 界面上的 “Storage” 存储图标，切换到存储选项卡。系统已经在卷下创建了一个同名的数据集，如下图。你可以直接使用这个数据集用作 SMB 共享，也可以在该数据集下面创建新的数据集，此处为了便于演示，我们直接使用这个名为 myStor 的数据集。 ​ 点选 myStor 数据集，然后点击下方的第一个图标按钮 “Change Permissions” 修改权限，随即弹出如下图所示的修改数据集权限的窗口。此处，我们只需要在 Owner(user)所有者和 Owner(group)所有者组的下拉菜单中选择 laohu 即可，点击 “Change” 确定按钮使设置生效。注：Mode 是详细的权限设定，默认为所有者拥有读写和执行权限，所有者组具有读和执行权限，其他用户和组拥有读和执行权限。现在不用管它，保持默认即可。 简单介绍下各个选项: Apply Owner (user): 应用所有者(用户)。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到数据集所有者(用户)。 Owner (user): 数据集所有者(用户)。从下拉菜单选择数据集的所有者(用户)。 Apply Owner (group): 应用所有者(用户组)。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到数据集所有者(用户组)。 Apply Mode: 应用模式。用于对数据集权限进行微调，取消勾选可以防止将新权限变更到模式。 Mode: 权限模式。仅适用于Unix或Mac，如果下一项权限类型选择Windows，将不可设定具体权限。 Permission Type: 权限类型。可以选择Unix、Mac或Windows ; 请选择与访问卷/数据集的客户端类型相匹配的操作系统。 Set permission recursively: 设置递归权限。如果选中，权限也将应用于卷/数据集的子目录。 到这里，第一部分的操作就完成了，接下来开始创建 SMB 共享。 第二部分：创建共享并启动SMB服务在 WebGUI 管理界面中点击 “Sharing” 共享图标，打开共享列表界面。点击切换到 Windows (SMB) 共享列表。 点击 “Add Windows (SMB) Share” 添加 SMB 共享按钮，弹出如下所示窗口。 我们只需填写以下两项即可： Path：是存储路径，点击右侧的 “Browse” 浏览按钮，找到此共享需要使用的数据集，此处我们选择与卷同名的 myStor 数据集。 Name：共享名称，随意设置，此处设置的名称会显示在共享目录中。图中设置的共享名为 music。 ​ 设置好以后，点击 “OK” 确定按钮后系统会弹出下图所示的提示：是否启用 SMB 服务？我们点击 “Yes” 确定按钮。此时，SMB共享创建完成，系统也自动帮我们启动了 SMB 服务。 第三部分：访问测试 SMB 共享​ 经过前两个部分的设置，SMB 共享就正式创建好了，接下来让我们一起测试一下，看看是否可以正常访问共享目录。此处我们以 Windows 10 系统为例进行演示。 ​ 在测试之前，请首先确认，测试机是否与 FreeNAS 服务器位于同一局域网的相同网段。在本例中，我的 Windows 10 系统 IP 地址为 192.168.1.110，FreeNAS 服务器的 IP 地址为 192.168.1.250。可以看到，他们处于相同的 192.168.1.x 网段。 注：Win10确保SMB 1.0文件共享支持选中，不然可能会找不到freeNAS ​ 双击打开 Windows 10 系统桌面上的“计算机”，在左侧找到并点击“网络”，此时右侧会显示出同一局域网中的所有开放共享的设备。可以看到，FreeNAS 就在其中。注：如果你点击网络后，右侧没有显示任何共享设备，在窗口上方弹出了一个黄色的提示框，询问你是否启用网络发现，请点击提示框，确认启用网络共享和发现服务。 输入正确的用户名密码即可访问共享目录。 如果找不到设备，也可以在文件夹路径栏直接输入\\192.168.1.250访问 输入正确的账号密码后，可以看到我们在创建 SMB 共享时设置的 test 目录。 建立测试文件，测试共享目录 平均传输速度113MB/s，速度不错。 以上就是在FreeNAS中创建SMB共享教程。 参考：https://www.getnas.com/2015/01/20/freenas-the-first-cifs/]]></content>
       <categories>
         <category>FreeBSD</category>
       </categories>
@@ -400,7 +400,7 @@
   <entry>
     <title><![CDATA[FreeNAS 创建和删除卷]]></title>
     <url>%2Fposts%2F98bad996%2F</url>
-    <content type="text"><![CDATA[​ FreeNAS 采用 ZFS 文件系统，因此可以将多块硬盘组织成一个用于存储的卷。不仅如此，在创建卷时，还可以自由指定冗余方案，比如创建一个由四块 4TB 硬盘组成的卷，并指定他们以 RAID Z1 的阵列形式进行组织，此卷的可用存储空间为 12TB，另外的 4TB 用于奇偶校验。这样一来，这个卷下的任何一个硬盘发生损坏，卷中存储的数据都不会丢失。 为FreeNAS创建卷首先在浏览器中打开 WebGUI 管理界面，如下图所示，点击 “Storage” 存储器存储图标，然后点击存储选项卡中的“View Disks”查看磁盘按钮。 如下图所示，在 “View Disks” 选项卡中，列出了系统可以使用的所有硬盘。 点击左侧的 “Volume Manager” 卷管理器按钮,会弹出如下图所示的窗口。 第一项，“Volume Name” 卷名称，文本框中填入你想给卷取的名字，可以随意填写。 第二项，“Volume to extend” 扩展卷，用于给已存在的卷进行扩容的，我们的目的是创建新的卷，此项留空。 第三项，“Encryption” 加密，用于创建加密的卷，这一项暂时不要选中，以后再介绍。 第四项，“Available disks” 可用磁盘，可以看到，一共有2块硬盘。点击+号按钮，即可将磁盘添加到第五项中。 第五项，“Volume layout” 卷结构，用来指定硬盘以何种磁盘阵列形式进行组织。通过左侧的下拉菜单指定磁盘阵列形式，同时拉动右侧那个圆形的小按钮，进行更准确的结构调整。 ​ 如下图所示，如果主机接入了足够多的硬盘，第五项中的下来菜单就会显示出所有可以选择的磁盘阵列形式。需要注意，左侧的下拉菜单中列出的阵列形式，是根据你实际安装的硬盘数量显示的，由于两块硬盘无法组成 RaidZ 形式的阵列，因此，如果你只安装了两块硬盘，则不会显示 RaidZ、RaidZ2、RaidZ3。 由于我一起只有三块硬盘（其中一块系统盘）这里我只能使用mirror。 以下为各种卷结构的创建要求： RAID Z：最少由3块硬盘组成，其中一块硬盘的空间用作奇偶校验，允许一块硬盘损坏，不丢失数据。 RAID Z2：最少由3块硬盘组成，其中两块硬盘的空间用作奇偶校验，允许两块硬盘同时损坏，不丢失数据。 RAID Z3：最少由5块硬盘组成，其中三块硬盘的空间用作奇偶校验，允许三块硬盘同时损坏，不丢失数据。 Mirror 镜像：最少由2块硬盘组成，两块硬盘互作镜像，任何一块硬盘损坏，不丢失数据。 Stripe 带条：最少由1块硬盘组成，该形式无冗余，因此任何硬盘损坏，该卷下的所有数据均会丢失，这种类型的卷唯一有点是读写速度最快。 Log（ZIL）：用于写操作的高速缓存，通常用 SSD 固态硬盘来创建该设备。 Cache（L2ARC）：用于读操作的高速缓存，通常用 SSD 固态硬盘来创建该设备。 Spare：备用设备，此处略过不谈。 你可以根据对数据安全性的要求来决定创建哪一种形式的磁盘阵列，选择好卷结构，卷管理器左下角的 “Add Volume” 添加卷按钮，系统开始创建卷。注意，创建卷的过程会擦出所有已选择硬盘上的数据，创建之前，请务必确保硬盘中没有重要的数据。 ​ 待卷创建完成，存储选项卡的列表中会列出所有的卷，卷创建完成后会自动在该卷下创建一个同名的数据集。你可以把数据集简单的理解为文件夹，它的主要用途是对数据和权限进行归类，如下图所示，可以根据需要，创建多个数据集，数据集支持嵌套，可以分别指定所有权，且数量没有限制，如下图所示。 删除FreeNAS中已创建的卷在 FreeNAS 中，删除卷的操作被形象的称为“分离卷”，意思是将组成某个卷的所有硬盘，从卷中分离出去。分离卷的操作很简单，在存储选项卡的列表中点选要删除的卷，此时列表下方会显示一排功能按钮（将鼠标移动到按钮上会显示每个按钮所代表的功能），可以看到第一个按钮 “Detach Volume” 分离卷。 点击分离卷按钮，会弹出如下图所示的窗口。可以看到，界面的背景变成了红色，代表这是一项危险操作。 ​ 如果希望删除卷的同时清空硬盘中的所有数据，则选中 “Mark the disks as new (destory data) 销毁数据” 选项。注意：这是一个危险的可选操作，如果你在这个卷中存储了敏感数据，可能希望对硬盘执行数据销毁操作。但如果你还希望重新导入这个卷，并且还需要使用这个卷中已存储的数据，则不要勾选此项。 点击 “Yes” 确定按钮，系统会自动将选择的卷删除。 ​ 如果在分离卷时，没有勾选“销毁数据”选项，且分离卷以后，也没有使用分离出来的硬盘再次创建其他的卷。满足上述两种条件，可以使用存储选项卡中的 “Import Volume” 导入卷工具，将这个被分离的卷重新还原回来。 参考：https://www.getnas.com/2015/01/20/freenas-volume-management/]]></content>
+    <content type="text"><![CDATA[=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 =========================================================================== ​ FreeNAS 采用 ZFS 文件系统，因此可以将多块硬盘组织成一个用于存储的卷。不仅如此，在创建卷时，还可以自由指定冗余方案，比如创建一个由四块 4TB 硬盘组成的卷，并指定他们以 RAID Z1 的阵列形式进行组织，此卷的可用存储空间为 12TB，另外的 4TB 用于奇偶校验。这样一来，这个卷下的任何一个硬盘发生损坏，卷中存储的数据都不会丢失。 为FreeNAS创建卷首先在浏览器中打开 WebGUI 管理界面，如下图所示，点击 “Storage” 存储器存储图标，然后点击存储选项卡中的“View Disks”查看磁盘按钮。 如下图所示，在 “View Disks” 选项卡中，列出了系统可以使用的所有硬盘。 点击左侧的 “Volume Manager” 卷管理器按钮,会弹出如下图所示的窗口。 第一项，“Volume Name” 卷名称，文本框中填入你想给卷取的名字，可以随意填写。 第二项，“Volume to extend” 扩展卷，用于给已存在的卷进行扩容的，我们的目的是创建新的卷，此项留空。 第三项，“Encryption” 加密，用于创建加密的卷，这一项暂时不要选中，以后再介绍。 第四项，“Available disks” 可用磁盘，可以看到，一共有2块硬盘。点击+号按钮，即可将磁盘添加到第五项中。 第五项，“Volume layout” 卷结构，用来指定硬盘以何种磁盘阵列形式进行组织。通过左侧的下拉菜单指定磁盘阵列形式，同时拉动右侧那个圆形的小按钮，进行更准确的结构调整。 ​ 如下图所示，如果主机接入了足够多的硬盘，第五项中的下来菜单就会显示出所有可以选择的磁盘阵列形式。需要注意，左侧的下拉菜单中列出的阵列形式，是根据你实际安装的硬盘数量显示的，由于两块硬盘无法组成 RaidZ 形式的阵列，因此，如果你只安装了两块硬盘，则不会显示 RaidZ、RaidZ2、RaidZ3。 由于我一起只有三块硬盘（其中一块系统盘）这里我只能使用mirror。 以下为各种卷结构的创建要求： RAID Z：最少由3块硬盘组成，其中一块硬盘的空间用作奇偶校验，允许一块硬盘损坏，不丢失数据。 RAID Z2：最少由3块硬盘组成，其中两块硬盘的空间用作奇偶校验，允许两块硬盘同时损坏，不丢失数据。 RAID Z3：最少由5块硬盘组成，其中三块硬盘的空间用作奇偶校验，允许三块硬盘同时损坏，不丢失数据。 Mirror 镜像：最少由2块硬盘组成，两块硬盘互作镜像，任何一块硬盘损坏，不丢失数据。 Stripe 带条：最少由1块硬盘组成，该形式无冗余，因此任何硬盘损坏，该卷下的所有数据均会丢失，这种类型的卷唯一有点是读写速度最快。 Log（ZIL）：用于写操作的高速缓存，通常用 SSD 固态硬盘来创建该设备。 Cache（L2ARC）：用于读操作的高速缓存，通常用 SSD 固态硬盘来创建该设备。 Spare：备用设备，此处略过不谈。 你可以根据对数据安全性的要求来决定创建哪一种形式的磁盘阵列，选择好卷结构，卷管理器左下角的 “Add Volume” 添加卷按钮，系统开始创建卷。注意，创建卷的过程会擦出所有已选择硬盘上的数据，创建之前，请务必确保硬盘中没有重要的数据。 ​ 待卷创建完成，存储选项卡的列表中会列出所有的卷，卷创建完成后会自动在该卷下创建一个同名的数据集。你可以把数据集简单的理解为文件夹，它的主要用途是对数据和权限进行归类，如下图所示，可以根据需要，创建多个数据集，数据集支持嵌套，可以分别指定所有权，且数量没有限制，如下图所示。 删除FreeNAS中已创建的卷在 FreeNAS 中，删除卷的操作被形象的称为“分离卷”，意思是将组成某个卷的所有硬盘，从卷中分离出去。分离卷的操作很简单，在存储选项卡的列表中点选要删除的卷，此时列表下方会显示一排功能按钮（将鼠标移动到按钮上会显示每个按钮所代表的功能），可以看到第一个按钮 “Detach Volume” 分离卷。 点击分离卷按钮，会弹出如下图所示的窗口。可以看到，界面的背景变成了红色，代表这是一项危险操作。 ​ 如果希望删除卷的同时清空硬盘中的所有数据，则选中 “Mark the disks as new (destory data) 销毁数据” 选项。注意：这是一个危险的可选操作，如果你在这个卷中存储了敏感数据，可能希望对硬盘执行数据销毁操作。但如果你还希望重新导入这个卷，并且还需要使用这个卷中已存储的数据，则不要勾选此项。 点击 “Yes” 确定按钮，系统会自动将选择的卷删除。 ​ 如果在分离卷时，没有勾选“销毁数据”选项，且分离卷以后，也没有使用分离出来的硬盘再次创建其他的卷。满足上述两种条件，可以使用存储选项卡中的 “Import Volume” 导入卷工具，将这个被分离的卷重新还原回来。 参考：https://www.getnas.com/2015/01/20/freenas-volume-management/]]></content>
       <categories>
         <category>FreeBSD</category>
       </categories>
@@ -425,7 +425,7 @@
   <entry>
     <title><![CDATA[FreeNAS如何安装]]></title>
     <url>%2Fposts%2F575cc893%2F</url>
-    <content type="text"><![CDATA[FreeNAS （free·nas [free-næs]），是一款开源免费的专门用于构建 NAS（Network Attached Storage）服务器的专业操作系统。 FreeNAS 可以轻松把一台普通的台式电脑变成存储服务器。它基于 FreeBSD 开发，在 BSD License 授权写一下发布，主要运行在 x86-64 架构的计算上。 FreeNAS 支持 Windows，macOS 和类 Unix 客户端，以及大量的虚拟化主机，例如 XenServer 和 VMware，支持 CIFS，AFP，NFS，iSCSI，SSH，rsync，WebDAV，以及 FTP/TFTP 等文件共享和传输协议。 FreeNAS 采用 ZFS 文件系统存储、管理和保护数据。ZFS 提供了诸如轻量级快照、压缩和重复数据删除等高级功能。可以快速的将数据增量备份到其他设备，带宽占用少，可有效帮助系统从故障中转移。 转载于：https://www.getnas.com/what-is-freenas/ 镜像下载地址：https://www.freenas.org/download-freenas-release/ 版本：FreeNAS 11.2-U2.1 需要64位CPU和至少8GB RAM 硬件使用：qotom 350p mini pc 开始进行安装 制作U盘启动 工具：Rufus 3.3 选择FreeNAS镜像后点开始制作 插入U盘，启动电脑，按F11，选择U盘启动 进入FreeNAS安装引导界面，按Enter 进入安装界面，选择1安装 选择安装系统的磁盘，空格设置为*，OK下一步 安装警告，无视，直接YES 设置密码，默认用户名为root 选择启动模式，根据BISO设置的启动模式选择，我的主板默认是UEFI，选择错误的话会启动不了，在BISO里修改为对应的启动模式就行了 安装完成后，选择reboot重启电脑，拔掉U盘 系统启动完成界面 进入WEB配置界面，默认账号为root，密码就是安装时设置的密码，IP为控制台显示的ip 安装完成，总的来说，FreeNAS安装还是很简单的]]></content>
+    <content type="text"><![CDATA[=========================================================================== 《FreeNAS如何安装》 《FreeNAS-创建和删除卷》 《FreeNAS-创建SMB共享》 =========================================================================== FreeNAS （free·nas [free-næs]），是一款开源免费的专门用于构建 NAS（Network Attached Storage）服务器的专业操作系统。 FreeNAS 可以轻松把一台普通的台式电脑变成存储服务器。它基于 FreeBSD 开发，在 BSD License 授权写一下发布，主要运行在 x86-64 架构的计算上。 FreeNAS 支持 Windows，macOS 和类 Unix 客户端，以及大量的虚拟化主机，例如 XenServer 和 VMware，支持 CIFS，AFP，NFS，iSCSI，SSH，rsync，WebDAV，以及 FTP/TFTP 等文件共享和传输协议。 FreeNAS 采用 ZFS 文件系统存储、管理和保护数据。ZFS 提供了诸如轻量级快照、压缩和重复数据删除等高级功能。可以快速的将数据增量备份到其他设备，带宽占用少，可有效帮助系统从故障中转移。 转载于：https://www.getnas.com/what-is-freenas/ 镜像下载地址：https://www.freenas.org/download-freenas-release/ 版本：FreeNAS 11.2-U2.1 需要64位CPU和至少8GB RAM 硬件使用：qotom 350p mini pc 开始进行安装 制作U盘启动 工具：Rufus 3.3 选择FreeNAS镜像后点开始制作 插入U盘，启动电脑，按F11，选择U盘启动 进入FreeNAS安装引导界面，按Enter 进入安装界面，选择1安装 选择安装系统的磁盘，空格设置为*，OK下一步 安装警告，无视，直接YES 设置密码，默认用户名为root 选择启动模式，根据BISO设置的启动模式选择，我的主板默认是UEFI，选择错误的话会启动不了，在BISO里修改为对应的启动模式就行了 安装完成后，选择reboot重启电脑，拔掉U盘 系统启动完成界面 进入WEB配置界面，默认账号为root，密码就是安装时设置的密码，IP为控制台显示的ip 安装完成，总的来说，FreeNAS安装还是很简单的]]></content>
       <categories>
         <category>FreeBSD</category>
       </categories>
@@ -482,8 +482,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
