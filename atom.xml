@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-15T06:07:55.761Z</updated>
+  <updated>2019-10-17T02:51:13.887Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何用VS打包发布Winform程序并设置开机启动</title>
+    <link href="http://minipc.netlify.com/posts/eee045de/"/>
+    <id>http://minipc.netlify.com/posts/eee045de/</id>
+    <published>2019-10-17T02:44:28.000Z</published>
+    <updated>2019-10-17T02:51:13.887Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;系统：Windows10 x64&lt;/p&gt;
+&lt;p&gt;工具：Visual Studio 2017&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先需要确保VS安装了Visual Studio Installer Project（菜单栏——工具——扩展和更新）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;!
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="C#" scheme="http://minipc.netlify.com/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu下使用脚本打包QT程序</title>
     <link href="http://minipc.netlify.com/posts/929948af/"/>
     <id>http://minipc.netlify.com/posts/929948af/</id>
     <published>2019-10-15T05:52:06.000Z</published>
-    <updated>2019-10-15T06:07:55.761Z</updated>
+    <updated>2019-10-15T06:21:38.854Z</updated>
     
     <summary type="html">
     
@@ -522,33 +550,6 @@
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ESXi6.7安装ROS软路由-设置网卡桥接</title>
-    <link href="http://minipc.netlify.com/posts/1cf14ed3/"/>
-    <id>http://minipc.netlify.com/posts/1cf14ed3/</id>
-    <published>2019-06-04T10:33:45.000Z</published>
-    <updated>2019-08-26T15:27:43.949Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;RouterOS介绍&quot;&gt;&lt;a href=&quot;#RouterOS介绍&quot; class=&quot;headerlink&quot; title=&quot;RouterOS介绍&quot;&gt;&lt;/a&gt;RouterOS介绍&lt;/h4&gt;&lt;p&gt;MikroTik RouterOS是一种路由操作系统，是基于Linux核心开
-      
-    
-    </summary>
-    
-      <category term="VMware EXSI" scheme="http://minipc.netlify.com/categories/VMware-EXSI/"/>
-    
-    
-      <category term="ESXI" scheme="http://minipc.netlify.com/tags/ESXI/"/>
-    
-      <category term="ROS" scheme="http://minipc.netlify.com/tags/ROS/"/>
-    
-      <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
     
   </entry>
   

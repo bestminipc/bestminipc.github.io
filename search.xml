@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[如何用VS打包发布Winform程序并设置开机启动]]></title>
+    <url>%2Fposts%2Feee045de%2F</url>
+    <content type="text"><![CDATA[系统：Windows10 x64 工具：Visual Studio 2017 首先需要确保VS安装了Visual Studio Installer Project（菜单栏——工具——扩展和更新） ![Installer](Winform打包\VS Installer 01.png) 打包步骤 新建Installer项目 ![Installer](Winform打包\VS Installer 02.png) 右键Application Folder添加文件，将主程序和库文件上传，比如我的程序叫appname.exe ![Installer](Winform打包\VS Installer 03.png) 创建程序桌面快捷方式 右键主程序，选择Create Shortcut to appname.exe，将生成的快捷方式剪贴到User&#39;s Desktop 创建程序开始菜单 4.1 程序快速启动图标 这个跟创建桌面快捷方式的方法一样 4.2 程序卸载图标 a.将`C\Windows\System32\msiexec.exe`上传到`Applicaiton Folder` b.对`msiexec.exe`重命名下，一般改名为`“Uninstall.exe”`，然后创建快捷方式到`User&apos;s Programs Menu` 4.3 设置卸载参数，告诉卸载程序应该卸载哪个程序 ​ a. 在属性里面找到安装项目的ProductCode ![Installer](Winform打包\VS Installer 04.png) ​ b. 然后点击Uninstall程序，修改属性参数Arguments，值为&quot;/x ProductCode&quot; ![Installer](Winform打包\VS Installer 05.png) 设置开机启动用修改注册表的方式来设置开机启动 右键项目——View——注册表 ![Installer](Winform打包\VS Installer 06.png) 添加如下字段到LOCAL_MACHINE，这个是所有用户，CURRENT_USER应该也可以（没测试过）\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run ![Installer](Winform打包\VS Installer 07.png) 设置系统必备一般我们开发的Winform程序都有一个目标框架，就是所依赖的.Net Framework版本环境，如.Net Framework 2.0/3.5/4.0/4.5等 要想我们的程序在电脑上正常运行，首先就得保证系统上装有指定的.net Framework版本框架，可以在安装包的属性中设置，启动安装前检查操作系统中是否安装了指定版本的框架或其他依赖，设置方法如下： 右键安装包项目，点开“Prerequisites” ![Installer](Winform打包\VS Installer 08.png) 选择“从组件供应商的网站上下载系统必备组件”，这样一来，即使电脑上没有安装需要的.net Framework也不要紧，只要设置了这项，安装程序会自动从微软的官网上下载对应的组件并安装 生成安装文件右键安装项目，选择重新生成 如果不出错，那么会在项目的Debug或Release文件夹生成安装文件 ![Installer](Winform打包\VS Installer 09.png) setup.exe里边包含了对安装程序的一些条件的检测，比如.net的版本是否支持，当条件具备后，setup.exe接着调用setup.msi进行安装。如果你确定条件都具备的话也可以直接运行setup.msi进行安装]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu下使用脚本打包QT程序]]></title>
     <url>%2Fposts%2F929948af%2F</url>
     <content type="text"><![CDATA[Ubuntu版本：18.04 QT版本：5.7.0 例如程序名为GPIO-TEST 找个目录创建文件夹用来存放打包的程序，/zdisk/MY_GPIO-TEST 将工程用Release模式编译，直接运行项目就行了 打开编译出文件夹的文件，我的路径如下： /zdisk/qt-project/build-GPIO-TEST-Desktop_Qt_5_7_0_GCC_64bit-Release 在Release文件夹创建文件copylib.sh，并修改权限为777，文件内容如下： 12345678910LibDir=$PWD&quot;/lib&quot;Target=$1lib_array=($(ldd $Target | grep -o &quot;/.*&quot; | grep -o &quot;/.*/[^[:space:]]*&quot;))$(mkdir $LibDir)for Variable in $&#123;lib_array[@]&#125;do cp &quot;$Variable&quot; $LibDir 打开终端进到当前文件夹，输入./copylib.sh GPIO-TEST，会产生一个lib文件夹，这里称为GPIO-TEST库文件 脚本实际上是调用了ldd GPIO-TEST指令获得GPIO-TEST运行时需要哪些库，并将库都复制放到当前目录的lib文件夹中 将GPIO-TEST的二进制文件和GPIO-TEST的库文件夹里的所有的文件复制到MY_GPIO-TEST文件夹中 进入QT的安装目录，找到platforms文件夹，我的路径如下： /opt/Qt5.7.0/5.7/gcc_64/plugins/platforms 将上文的copylib.sh放到platforms文件夹中，并运行./copylib.sh libqxcb.so，这时会得到libqxcb.so的库文件夹 将libqxcb.so的库文件夹的所有文件和platforms文件夹复制到MY_GPIO-TEST文件夹中 在MY_GPIO-TEST文件夹中新建脚本GPIO-TEST.sh,执行chmod 777 GPIO-TEST.sh,并在其中加入如下代码： 123456789101112#!/bin/shappname=`basename $0 | sed s,\.sh$,,`dirname=`dirname $0`tmp=&quot;$&#123;dirname#?&#125;&quot;if [ &quot;$&#123;dirname%$tmp&#125;&quot; != &quot;/&quot; ]; thendirname=$PWD/$dirnamefiLD_LIBRARY_PATH=$dirnameexport LD_LIBRARY_PATH$dirname/$appname &quot;$@&quot; 到这里就基本完成了，将MY_GPIO-TEST文件夹复制到需要运行程序的目标主机即可，在目标主机中，运行程序，都采用 ./GPIO-TEST.sh 而不是./GPIO-TEST，即运行程序的sh脚本，而不是二进制文件 以上就是在ubuntu下使用脚本打包QT程序的方法！ 参考链接：https://blog.csdn.net/z3512498/article/details/64922180]]></content>
