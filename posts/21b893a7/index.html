@@ -98,10 +98,34 @@
 <meta property="og:site_name" content="Laohu Blog">
 <meta property="og:description" content="VMware VSphere介绍虚拟化打破了物理硬件与操作系统及在其上运行的应用程序之间的硬性连接。操作系统和应用程序在虚拟机中实现虚拟化之后，便不再因位于单台物理计算机中而受到种种束缚。物理元素（如交换机和存储器）的虚拟等效于在可跨越整个企业的虚拟基础架构内运行。 与物理机一样，虚拟机是运行操作系统和应用程序的软件计算机。管理程序用作虚拟机的运行平台，并且可以整合计算资源。每个虚拟机包含自己的虚">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-26T11:52:17.633Z">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_0.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/q515g6_mini_pc.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_01.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_02.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_03.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_04.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_05.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_06.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_07.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_08.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_09.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_10.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_11.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_12.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_13.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_14.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_15.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_16.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_17.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_18.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_19.jpg">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_20.png">
+<meta property="og:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_21.png">
+<meta property="og:updated_time" content="2019-10-17T03:13:11.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VMware Esxi 6.7如何安装">
 <meta name="twitter:description" content="VMware VSphere介绍虚拟化打破了物理硬件与操作系统及在其上运行的应用程序之间的硬性连接。操作系统和应用程序在虚拟机中实现虚拟化之后，便不再因位于单台物理计算机中而受到种种束缚。物理元素（如交换机和存储器）的虚拟等效于在可跨越整个企业的虚拟基础架构内运行。 与物理机一样，虚拟机是运行操作系统和应用程序的软件计算机。管理程序用作虚拟机的运行平台，并且可以整合计算资源。每个虚拟机包含自己的虚">
+<meta name="twitter:image" content="http://minipc.netlify.com/posts/21b893a7/esxi_0.png">
 
 
 
@@ -385,8 +409,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-26T19:52:17+08:00">
-                2019-08-26
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-17T11:13:11+08:00">
+                2019-10-17
               </time>
             
           </span>
@@ -450,7 +474,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  787
                 </span>
               
 
@@ -466,7 +490,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -492,95 +516,101 @@
 <p>虚拟化计算机：</p>
 <p>x86计算机硬件被设计为只能运行单个操作系统和单个应用程序，这导致了大多数计算机未得到充分利用。即使安装了众多应用程序，大多数计算机仍无法得到充分利用。在最基本的层次上，通过虚拟化可以在单台物理计算机上运行多个虚拟机，且所有虚拟机可在多种环境下共享该物理计算机的资源。在同一物理计算机上，不同的虚拟机可以独立、并行运行不同的操作系统和多个应用程序。</p>
 <p>下图所示的就是一台物理主机在虚拟化前和虚拟后的差别：</p>
-<p>![esxi 0](VMware-Esxi-6-7如何安装/esxi 0.png)</p>
+<p><img src="/posts/21b893a7/esxi_0.png" alt="esxi 0"></p>
 <p>以上介绍转载于：<a href="https://blog.csdn.net/Kim_Weir/article/details/80554981" target="_blank" rel="noopener">https://blog.csdn.net/Kim_Weir/article/details/80554981</a> </p>
+<p>=======================================================================</p>
+<p>《<a href="https://bestminipc.github.io/posts/21b893a7/" target="_blank" rel="noopener">VMware Esxi 6.7如何安装</a>》</p>
+<p><a href="https://bestminipc.github.io/posts/86171f25/" target="_blank" rel="noopener">《ESXI iKuai/LEDE双路由系统安装》</a></p>
+<p><a href="https://bestminipc.github.io/posts/e303e8c3/" target="_blank" rel="noopener">《ESXI 群晖NAS/LEDE路由系统安装》</a></p>
+<p><a href="https://bestminipc.github.io/posts/1cf14ed3/" target="_blank" rel="noopener">《ESXI ROS路由系统安装》</a></p>
+<p>=======================================================================</p>
 <h4 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h4><p>工控迷你电脑，用于安装虚拟机</p>
-<p>![mini pc](VMware-Esxi-6-7如何安装/mini pc.png)</p>
+<p><img src="/posts/21b893a7/q515g6_mini_pc.png" alt="mini pc"></p>
 <h5 id="制作U盘启动器"><a href="#制作U盘启动器" class="headerlink" title="制作U盘启动器"></a>制作U盘启动器</h5><p>Rufus 3.3启动盘制作工具</p>
-<p>![esxi 01](VMware-Esxi-6-7如何安装/esxi 01.png)</p>
+<p><img src="/posts/21b893a7/esxi_01.png" alt="esxi 01"></p>
 <h5 id="将U盘插入MINIPC，开机按F11选择从U盘启动"><a href="#将U盘插入MINIPC，开机按F11选择从U盘启动" class="headerlink" title="将U盘插入MINIPC，开机按F11选择从U盘启动"></a>将U盘插入MINIPC，开机按F11选择从U盘启动</h5><ul>
 <li>选择第一项U盘，按回车</li>
 </ul>
-<p>![esxi 02](VMware-Esxi-6-7如何安装/esxi 02.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_02.jpg" alt="esxi 02"></p>
 <ul>
 <li>安装程序初始化，检测硬件信息，如不满足会跳出错误提示</li>
 </ul>
-<p>![esxi 03](VMware-Esxi-6-7如何安装/esxi 03.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_03.jpg" alt="esxi 03"></p>
 <ul>
 <li>检测完成出现如下界面，回车</li>
 </ul>
-<p>![esxi 04](VMware-Esxi-6-7如何安装/esxi 04.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_04.jpg" alt="esxi 04"></p>
 <ul>
 <li>同意条款，F11继续</li>
 </ul>
-<p>![esxi 05](VMware-Esxi-6-7如何安装/esxi 05.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_05.jpg" alt="esxi 05"></p>
 <ul>
 <li>出现硬盘信息，选择要安装的磁盘，按回车</li>
 </ul>
-<p>![esxi 06](VMware-Esxi-6-7如何安装/esxi 06.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_06.jpg" alt="esxi 06"></p>
 <ul>
 <li>键盘模式使用默认</li>
 </ul>
-<p>![esxi 07](VMware-Esxi-6-7如何安装/esxi 07.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_07.jpg" alt="esxi 07"></p>
 <ul>
 <li>设置root账户密码（注意：vSphere 6.7不再支持简单密码，可以在主机配置中启用简单密码）</li>
 </ul>
-<p>![esxi 08](VMware-Esxi-6-7如何安装/esxi 08.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_08.jpg" alt="esxi 08"></p>
 <ul>
 <li>按F11开始安装</li>
 </ul>
-<p>![esxi 09](VMware-Esxi-6-7如何安装/esxi 09.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_09.jpg" alt="esxi 09"></p>
 <ul>
 <li>安装中…</li>
 </ul>
-<p>![esxi 10](VMware-Esxi-6-7如何安装/esxi 10.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_10.jpg" alt="esxi 10"></p>
 <ul>
 <li>安装完成，拔掉U盘，按回车重启系统</li>
 </ul>
-<p>![esxi 11](VMware-Esxi-6-7如何安装/esxi 11.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_11.jpg" alt="esxi 11"></p>
 <ul>
 <li>系统重启完成</li>
 </ul>
-<p>![esxi 12](VMware-Esxi-6-7如何安装/esxi 12.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_12.jpg" alt="esxi 12"></p>
 <h5 id="安装完成进行系统设置"><a href="#安装完成进行系统设置" class="headerlink" title="安装完成进行系统设置"></a>安装完成进行系统设置</h5><ul>
 <li>按F2，输入root密码</li>
 </ul>
-<p>![esxi 13](VMware-Esxi-6-7如何安装/esxi 13.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_13.jpg" alt="esxi 13"></p>
 <ul>
 <li>配置界面如下</li>
 <li>选择Configure Management Network进行管理网络配置</li>
 </ul>
-<p>![esxi 13](VMware-Esxi-6-7如何安装/esxi 14.png)</p>
+<p><img src="/posts/21b893a7/esxi_14.png" alt="esxi 13"></p>
 <ul>
 <li>可以选择修改管理网络网卡、VLAN、IPv4、IPv6、DNS、DNS域</li>
 <li>配置IPV4地址</li>
 </ul>
-<p>![esxi 15](VMware-Esxi-6-7如何安装/esxi 15.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_15.jpg" alt="esxi 15"></p>
 <ul>
 <li>设置为静态IP，按回车</li>
 </ul>
-<p>![esxi 16](VMware-Esxi-6-7如何安装/esxi 16.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_16.jpg" alt="esxi 16"></p>
 <ul>
 <li>DNS设置</li>
 </ul>
-<p>![esxi 17](VMware-Esxi-6-7如何安装/esxi 17.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_17.jpg" alt="esxi 17"></p>
 <ul>
 <li>按ESC，输入Y保存上面的配置信息</li>
 </ul>
-<p>![esxi 18](VMware-Esxi-6-7如何安装/esxi 18.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_18.jpg" alt="esxi 18"></p>
 <ul>
 <li>继续按ESC 返回主界面</li>
 </ul>
-<p>![esxi 19](VMware-Esxi-6-7如何安装/esxi 19.jpg)</p>
+<p><img src="/posts/21b893a7/esxi_19.jpg" alt="esxi 19"></p>
 <h5 id="配置完成后进入VMware-esxi-WEB配置页面"><a href="#配置完成后进入VMware-esxi-WEB配置页面" class="headerlink" title="配置完成后进入VMware esxi WEB配置页面"></a>配置完成后进入VMware esxi WEB配置页面</h5><ul>
 <li>在同个局域网中的另一台电脑浏览器输入vmware esxi主机的ip就可以访问了</li>
 </ul>
-<p>![esxi 20](VMware-Esxi-6-7如何安装/esxi 20.png)</p>
+<p><img src="/posts/21b893a7/esxi_20.png" alt="esxi 20"></p>
 <ul>
 <li>第一次进来的画面</li>
 </ul>
-<p>![esxi 21](VMware-Esxi-6-7如何安装/esxi 21.png)</p>
-<p><strong>本教程到此结束，后面介绍如何使用VMware Exsi安装多个系统</strong></p>
+<p><img src="/posts/21b893a7/esxi_21.png" alt="esxi 21"></p>
+<p><strong>本教程到此结束</strong></p>
 
       
     </div>

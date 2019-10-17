@@ -57,8 +57,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -92,9 +92,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
-        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -105,8 +105,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +117,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -179,8 +179,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +191,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Mini Pc</tag>
         <tag>Windows</tag>
         <tag>Linux</tag>
-        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +217,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -229,8 +229,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -242,15 +242,15 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[ESXi6.7安装ROS软路由-设置网卡桥接]]></title>
     <url>%2Fposts%2F1cf14ed3%2F</url>
-    <content type="text"><![CDATA[RouterOS介绍MikroTik RouterOS是一种路由操作系统，是基于Linux核心开发，兼容x86 PC的路由软件,并通过该软件将标准的PC电脑变成专业路由器，在软件RouterOS 软路由图的开发和应用上不断的更新和发展，软件经历了多次更新和改进，使其功能在不断增强和完善。特别在无线、认证、策略路由、带宽控制和防火墙过滤等功能上有着非常突出的功能，其极高的性价比，受到许多网络人士的青睐。 准备工作6网工控机一台，CPU 3865U、内存金士顿4G DDR4、东芝 60G mSATA（已安装了ESXI6.7） 虚拟机镜像请自行下载，这里我使用的版本是 MikroTik RouterOS-v6.19.ova 工控机网卡芯片I211AT，在物理机上用U盘和NetInstall都没安装成功 ESXI直通5个网卡后ROS也无法识别到，百度搜索没有找到解决办法，这里不使用直通，用虚拟网卡绑定物理网卡 创建ROS虚拟机选择从OVF或OVA文件部署 输入名称后，直接将OVA文件拖入 然后一直下一步，近期任务中虚拟机会自动生成，这时候不要刷新页面，完成后虚拟机自动开机先关闭 配置ROS虚拟机CPU建议划分多点，网络需要消耗CPU资源 内存1G，勾选预留，添加所有的网络适配器 至此，ROS已经安装完成了！ 系统初始账号是admin，初始密码是空 配置网络 打开WinBOX工具，用户admin，密码为空 修改网卡名称：点击接口——双击ether*——修改Name——确定(为了好看而已) 设置网桥： 点击网桥(brideg1)——STP(rtsp)——确定 点击协议——添加接口(LAN1)——Edge(yes)——确定，依次添加LAN2——LAN5 点击过滤器——选择接口(LAN1,LAN5)——动作(drop) 设置IP地址池：IP——池——输入IP范围，网桥使用192.168.10.1 设置IP地址：IP——地址——输入IP/广播——接口(brideg1) DHCP服务：接口(bridge)——地址池(dhcp)——ARP勾选——网关/DNS服务器 现在已经可以获取到IP了，但是还不能上网，需要设置一下防火墙 防火墙设置：NAT伪装与DNS NAT：IP——防火墙——NAT——常规(srcnat)——动作(masquerade) DNS：勾选允许远程请求 最后让软路由做出口通道，这里已经建好了 测试已经可以正常上网使用了 本教程至此结束！]]></content>
+    <content type="text"><![CDATA[======================================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 ======================================================================= RouterOS介绍MikroTik RouterOS是一种路由操作系统，是基于Linux核心开发，兼容x86 PC的路由软件,并通过该软件将标准的PC电脑变成专业路由器，在软件RouterOS 软路由图的开发和应用上不断的更新和发展，软件经历了多次更新和改进，使其功能在不断增强和完善。特别在无线、认证、策略路由、带宽控制和防火墙过滤等功能上有着非常突出的功能，其极高的性价比，受到许多网络人士的青睐。 准备工作6网工控机一台，CPU 3865U、内存金士顿4G DDR4、东芝 60G mSATA（已安装了ESXI6.7） 虚拟机镜像请自行下载，这里我使用的版本是 MikroTik RouterOS-v6.19.ova 工控机网卡芯片I211AT，在物理机上用U盘和NetInstall都没安装成功 ESXI直通5个网卡后ROS也无法识别到，百度搜索没有找到解决办法，这里不使用直通，用虚拟网卡绑定物理网卡 创建ROS虚拟机选择从OVF或OVA文件部署 输入名称后，直接将OVA文件拖入 然后一直下一步，近期任务中虚拟机会自动生成，这时候不要刷新页面，完成后虚拟机自动开机先关闭 配置ROS虚拟机CPU建议划分多点，网络需要消耗CPU资源 内存1G，勾选预留，添加所有的网络适配器 至此，ROS已经安装完成了！ 系统初始账号是admin，初始密码是空 配置网络 打开WinBOX工具，用户admin，密码为空 修改网卡名称：点击接口——双击ether*——修改Name——确定(为了好看而已) 设置网桥： 点击网桥(brideg1)——STP(rtsp)——确定 点击协议——添加接口(LAN1)——Edge(yes)——确定，依次添加LAN2——LAN5 点击过滤器——选择接口(LAN1,LAN5)——动作(drop) 设置IP地址池：IP——池——输入IP范围，网桥使用192.168.10.1 设置IP地址：IP——地址——输入IP/广播——接口(brideg1) DHCP服务：接口(bridge)——地址池(dhcp)——ARP勾选——网关/DNS服务器 现在已经可以获取到IP了，但是还不能上网，需要设置一下防火墙 防火墙设置：NAT伪装与DNS NAT：IP——防火墙——NAT——常规(srcnat)——动作(masquerade) DNS：勾选允许远程请求 最后让软路由做出口通道，这里已经建好了 测试已经可以正常上网使用了 本教程至此结束！]]></content>
       <categories>
         <category>VMware EXSI</category>
       </categories>
@@ -315,8 +315,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -328,8 +328,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -340,8 +340,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -360,7 +360,7 @@
   <entry>
     <title><![CDATA[ESXi6.7 安装群晖NAS/LEDE路由系统]]></title>
     <url>%2Fposts%2Fe303e8c3%2F</url>
-    <content type="text"><![CDATA[安装环境工控迷你PC一台，CPU 3865U（支持VT-d） 东芝 60G mSATA（已安装了ESXI6.7、LEDE X86），安装方法可以参考我上一篇文章 一块500G 2.5寸HDD （硬盘直通） 黑群晖引导链接： https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ 提取码: s7z9 虚拟机安装步骤 首先将下载的.img引导文件使用StarWindConverter转换为ESXI可用的.vmdk文件备用 打开StarWind点击local file——&gt;选择下载好的lede镜像文件——&gt;选择ESX SERVER IMAGE 新建ESXI虚机：选择linux、Red Hat Enterprise Linux 7 (64 位)，然后下一步 CPU和内存按实际情况修改（1G够了），按顺序删除默认硬盘、SCSI控制器、CD/DVD驱动器，修改网卡为E1000e后点下一步后保存 然后点击左侧存储——&gt;数据存储浏览器——&gt;选择目录DSM——&gt;上传转换的镜像文件（两个会自动合并） 接下来做硬盘直通，用ssh连上ESXI（设置打开ESXi Shell：Troubleshooting Mode Options 选项卡第二项 Enable SSH） 接好硬盘后ESXi要重启下才能识别到硬盘，然后分别复制下面的磁盘路径 打开Putty连接ESXi，在控制台输入vmkfstools -z 路径1 路径2/xxx.vmdk，如果没错误提示就说明直通成功了 进入数据存储——&gt;数据存储浏览器，刚刚直通的vmdk就可以看到了 返回虚拟机，编辑设置，添加现有硬盘，分别选择DSM6.2.1目录下的synoboot镜像和根目录的wd_hdd，然后保存 打开DSM虚拟机，准备初始化 打开虚拟机，出现如下界面，说明已经正常启动 可以输入http://find.synologt.com搜索 在LEDE中查看DHCP也可以知道具体的ip地址，可直接访问 群晖NAS安装 进入安装界面后点击立即安装，勾选提示，点击确定 等待下载安装，会有十分钟的倒计时等待，一般到6-7分钟就可以访问地址了 进入系统安装界面，根据提示进行相关设置完成黑群晖的安装 配置完成后进入系统，已经是最新版群晖 有多个磁盘的话可以使用minipcie转sata，经测试也可以正常直通 但不能识别成固态硬盘，具体原因未知… 本教程到此结束！]]></content>
+    <content type="text"><![CDATA[======================================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 ======================================================================= 安装环境工控迷你PC一台，CPU 3865U（支持VT-d） 东芝 60G mSATA（已安装了ESXI6.7、LEDE X86），安装方法可以参考我上一篇文章 一块500G 2.5寸HDD （硬盘直通） 黑群晖引导链接： https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ 提取码: s7z9 虚拟机安装步骤 首先将下载的.img引导文件使用StarWindConverter转换为ESXI可用的.vmdk文件备用 打开StarWind点击local file——&gt;选择下载好的lede镜像文件——&gt;选择ESX SERVER IMAGE 新建ESXI虚机：选择linux、Red Hat Enterprise Linux 7 (64 位)，然后下一步 CPU和内存按实际情况修改（1G够了），按顺序删除默认硬盘、SCSI控制器、CD/DVD驱动器，修改网卡为E1000e后点下一步后保存 然后点击左侧存储——&gt;数据存储浏览器——&gt;选择目录DSM——&gt;上传转换的镜像文件（两个会自动合并） 接下来做硬盘直通，用ssh连上ESXI（设置打开ESXi Shell：Troubleshooting Mode Options 选项卡第二项 Enable SSH） 接好硬盘后ESXi要重启下才能识别到硬盘，然后分别复制下面的磁盘路径 打开Putty连接ESXi，在控制台输入vmkfstools -z 路径1 路径2/xxx.vmdk，如果没错误提示就说明直通成功了 进入数据存储——&gt;数据存储浏览器，刚刚直通的vmdk就可以看到了 返回虚拟机，编辑设置，添加现有硬盘，分别选择DSM6.2.1目录下的synoboot镜像和根目录的wd_hdd，然后保存 打开DSM虚拟机，准备初始化 打开虚拟机，出现如下界面，说明已经正常启动 可以输入http://find.synologt.com搜索 在LEDE中查看DHCP也可以知道具体的ip地址，可直接访问 群晖NAS安装 进入安装界面后点击立即安装，勾选提示，点击确定 等待下载安装，会有十分钟的倒计时等待，一般到6-7分钟就可以访问地址了 进入系统安装界面，根据提示进行相关设置完成黑群晖的安装 配置完成后进入系统，已经是最新版群晖 有多个磁盘的话可以使用minipcie转sata，经测试也可以正常直通 但不能识别成固态硬盘，具体原因未知… 本教程到此结束！]]></content>
       <categories>
         <category>VMware EXSI</category>
       </categories>
@@ -374,7 +374,7 @@
   <entry>
     <title><![CDATA[工控迷你PC打造iKuai/LEDE双路由系统，实现多拨、宽带叠加、科学上网]]></title>
     <url>%2Fposts%2F86171f25%2F</url>
-    <content type="text"><![CDATA[前期准备工作：6网迷你电脑一台，CPU 3865，支持VT-D技术，内存三星8G，东芝60G mSATA，测试电脑一台 StarWind V2V Image Converter（转换镜像为exsi专用）请google自行下载 爱快镜像：https://www.ikuai8.com/component/download（64位ISO） lede镜像：http://firmware.koolshare.cn/LEDE_X64_fw867（虚拟机转盘或PE下写盘专用） EXSI的安装可以参考《VMware Esxi 6.7如何安装》 第一步：转换镜像转换步骤很简单就不一一截图了。 打开StarWind点击local file 选择下载好的lede镜像文件 选择ESX SERVER IMAGE 最终转换成功的效果图 第二步：ESXI创建虚拟机 工控机网口1、网口6分别接上电脑和外网，进入ESXI配置页面 管理-硬件-PCI设备-切换直通（据说能“网卡性能最大化”），LAN1不要勾选（用于管理虚拟机），剩余的网卡全部勾选，然后重新引导主机 重启完成后，点击网络——虚拟交换机——安全——勾选混杂模式 打开存储——数据存储浏览器——创建目录（aikuai/lede）——分别上传爱快iso和lede vmdk镜像文件 创建爱快虚拟机，操作系统选择Linux CPU配置2，内存配置4GB，勾选预留所有客户机内存，硬盘配置2GB，CD/DVD驱动器选择上传的爱快ISO，添加一个PCI设备，选择6号网卡作为WAN口 创建LEDE虚拟机（客户机操作系统与爱快设置一样） CPU配置2，内存配置1GB，勾选预留所有客户机内存，删除硬盘，添加现有硬盘，选择上传的LEDE镜像 添加4个PCI设备，分别绑定网卡2、网卡3、网卡4、网卡5 虚拟机创建完成 第三步：配置虚拟机 打开爱快虚拟机，按提示安装，安装完成界面如下 输入编号2设置LAN地址10.10.10.10，按回车，完成后如下图 设置网卡绑定 先拔掉WAN口的网线确认对应的网卡，这里确认网口1是对应eth1 输入1设置网卡 绑定完成，接下来可以进入爱快web管理页面了 浏览器输入管理地址：10.10.10.10，账号密码默认admin/admin 网络设置——外网设置——绑定网卡eth0（先不要插上，会显示空闲） 如果要使用多播的话选择基于物理网卡的多拨，由于我是接的交换机，这里选择DHCP，然后保存刷新就已经自动连上了 DHCP设置，注意这里的网关设置是LEDE的地址 打开LEDE虚拟机，配置网络 输入vim ect/config/network打开网络配置 按insert进入插入模式，将接口lan的网关改位10.10.10.11 按esc，输入：wq保存退出 输入reboot重启或者输入/etc/init.d/network restart重启网络 重启完成后，在浏览器输入10.10.10.11，默认密码koolshare登录LEDE 绑定网卡 网络——接口——物理设置——接口 WAN口由爱快提供，绑定成其他网卡，删除掉 点击网络——接口——编辑，设置IPV4网关，DNS与爱快一样，DHCP服务器设置关闭 进入酷软中心，安装科学上网插件，如果能安装成功，说明网络是OK的 插件设置我就不介绍了，可以百度SSR使用教程，用SSR链接解析并保存为节点 将电脑ip需修改为自动获取ip，可以发现网关变为LEDE后台地址了，如果设置好科学上网，国内国外的网络就都可以访问了 这里LEDE只是作为一个交换机了，只要终端网关是LEDE的IP，数据流量都会通过LEDE最终发至爱快的LAN口 电脑——&gt;LEDE网关——&gt;爱快网关 参考了Vedio Talk的视频教程：https://www.youtube.com/watch?v=WD1T1S8FYS4&amp;t=124s]]></content>
+    <content type="text"><![CDATA[======================================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 ======================================================================= 前期准备工作：6网迷你电脑一台，CPU 3865，支持VT-D技术，内存三星8G，东芝60G mSATA，测试电脑一台 StarWind V2V Image Converter（转换镜像为exsi专用）请google自行下载 爱快镜像：https://www.ikuai8.com/component/download（64位ISO） lede镜像：http://firmware.koolshare.cn/LEDE_X64_fw867（虚拟机转盘或PE下写盘专用） EXSI的安装可以参考《VMware Esxi 6.7如何安装》 第一步：转换镜像转换步骤很简单就不一一截图了。 打开StarWind点击local file 选择下载好的lede镜像文件 选择ESX SERVER IMAGE 最终转换成功的效果图 第二步：ESXI创建虚拟机 工控机网口1、网口6分别接上电脑和外网，进入ESXI配置页面 管理-硬件-PCI设备-切换直通（据说能“网卡性能最大化”），LAN1不要勾选（用于管理虚拟机），剩余的网卡全部勾选，然后重新引导主机 重启完成后，点击网络——虚拟交换机——安全——勾选混杂模式 打开存储——数据存储浏览器——创建目录（aikuai/lede）——分别上传爱快iso和lede vmdk镜像文件 创建爱快虚拟机，操作系统选择Linux CPU配置2，内存配置4GB，勾选预留所有客户机内存，硬盘配置2GB，CD/DVD驱动器选择上传的爱快ISO，添加一个PCI设备，选择6号网卡作为WAN口 创建LEDE虚拟机（客户机操作系统与爱快设置一样） CPU配置2，内存配置1GB，勾选预留所有客户机内存，删除硬盘，添加现有硬盘，选择上传的LEDE镜像 添加4个PCI设备，分别绑定网卡2、网卡3、网卡4、网卡5 虚拟机创建完成 第三步：配置虚拟机 打开爱快虚拟机，按提示安装，安装完成界面如下 输入编号2设置LAN地址10.10.10.10，按回车，完成后如下图 设置网卡绑定 先拔掉WAN口的网线确认对应的网卡，这里确认网口1是对应eth1 输入1设置网卡 绑定完成，接下来可以进入爱快web管理页面了 浏览器输入管理地址：10.10.10.10，账号密码默认admin/admin 网络设置——外网设置——绑定网卡eth0（先不要插上，会显示空闲） 如果要使用多播的话选择基于物理网卡的多拨，由于我是接的交换机，这里选择DHCP，然后保存刷新就已经自动连上了 DHCP设置，注意这里的网关设置是LEDE的地址 打开LEDE虚拟机，配置网络 输入vim ect/config/network打开网络配置 按insert进入插入模式，将接口lan的网关改位10.10.10.11 按esc，输入：wq保存退出 输入reboot重启或者输入/etc/init.d/network restart重启网络 重启完成后，在浏览器输入10.10.10.11，默认密码koolshare登录LEDE 绑定网卡 网络——接口——物理设置——接口 WAN口由爱快提供，绑定成其他网卡，删除掉 点击网络——接口——编辑，设置IPV4网关，DNS与爱快一样，DHCP服务器设置关闭 进入酷软中心，安装科学上网插件，如果能安装成功，说明网络是OK的 插件设置我就不介绍了，可以百度SSR使用教程，用SSR链接解析并保存为节点 将电脑ip需修改为自动获取ip，可以发现网关变为LEDE后台地址了，如果设置好科学上网，国内国外的网络就都可以访问了 这里LEDE只是作为一个交换机了，只要终端网关是LEDE的IP，数据流量都会通过LEDE最终发至爱快的LAN口 电脑——&gt;LEDE网关——&gt;爱快网关 参考了Vedio Talk的视频教程：https://www.youtube.com/watch?v=WD1T1S8FYS4&amp;t=124s]]></content>
       <categories>
         <category>VMware EXSI</category>
       </categories>
@@ -413,7 +413,7 @@
   <entry>
     <title><![CDATA[VMware Esxi 6.7如何安装]]></title>
     <url>%2Fposts%2F21b893a7%2F</url>
-    <content type="text"><![CDATA[VMware VSphere介绍虚拟化打破了物理硬件与操作系统及在其上运行的应用程序之间的硬性连接。操作系统和应用程序在虚拟机中实现虚拟化之后，便不再因位于单台物理计算机中而受到种种束缚。物理元素（如交换机和存储器）的虚拟等效于在可跨越整个企业的虚拟基础架构内运行。 与物理机一样，虚拟机是运行操作系统和应用程序的软件计算机。管理程序用作虚拟机的运行平台，并且可以整合计算资源。每个虚拟机包含自己的虚拟（基于软件的）硬件，包括虚拟CPU、内存、硬盘和网络接口卡。 虚拟化计算机： x86计算机硬件被设计为只能运行单个操作系统和单个应用程序，这导致了大多数计算机未得到充分利用。即使安装了众多应用程序，大多数计算机仍无法得到充分利用。在最基本的层次上，通过虚拟化可以在单台物理计算机上运行多个虚拟机，且所有虚拟机可在多种环境下共享该物理计算机的资源。在同一物理计算机上，不同的虚拟机可以独立、并行运行不同的操作系统和多个应用程序。 下图所示的就是一台物理主机在虚拟化前和虚拟后的差别： ![esxi 0](VMware-Esxi-6-7如何安装/esxi 0.png) 以上介绍转载于：https://blog.csdn.net/Kim_Weir/article/details/80554981 安装过程工控迷你电脑，用于安装虚拟机 ![mini pc](VMware-Esxi-6-7如何安装/mini pc.png) 制作U盘启动器Rufus 3.3启动盘制作工具 ![esxi 01](VMware-Esxi-6-7如何安装/esxi 01.png) 将U盘插入MINIPC，开机按F11选择从U盘启动 选择第一项U盘，按回车 ![esxi 02](VMware-Esxi-6-7如何安装/esxi 02.jpg) 安装程序初始化，检测硬件信息，如不满足会跳出错误提示 ![esxi 03](VMware-Esxi-6-7如何安装/esxi 03.jpg) 检测完成出现如下界面，回车 ![esxi 04](VMware-Esxi-6-7如何安装/esxi 04.jpg) 同意条款，F11继续 ![esxi 05](VMware-Esxi-6-7如何安装/esxi 05.jpg) 出现硬盘信息，选择要安装的磁盘，按回车 ![esxi 06](VMware-Esxi-6-7如何安装/esxi 06.jpg) 键盘模式使用默认 ![esxi 07](VMware-Esxi-6-7如何安装/esxi 07.jpg) 设置root账户密码（注意：vSphere 6.7不再支持简单密码，可以在主机配置中启用简单密码） ![esxi 08](VMware-Esxi-6-7如何安装/esxi 08.jpg) 按F11开始安装 ![esxi 09](VMware-Esxi-6-7如何安装/esxi 09.jpg) 安装中… ![esxi 10](VMware-Esxi-6-7如何安装/esxi 10.jpg) 安装完成，拔掉U盘，按回车重启系统 ![esxi 11](VMware-Esxi-6-7如何安装/esxi 11.jpg) 系统重启完成 ![esxi 12](VMware-Esxi-6-7如何安装/esxi 12.jpg) 安装完成进行系统设置 按F2，输入root密码 ![esxi 13](VMware-Esxi-6-7如何安装/esxi 13.jpg) 配置界面如下 选择Configure Management Network进行管理网络配置 ![esxi 13](VMware-Esxi-6-7如何安装/esxi 14.png) 可以选择修改管理网络网卡、VLAN、IPv4、IPv6、DNS、DNS域 配置IPV4地址 ![esxi 15](VMware-Esxi-6-7如何安装/esxi 15.jpg) 设置为静态IP，按回车 ![esxi 16](VMware-Esxi-6-7如何安装/esxi 16.jpg) DNS设置 ![esxi 17](VMware-Esxi-6-7如何安装/esxi 17.jpg) 按ESC，输入Y保存上面的配置信息 ![esxi 18](VMware-Esxi-6-7如何安装/esxi 18.jpg) 继续按ESC 返回主界面 ![esxi 19](VMware-Esxi-6-7如何安装/esxi 19.jpg) 配置完成后进入VMware esxi WEB配置页面 在同个局域网中的另一台电脑浏览器输入vmware esxi主机的ip就可以访问了 ![esxi 20](VMware-Esxi-6-7如何安装/esxi 20.png) 第一次进来的画面 ![esxi 21](VMware-Esxi-6-7如何安装/esxi 21.png) 本教程到此结束，后面介绍如何使用VMware Exsi安装多个系统]]></content>
+    <content type="text"><![CDATA[VMware VSphere介绍虚拟化打破了物理硬件与操作系统及在其上运行的应用程序之间的硬性连接。操作系统和应用程序在虚拟机中实现虚拟化之后，便不再因位于单台物理计算机中而受到种种束缚。物理元素（如交换机和存储器）的虚拟等效于在可跨越整个企业的虚拟基础架构内运行。 与物理机一样，虚拟机是运行操作系统和应用程序的软件计算机。管理程序用作虚拟机的运行平台，并且可以整合计算资源。每个虚拟机包含自己的虚拟（基于软件的）硬件，包括虚拟CPU、内存、硬盘和网络接口卡。 虚拟化计算机： x86计算机硬件被设计为只能运行单个操作系统和单个应用程序，这导致了大多数计算机未得到充分利用。即使安装了众多应用程序，大多数计算机仍无法得到充分利用。在最基本的层次上，通过虚拟化可以在单台物理计算机上运行多个虚拟机，且所有虚拟机可在多种环境下共享该物理计算机的资源。在同一物理计算机上，不同的虚拟机可以独立、并行运行不同的操作系统和多个应用程序。 下图所示的就是一台物理主机在虚拟化前和虚拟后的差别： 以上介绍转载于：https://blog.csdn.net/Kim_Weir/article/details/80554981 ======================================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 ======================================================================= 安装过程工控迷你电脑，用于安装虚拟机 制作U盘启动器Rufus 3.3启动盘制作工具 将U盘插入MINIPC，开机按F11选择从U盘启动 选择第一项U盘，按回车 安装程序初始化，检测硬件信息，如不满足会跳出错误提示 检测完成出现如下界面，回车 同意条款，F11继续 出现硬盘信息，选择要安装的磁盘，按回车 键盘模式使用默认 设置root账户密码（注意：vSphere 6.7不再支持简单密码，可以在主机配置中启用简单密码） 按F11开始安装 安装中… 安装完成，拔掉U盘，按回车重启系统 系统重启完成 安装完成进行系统设置 按F2，输入root密码 配置界面如下 选择Configure Management Network进行管理网络配置 可以选择修改管理网络网卡、VLAN、IPv4、IPv6、DNS、DNS域 配置IPV4地址 设置为静态IP，按回车 DNS设置 按ESC，输入Y保存上面的配置信息 继续按ESC 返回主界面 配置完成后进入VMware esxi WEB配置页面 在同个局域网中的另一台电脑浏览器输入vmware esxi主机的ip就可以访问了 第一次进来的画面 本教程到此结束]]></content>
       <categories>
         <category>VMware EXSI</category>
       </categories>
@@ -482,8 +482,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
