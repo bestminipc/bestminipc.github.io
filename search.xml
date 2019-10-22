@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Ubuntu systemd开机启动设置]]></title>
+    <title><![CDATA[Ubuntu systemd rc.local 如何设置开机启动]]></title>
     <url>%2Fposts%2F110ed71d%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[转载：http://iqotom.com/?p=965 前言Ubuntu18.04不再使用initd管理系统，改用systemd，现在已成为大多数发行版的标准配置。 以前Linux启动一直采用init进程，例如： 12sudo /etc/init.d/apache2 startservice apache2 start 这种方法有两个缺点： 一是启动时间长。init进程是串行启动，只有前一个进程启动完，才会启动下一个进程 二是启动脚本复杂。init进程只是执行启动脚本，不管其他事情。脚本需要自己处理各种情况，这往往使得脚本变得很长 Systemd 就是为了解决这些问题而诞生的。它的设计目标是，为系统的启动和管理提供一套完整的解决方案。 根据 Linux 惯例，字母d是守护进程（daemon）的缩写。 Systemd 这个名字的含义，就是它要守护整个系统。 Systemd 的优点是功能强大，但是缺点也很明显，体系庞大，非常复杂。事实上，现在还有很多人反对使用 。 这里记录下，跟以前一样在/etc/rc.local设置开机启动程序，加载驱动 Setp.1systemd默认读取/etc/systemd/system下的配置文件，该目录下的文件会链接/lib/systemd/system/下的文件。一般系统安装完/lib/systemd/system/下会有rc-local.service文件，即我们需要的配置文件。 链接过来： 1234cd /lib/systemd/systemln -fs /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.servicecd /etc/systemd/systemcat rc-local.service rc-local.service内容： 1234567891011121314151617181920212223# SPDX-License-Identifier: LGPL-2.1+## This file is part of systemd.## systemd is free software; you can redistribute it and/or modify it# under the terms of the GNU Lesser General Public License as published by# the Free Software Foundation; either version 2.1 of the License, or# (at your option) any later version.# This unit gets pulled automatically into multi-user.target by# systemd-rc-local-generator if /etc/rc.local is executable.[Unit]Description=/etc/rc.local CompatibilityDocumentation=man:systemd-rc-local-generator(8)ConditionFileIsExecutable=/etc/rc.localAfter=network.target[Service]Type=forkingExecStart=/etc/rc.local startTimeoutSec=0RemainAfterExit=yesGuessMainPID=no [Unit] 区块：启动顺序与依赖关系。 [Service] 区块：启动行为,如何启动，启动类型。 Setp.2 创建/etc/rc.local文件 1touch /etc/rc.local 赋予可执行权限 1chmod 755 rc.local 编辑rc.local，添加需要开机启动的任务 123#!/bin/bashecho &quot;test rc!!!&quot; &gt; /var/test_rc.log reboot重启系统，查看/var目录已经成了test_rc.log]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>systemd</tag>
+        <tag>rc.local</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Linux压力测试工具stress如何使用]]></title>
@@ -74,8 +82,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -122,8 +130,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -134,8 +142,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -208,9 +216,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>Mini Pc</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -345,8 +353,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -357,8 +365,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -397,8 +405,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>Router</tag>
         <tag>EXSI</tag>
+        <tag>Router</tag>
       </tags>
   </entry>
   <entry>
