@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-17T03:00:57.843Z</updated>
+  <updated>2019-10-22T01:31:23.977Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu systemd开机启动设置</title>
+    <link href="http://minipc.netlify.com/posts/110ed71d/"/>
+    <id>http://minipc.netlify.com/posts/110ed71d/</id>
+    <published>2019-10-22T01:24:13.000Z</published>
+    <updated>2019-10-22T01:31:23.977Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux压力测试工具stress如何使用</title>
+    <link href="http://minipc.netlify.com/posts/d0639c77/"/>
+    <id>http://minipc.netlify.com/posts/d0639c77/</id>
+    <published>2019-10-21T02:42:20.000Z</published>
+    <updated>2019-10-22T01:31:50.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;转载：&lt;a href=&quot;http://iqotom.com/?p=969&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://iqotom.com/?p=969&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;下载安装stress&quot;&gt;&lt;a href=&quot;#下载安装s
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="stress" scheme="http://minipc.netlify.com/tags/stress/"/>
+    
+  </entry>
   
   <entry>
     <title>如何用VS打包发布Winform程序并设置开机启动</title>
@@ -147,9 +187,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -223,11 +263,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -250,9 +290,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -277,9 +317,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -411,9 +451,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -438,11 +478,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -493,63 +533,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Linux Superio Read CPU FAN RPM</title>
-    <link href="http://minipc.netlify.com/posts/5c7fdca/"/>
-    <id>http://minipc.netlify.com/posts/5c7fdca/</id>
-    <published>2019-06-26T10:33:52.000Z</published>
-    <updated>2019-08-26T11:44:19.810Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;​        之前写了一篇Linux下利用Superio控制GPIO的教程，这次继续利用Superio读取CPU风扇转速，CPU风扇属于环境控制器（EC），内置在IT8786E-I中，包括五个电压输入，三个温度传感器输入，五个FAN转速计输入和五组先进的风扇控制器。 E
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>X86 Linux ITE SuperIO GPIO Control</title>
-    <link href="http://minipc.netlify.com/posts/511726ae/"/>
-    <id>http://minipc.netlify.com/posts/511726ae/</id>
-    <published>2019-06-05T07:28:43.000Z</published>
-    <updated>2019-08-26T11:44:08.590Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Superio概述&quot;&gt;&lt;a href=&quot;#Superio概述&quot; class=&quot;headerlink&quot; title=&quot;Superio概述&quot;&gt;&lt;/a&gt;Superio概述&lt;/h3&gt;&lt;p&gt;​        Super I/O芯片也叫I/O芯片。在486以上档次的主板上都有
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="SuperIO" scheme="http://minipc.netlify.com/tags/SuperIO/"/>
     
   </entry>
   

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ubuntu systemd开机启动设置]]></title>
+    <url>%2Fposts%2F110ed71d%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux压力测试工具stress如何使用]]></title>
+    <url>%2Fposts%2Fd0639c77%2F</url>
+    <content type="text"><![CDATA[转载：http://iqotom.com/?p=969 下载安装stress1apt install stress stress工具使用先介绍下stress的命令参数 1234567891011121314151617181920212223`stress&apos; imposes certain types of compute stress on your systemUsage: stress [OPTION [ARG]] ... -?, --help show this help statement --version show version statement -v, --verbose be verbose -q, --quiet be quiet -n, --dry-run show what would have been done -t, --timeout N timeout after N seconds --backoff N wait factor of N microseconds before work starts -c, --cpu N spawn N workers spinning on sqrt() -i, --io N spawn N workers spinning on sync() -m, --vm N spawn N workers spinning on malloc()/free() --vm-bytes B malloc B bytes per vm worker (default is 256MB) --vm-stride B touch a byte every B bytes (default is 4096) --vm-hang N sleep N secs before free (default none, 0 is inf) --vm-keep redirty memory instead of freeing and reallocating -d, --hdd N spawn N workers spinning on write()/unlink() --hdd-bytes B write B bytes per hdd worker (default is 1GB)Example: stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 10sNote: Numbers may be suffixed with s,m,h,d,y (time) or B,K,M,G (size). 参数说明： -? 显示帮助信息 -v 显示版本号 -q 不显示运行信息 -n 显示已完成的指令情况 -t –timeout N 指定运行N秒后停止 –backoff N 等待N微妙后开始运行 -c 产生n个进程 每个进程都反复不停的计算随机数的平方根 -i 产生n个进程 每个进程反复调用sync()，sync()用于将内存上的内容写到硬盘上 -m –vm n 产生n个进程,每个进程不断调用内存分配malloc和内存释放free函数 –vm-bytes B 指定malloc时内存的字节数 （默认256MB） –vm-hang N 指定在free钱的秒数 -d –hadd n 产生n个执行write和unlink函数的进程 -hadd-bytes B 指定写的字节数 –hadd-noclean 不unlink 时间单位可以为秒s，分m，小时h，天d，年y，文件大小单位可以为K，M，G 测试场景举例： 测试CPU负荷 输入命令：stress -c 4 -t 10 增加4个cpu进程，处理sqrt()函数函数，以提高系统CPU负荷，测试10s 内存测试 输入命令：stress -i 4 –vm 10 –vm-bytes 1G –vm-hang 100 –timeout 100s 新增4个io进程，10个内存分配进程，每次分配大小1G，分配后不释放，测试100S 磁盘I/O测试 输入命令：stress -d 1 –hdd-bytes 3G 新增1个写进程，每次写3G文件块 硬盘测试（不删除） 输入命令：stress -i 1 -d 10 –hdd-bytes 3G -hdd-noclean 新增1个IO进程，10个写进程，每次写入3G文件块，且不清除，会逐步将硬盘耗尽 安装htop监控进程12apt install htop#htop的具体使用方法请自行搜索 安装sensors监控温度123456apt install lm-sensors#输入sensors即可检测温度和风扇转速root@ubuntu:~# sensors|grep -E &apos;Core|Package&apos;Package id 0: +46.0°C (high = +100.0°C, crit = +100.0°C)Core 0: +42.0°C (high = +100.0°C, crit = +100.0°C)Core 1: +44.0°C (high = +100.0°C, crit = +100.0°C) 测试脚本输入测试时间，每秒钟打印当前CPU温度 123456789101112#!/bin/shecho -n &quot;Input test time:&quot;read TIMEecho &quot;===================STRESS TEST START===================&quot;stress -c 4 -t $TIME &amp;while [ &quot;$TIME&quot; -gt 0 ]; do sensors|grep -E &quot;Package|Core&quot; sleep 1 TIME=$(($TIME-1)) echo &quot;==============================time:$TIME&quot;done 测试截屏]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>stress</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何用VS打包发布Winform程序并设置开机启动]]></title>
     <url>%2Fposts%2Feee045de%2F</url>
     <content type="text"><![CDATA[系统：Windows10 x64 工具：Visual Studio 2017 首先需要确保VS安装了Visual Studio Installer Project（菜单栏——工具——扩展和更新） 打包步骤 新建Installer项目 右键Application Folder添加文件，将主程序和库文件上传，比如我的程序叫appname.exe 创建程序桌面快捷方式 右键主程序，选择Create Shortcut to appname.exe，将生成的快捷方式剪贴到User&#39;s Desktop 创建程序开始菜单 4.1 程序快速启动图标 这个跟创建桌面快捷方式的方法一样 4.2 程序卸载图标 a.将`C\Windows\System32\msiexec.exe`上传到`Applicaiton Folder` b.对`msiexec.exe`重命名下，一般改名为`“Uninstall.exe”`，然后创建快捷方式到`User&apos;s Programs Menu` 4.3 设置卸载参数，告诉卸载程序应该卸载哪个程序 ​ a. 在属性里面找到安装项目的ProductCode ​ b. 然后点击Uninstall程序，修改属性参数Arguments，值为&quot;/x ProductCode&quot; 设置开机启动用修改注册表的方式来设置开机启动 右键项目——View——注册表 添加如下字段到LOCAL_MACHINE，这个是所有用户，CURRENT_USER应该也可以（没测试过）\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run 设置系统必备一般我们开发的Winform程序都有一个目标框架，就是所依赖的.Net Framework版本环境，如.Net Framework 2.0/3.5/4.0/4.5等 要想我们的程序在电脑上正常运行，首先就得保证系统上装有指定的.net Framework版本框架，可以在安装包的属性中设置，启动安装前检查操作系统中是否安装了指定版本的框架或其他依赖，设置方法如下： 右键安装包项目，点开“Prerequisites” 选择“从组件供应商的网站上下载系统必备组件”，这样一来，即使电脑上没有安装需要的.net Framework也不要紧，只要设置了这项，安装程序会自动从微软的官网上下载对应的组件并安装 生成安装文件右键安装项目，选择重新生成 如果不出错，那么会在项目的Debug或Release文件夹生成安装文件 setup.exe里边包含了对安装程序的一些条件的检测，比如.net的版本是否支持，当条件具备后，setup.exe接着调用setup.msi进行安装。如果你确定条件都具备的话也可以直接运行setup.msi进行安装]]></content>
@@ -57,8 +74,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -92,9 +109,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -105,8 +122,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +134,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -179,8 +196,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -191,9 +208,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +234,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -229,8 +246,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -242,8 +259,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -315,8 +332,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -328,8 +345,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -340,8 +357,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -380,8 +397,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>EXSI</tag>
         <tag>Router</tag>
+        <tag>EXSI</tag>
       </tags>
   </entry>
   <entry>
@@ -482,8 +499,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>

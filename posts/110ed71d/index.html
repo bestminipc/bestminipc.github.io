@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Mini Pc,EXSI,Synology,NAS,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -90,38 +90,14 @@
 
 
 
-<meta name="description" content="======================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 =======================================================">
-<meta name="keywords" content="Mini Pc,EXSI,Synology,NAS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ESXi6.7 安装群晖NAS&#x2F;LEDE路由系统">
-<meta property="og:url" content="http://minipc.netlify.com/posts/e303e8c3/index.html">
+<meta property="og:title" content="Ubuntu systemd开机启动设置">
+<meta property="og:url" content="http://minipc.netlify.com/posts/110ed71d/index.html">
 <meta property="og:site_name" content="Laohu Blog">
-<meta property="og:description" content="======================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 =======================================================">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_000.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_001.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_002.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_003.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_004.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_005.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_006.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_007.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_008.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_009.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_010.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_011.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_012.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_013.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_014.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_015.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_016.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_020.jpg">
-<meta property="og:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_017.png">
-<meta property="og:updated_time" content="2019-10-17T03:21:33.135Z">
+<meta property="og:updated_time" content="2019-10-22T01:31:23.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ESXi6.7 安装群晖NAS&#x2F;LEDE路由系统">
-<meta name="twitter:description" content="======================================================= 《VMware Esxi 6.7如何安装》 《ESXI iKuai/LEDE双路由系统安装》 《ESXI 群晖NAS/LEDE路由系统安装》 《ESXI ROS路由系统安装》 =======================================================">
-<meta name="twitter:image" content="http://minipc.netlify.com/posts/e303e8c3/nas_000.png">
+<meta name="twitter:title" content="Ubuntu systemd开机启动设置">
 
 
 
@@ -166,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://minipc.netlify.com/posts/e303e8c3/">
+  <link rel="canonical" href="http://minipc.netlify.com/posts/110ed71d/">
 
 
 
 
 
-  <title>ESXi6.7 安装群晖NAS/LEDE路由系统 | Laohu Blog</title>
+  <title>Ubuntu systemd开机启动设置 | Laohu Blog</title>
   
 
 
@@ -360,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/e303e8c3/">
+    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/110ed71d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lao hu">
@@ -377,7 +353,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">ESXi6.7 安装群晖NAS/LEDE路由系统</h2>
+          <h2 class="post-title" itemprop="name headline">Ubuntu systemd开机启动设置</h2>
         
 
         <div class="post-meta">
@@ -389,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-02T11:47:33+08:00">
-                2019-04-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-22T09:24:13+08:00">
+                2019-10-22
               </time>
             
 
@@ -405,34 +381,12 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-10-17T11:21:33+08:00">
-                2019-10-17
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-22T09:31:23+08:00">
+                2019-10-22
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VMware-EXSI/" itemprop="url" rel="index">
-                    <span itemprop="name">VMware EXSI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -442,8 +396,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/e303e8c3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/posts/e303e8c3/" itemprop="commentCount"></span>
+                <a href="/posts/110ed71d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/110ed71d/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -470,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  632
+                  0
                 </span>
               
 
@@ -486,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -507,75 +461,7 @@
       
 
       
-        <p>=======================================================</p>
-<p>《<a href="https://bestminipc.github.io/posts/21b893a7/" target="_blank" rel="noopener">VMware Esxi 6.7如何安装</a>》</p>
-<p><a href="https://bestminipc.github.io/posts/86171f25/" target="_blank" rel="noopener">《ESXI iKuai/LEDE双路由系统安装》</a></p>
-<p><a href="https://bestminipc.github.io/posts/e303e8c3/" target="_blank" rel="noopener">《ESXI 群晖NAS/LEDE路由系统安装》</a></p>
-<p><a href="https://bestminipc.github.io/posts/1cf14ed3/" target="_blank" rel="noopener">《ESXI ROS路由系统安装》</a></p>
-<p>=======================================================</p>
-<h3 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h3><p>工控<a href="http://www.qotom.com" target="_blank" rel="noopener">迷你PC</a>一台，CPU 3865U（支持VT-d）</p>
-<p>东芝 60G mSATA（已安装了ESXI6.7、LEDE X86），安装方法可以参考我上一篇文章</p>
-<p>一块500G 2.5寸HDD （硬盘直通）</p>
-<p>黑群晖引导链接： <a href="https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1zRtZXtq2TX58w2NoTyAvKQ</a> 提取码: s7z9</p>
-<p><img src="/posts/e303e8c3/nas_000.png" alt="nas"></p>
-<h3 id="虚拟机安装步骤"><a href="#虚拟机安装步骤" class="headerlink" title="虚拟机安装步骤"></a>虚拟机安装步骤</h3><ol>
-<li><p>首先将下载的.img引导文件使用StarWindConverter转换为ESXI可用的.vmdk文件备用</p>
-<p>打开StarWind点击local file——&gt;选择下载好的lede镜像文件——&gt;选择ESX SERVER IMAGE</p>
-<p><img src="/posts/e303e8c3/nas_001.png" alt="nas_001.png"></p>
-</li>
-<li><p>新建ESXI虚机：选择linux、Red Hat Enterprise Linux 7 (64 位)，然后下一步</p>
-<p><img src="/posts/e303e8c3/nas_002.png" alt="nas_002"></p>
-</li>
-</ol>
-<ol start="3">
-<li><p>CPU和内存按实际情况修改（1G够了），按顺序删除默认硬盘、SCSI控制器、CD/DVD驱动器，修改网卡为E1000e后点下一步后保存</p>
-<p><img src="/posts/e303e8c3/nas_003.png" alt="nas_003"></p>
-</li>
-<li><p>然后点击左侧存储——&gt;数据存储浏览器——&gt;选择目录DSM——&gt;上传转换的镜像文件（两个会自动合并）</p>
-<p><img src="/posts/e303e8c3/nas_004.png" alt="nas_004"></p>
-</li>
-<li><p>接下来做硬盘直通，用ssh连上ESXI（<strong>设置打开ESXi Shell：Troubleshooting Mode Options 选项卡第二项 Enable SSH</strong>）</p>
-<p>接好硬盘后ESXi要重启下才能识别到硬盘，然后分别复制下面的磁盘路径</p>
-<p><img src="/posts/e303e8c3/nas_005.png" alt="nas_005"></p>
-<p><img src="/posts/e303e8c3/nas_006.png" alt="nas_006"></p>
-<p>打开Putty连接ESXi，在控制台输入vmkfstools -z 路径1 路径2/xxx.vmdk，如果没错误提示就说明直通成功了</p>
-<p><img src="/posts/e303e8c3/nas_007.png" alt="nas_006"></p>
-<p>进入数据存储——&gt;数据存储浏览器，刚刚直通的vmdk就可以看到了</p>
-<p><img src="/posts/e303e8c3/nas_008.png" alt="nas_008"></p>
-</li>
-<li><p>返回虚拟机，编辑设置，添加现有硬盘，分别选择DSM6.2.1目录下的synoboot镜像和根目录的wd_hdd，然后保存</p>
-<p><img src="/posts/e303e8c3/nas_009.png" alt="nas_009"></p>
-</li>
-<li><p>打开DSM虚拟机，准备初始化</p>
-<p><img src="/posts/e303e8c3/nas_010.png" alt="nas_010"></p>
-</li>
-<li><p>打开虚拟机，出现如下界面，说明已经正常启动</p>
-<p>可以输入<a href="http://find.synologt.com搜索" target="_blank" rel="noopener">http://find.synologt.com搜索</a></p>
-<p><img src="/posts/e303e8c3/nas_011.png" alt="nas_011"></p>
-<p>在LEDE中查看DHCP也可以知道具体的ip地址，可直接访问</p>
-<p><img src="/posts/e303e8c3/nas_012.png" alt="nas_012"></p>
-</li>
-</ol>
-<h3 id="群晖NAS安装"><a href="#群晖NAS安装" class="headerlink" title="群晖NAS安装"></a>群晖NAS安装</h3><ol>
-<li><p>进入安装界面后点击立即安装，勾选提示，点击确定</p>
-<p><img src="/posts/e303e8c3/nas_013.png" alt="nas_013"></p>
-</li>
-<li><p>等待下载安装，会有十分钟的倒计时等待，一般到6-7分钟就可以访问地址了</p>
-<p><img src="/posts/e303e8c3/nas_014.png" alt="nas_014"></p>
-</li>
-<li><p>进入系统安装界面，根据提示进行相关设置完成黑群晖的安装</p>
-<p><img src="/posts/e303e8c3/nas_015.png" alt="nas_015"></p>
-</li>
-<li><p>配置完成后进入系统，已经是最新版群晖</p>
-<p><img src="/posts/e303e8c3/nas_016.png" alt="nas_016"></p>
-</li>
-</ol>
-<p>有多个磁盘的话可以使用minipcie转sata，经测试也可以正常直通</p>
-<p><img src="/posts/e303e8c3/nas_020.jpg" alt="nas_020"></p>
-<p>但不能识别成固态硬盘，具体原因未知…</p>
-<p><img src="/posts/e303e8c3/nas_017.png" alt="nas_017"></p>
-<p><strong>本教程到此结束！</strong></p>
-
+        
       
     </div>
     
@@ -590,18 +476,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Mini-Pc/" rel="tag"><i class="fa fa-tag"></i> Mini Pc</a>
-          
-            <a href="/tags/EXSI/" rel="tag"><i class="fa fa-tag"></i> EXSI</a>
-          
-            <a href="/tags/Synology/" rel="tag"><i class="fa fa-tag"></i> Synology</a>
-          
-            <a href="/tags/NAS/" rel="tag"><i class="fa fa-tag"></i> NAS</a>
-          
-        </div>
-      
 
       
       
@@ -611,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/86171f25/" rel="next" title="工控迷你PC打造iKuai/LEDE双路由系统，实现多拨、宽带叠加、科学上网">
-                <i class="fa fa-chevron-left"></i> 工控迷你PC打造iKuai/LEDE双路由系统，实现多拨、宽带叠加、科学上网
+              <a href="/posts/d0639c77/" rel="next" title="Linux压力测试工具stress如何使用">
+                <i class="fa fa-chevron-left"></i> Linux压力测试工具stress如何使用
               </a>
             
           </div>
@@ -620,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/892e18ba/" rel="prev" title="FreeBSD12 Atheros 无线网卡AP模式设置">
-                FreeBSD12 Atheros 无线网卡AP模式设置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -707,17 +577,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -814,22 +675,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装环境"><span class="nav-number">1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机安装步骤"><span class="nav-number">2.</span> <span class="nav-text">虚拟机安装步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群晖NAS安装"><span class="nav-number">3.</span> <span class="nav-text">群晖NAS安装</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
 	  
