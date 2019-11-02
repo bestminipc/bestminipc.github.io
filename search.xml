@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WPF程序实现多语言支持 动态加载资源词典]]></title>
+    <url>%2Fposts%2Fa747d650%2F</url>
+    <content type="text"><![CDATA[创建资源词典，首先新建两个词典文件en-us.xaml、zh-cn.xaml zh-cn.xaml： 123456789&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:GPIO_TOOL_WIN&quot; xmlns:s=&quot;clr-namespace:System;assembly=mscorlib&quot;&gt; &lt;s:String x:Key=&quot;buttonTest1&quot;&gt;测试按钮1&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonTest2&quot;&gt;测试按钮2&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttoncn&quot;&gt;中文&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonen&quot;&gt;英文&lt;/s:String&gt;&lt;/ResourceDictionary&gt; en-us.xaml: 123456789&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; xmlns:s=&quot;clr-namespace:System;assembly=mscorlib&quot;&gt; &lt;s:String x:Key=&quot;buttonTest1&quot;&gt;Button TEST1&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonTest2&quot;&gt;Button TEST2&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttoncn&quot;&gt;Chinese&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonen&quot;&gt;English&lt;/s:String&gt;&lt;/ResourceDictionary&gt; 将两个资源词典添加到App.xaml中 1234567891011121314&lt;Application x:Class=&quot;GPIO_TOOL_WIN.App&quot; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; StartupUri=&quot;MainWindow.xaml&quot;&gt; &lt;Application.Resources&gt; &lt;ResourceDictionary&gt; &lt;ResourceDictionary.MergedDictionaries&gt; &lt;ResourceDictionary Source=&quot;Resources\en-us.xaml&quot; /&gt; &lt;ResourceDictionary Source=&quot;Resources\zh-cn.xaml&quot; /&gt; &lt;/ResourceDictionary.MergedDictionaries&gt; &lt;/ResourceDictionary&gt; &lt;/Application.Resources&gt;&lt;/Application&gt; 在界面设计器中需要显示的位置添加动态资源，例如： 123456789101112131415&lt;Window x:Class=&quot;GPIO_TOOL_WIN.MainWindow&quot; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; mc:Ignorable=&quot;d&quot; Title=&quot;WPF TEST&quot; Height=&quot;450&quot; Width=&quot;800&quot;&gt; &lt;Grid&gt; &lt;Button x:Name=&quot;buttonTest1&quot; Content=&quot;&#123;DynamicResource buttonTest1&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,20,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;100&quot;/&gt; &lt;Button x:Name=&quot;buttonTest2&quot; Content=&quot;&#123;DynamicResource buttonTest2&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,50,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;100&quot;/&gt; &lt;Button x:Name=&quot;buttoncn&quot; Content=&quot;&#123;DynamicResource buttoncn&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,150,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;75&quot; Click=&quot;Buttoncn_Click&quot;/&gt; &lt;Button x:Name=&quot;buttonen&quot; Content=&quot;&#123;DynamicResource buttonen&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;120,150,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;75&quot; Click=&quot;Buttonen_Click&quot;/&gt; &lt;/Grid&gt;&lt;/Window&gt; 切换语言代码如下： 123456789List&lt;ResourceDictionary&gt; dictionaryList = new List&lt;ResourceDictionary&gt;(); foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries) &#123; dictionaryList.Add(dictionary); &#125; string requestedCulture = @&quot;Resources\en-us.xaml&quot;; ResourceDictionary resourceDictionary = dictionaryList.Find(d =&gt; d.Source.OriginalString.Equals(requestedCulture)); Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary); Application.Current.Resources.MergedDictionaries.Add(resourceDictionary); 测试效果如下图：]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>WPF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu systemd rc.local 如何设置开机启动]]></title>
     <url>%2Fposts%2F110ed71d%2F</url>
     <content type="text"><![CDATA[转载：http://iqotom.com/?p=965 前言Ubuntu18.04不再使用initd管理系统，改用systemd，现在已成为大多数发行版的标准配置。 以前Linux启动一直采用init进程，例如： 12sudo /etc/init.d/apache2 startservice apache2 start 这种方法有两个缺点： 一是启动时间长。init进程是串行启动，只有前一个进程启动完，才会启动下一个进程 二是启动脚本复杂。init进程只是执行启动脚本，不管其他事情。脚本需要自己处理各种情况，这往往使得脚本变得很长 Systemd 就是为了解决这些问题而诞生的。它的设计目标是，为系统的启动和管理提供一套完整的解决方案。 根据 Linux 惯例，字母d是守护进程（daemon）的缩写。 Systemd 这个名字的含义，就是它要守护整个系统。 Systemd 的优点是功能强大，但是缺点也很明显，体系庞大，非常复杂。事实上，现在还有很多人反对使用 。 这里记录下，跟以前一样在/etc/rc.local设置开机启动程序，加载驱动 Setp.1systemd默认读取/etc/systemd/system下的配置文件，该目录下的文件会链接/lib/systemd/system/下的文件。一般系统安装完/lib/systemd/system/下会有rc-local.service文件，即我们需要的配置文件。 链接过来： 1234cd /lib/systemd/systemln -fs /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.servicecd /etc/systemd/systemcat rc-local.service rc-local.service内容： 1234567891011121314151617181920212223# SPDX-License-Identifier: LGPL-2.1+## This file is part of systemd.## systemd is free software; you can redistribute it and/or modify it# under the terms of the GNU Lesser General Public License as published by# the Free Software Foundation; either version 2.1 of the License, or# (at your option) any later version.# This unit gets pulled automatically into multi-user.target by# systemd-rc-local-generator if /etc/rc.local is executable.[Unit]Description=/etc/rc.local CompatibilityDocumentation=man:systemd-rc-local-generator(8)ConditionFileIsExecutable=/etc/rc.localAfter=network.target[Service]Type=forkingExecStart=/etc/rc.local startTimeoutSec=0RemainAfterExit=yesGuessMainPID=no [Unit] 区块：启动顺序与依赖关系。 [Service] 区块：启动行为,如何启动，启动类型。 Setp.2 创建/etc/rc.local文件 1touch /etc/rc.local 赋予可执行权限 1chmod 755 rc.local 编辑rc.local，添加需要开机启动的任务 123#!/bin/bashecho &quot;test rc!!!&quot; &gt; /var/test_rc.log reboot重启系统，查看/var目录已经成了test_rc.log]]></content>
@@ -117,9 +129,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
-        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -204,8 +216,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +229,8 @@
       </categories>
       <tags>
         <tag>Windows</tag>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -242,8 +254,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -254,8 +266,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -267,8 +279,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -340,8 +352,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -507,8 +519,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>

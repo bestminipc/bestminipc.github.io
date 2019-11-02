@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-10-22T01:34:56.797Z</updated>
+  <updated>2019-11-02T09:35:44.021Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WPF程序实现多语言支持 动态加载资源词典</title>
+    <link href="http://minipc.netlify.com/posts/a747d650/"/>
+    <id>http://minipc.netlify.com/posts/a747d650/</id>
+    <published>2019-11-02T09:28:01.000Z</published>
+    <updated>2019-11-02T09:35:44.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建资源词典，首先新建两个词典文件en-us.xaml、zh-cn.xaml&lt;/p&gt;
+&lt;p&gt;zh-cn.xaml：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="C#" scheme="http://minipc.netlify.com/tags/C/"/>
+    
+      <category term="WPF" scheme="http://minipc.netlify.com/tags/WPF/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu systemd rc.local 如何设置开机启动</title>
@@ -277,11 +305,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -465,9 +493,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -494,9 +522,9 @@
     
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
   </entry>
   
@@ -525,31 +553,6 @@
       <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
     
       <category term="LEDE" scheme="http://minipc.netlify.com/tags/LEDE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux Read CPU Type and Temperature</title>
-    <link href="http://minipc.netlify.com/posts/3b1098bd/"/>
-    <id>http://minipc.netlify.com/posts/3b1098bd/</id>
-    <published>2019-06-29T08:37:08.000Z</published>
-    <updated>2019-08-26T11:43:55.902Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;​       前段时间利用Superio获取到了CPU风扇速度，并且利用Superio读取到了CPU的温度(Intel PCIE)，但通过sensors命令对比，发现封装的CPU温度和核心温度有误差，于是想通过代码获取下温度，来测试下是否正确。在网上查找了很多资料，这里记
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
