@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[搭建V2Ray实现科学上网(上)]]></title>
+    <url>%2Fposts%2F96d310%2F</url>
+    <content type="text"><![CDATA[前言​ V2Ray(Project V) 相对于 Shadowsocks，V2Ray 更像全能选手，拥有更多可选择的协议 / 传输载体 (Socks、HTTP、TLS、TCP、mKCP、WebSocket )，还有强大的路由功能，不仅仅于此，它亦包含 Shadowsocks 组件，你只需要安装 V2Ray，你就可以使用所有的 V2Ray 相关的特性包括使用 Shadowsocks，由于 V2Ray 是使用 GO 语言所撰写的，天生的平台部署优势，部署好服务端后，下载即可使用。 注册新用户​ 首先需要购买一个VPS用来搭建V2Ray，这里推荐使用VULTR的VPS，选择洛杉矶（延时低），可支付宝，微信付款； 新用户注册激活送$50 : https://www.vultr.com（赠送金额有效期30天）新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 激活账号注册成功后， VULTR 会发送一封验证邮箱的邮件，点击验证就可以了。 ​ 「新用户」注册后，进入后台的「Billing」页面，充值 10 美元 (支付宝 / 微信支付 / PayPal 等渠道至少充值 10 美元) 才能激活账号。 你的账号必须充值后才算“激活”完成，才能获赠使用金。 充值后赠送金额基本立马就可以到账。 Vultr赠送金额扣费方式主要为2种： 优先扣赠送金额这种扣费方式的意思就是会先扣你的赠送金额，扣完才会扣你充值的钱。Vultr充$10送$10以及目前的新用户充值送$50美元都是这种扣费方式。 一半扣账户余额，一半扣赠送金额这种扣费方式就是一半扣你充值的钱，一半扣赠送金额。Vultr的充多少送多少就是这种扣费方式，简单点说，加入你一个月用了10美元，那么5美元来自你的充值，5美元来自赠送金额。 另外绑定推特还有赠金送，不要忘记领取 下一步搭建V2Ray服务器]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>VPS</tag>
+        <tag>V2Ray</tag>
+        <tag>VPN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[WPF程序实现多语言支持 动态加载资源词典]]></title>
     <url>%2Fposts%2Fa747d650%2F</url>
     <content type="text"><![CDATA[创建资源词典，首先新建两个词典文件en-us.xaml、zh-cn.xaml zh-cn.xaml： 123456789&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:GPIO_TOOL_WIN&quot; xmlns:s=&quot;clr-namespace:System;assembly=mscorlib&quot;&gt; &lt;s:String x:Key=&quot;buttonTest1&quot;&gt;测试按钮1&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonTest2&quot;&gt;测试按钮2&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttoncn&quot;&gt;中文&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonen&quot;&gt;英文&lt;/s:String&gt;&lt;/ResourceDictionary&gt; en-us.xaml: 123456789&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; xmlns:s=&quot;clr-namespace:System;assembly=mscorlib&quot;&gt; &lt;s:String x:Key=&quot;buttonTest1&quot;&gt;Button TEST1&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonTest2&quot;&gt;Button TEST2&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttoncn&quot;&gt;Chinese&lt;/s:String&gt; &lt;s:String x:Key=&quot;buttonen&quot;&gt;English&lt;/s:String&gt;&lt;/ResourceDictionary&gt; 将两个资源词典添加到App.xaml中 1234567891011121314&lt;Application x:Class=&quot;GPIO_TOOL_WIN.App&quot; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; StartupUri=&quot;MainWindow.xaml&quot;&gt; &lt;Application.Resources&gt; &lt;ResourceDictionary&gt; &lt;ResourceDictionary.MergedDictionaries&gt; &lt;ResourceDictionary Source=&quot;Resources\en-us.xaml&quot; /&gt; &lt;ResourceDictionary Source=&quot;Resources\zh-cn.xaml&quot; /&gt; &lt;/ResourceDictionary.MergedDictionaries&gt; &lt;/ResourceDictionary&gt; &lt;/Application.Resources&gt;&lt;/Application&gt; 在界面设计器中需要显示的位置添加动态资源，例如： 123456789101112131415&lt;Window x:Class=&quot;GPIO_TOOL_WIN.MainWindow&quot; xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot; xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot; xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot; xmlns:local=&quot;clr-namespace:TEST_TOOL_WIN&quot; mc:Ignorable=&quot;d&quot; Title=&quot;WPF TEST&quot; Height=&quot;450&quot; Width=&quot;800&quot;&gt; &lt;Grid&gt; &lt;Button x:Name=&quot;buttonTest1&quot; Content=&quot;&#123;DynamicResource buttonTest1&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,20,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;100&quot;/&gt; &lt;Button x:Name=&quot;buttonTest2&quot; Content=&quot;&#123;DynamicResource buttonTest2&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,50,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;100&quot;/&gt; &lt;Button x:Name=&quot;buttoncn&quot; Content=&quot;&#123;DynamicResource buttoncn&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;20,150,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;75&quot; Click=&quot;Buttoncn_Click&quot;/&gt; &lt;Button x:Name=&quot;buttonen&quot; Content=&quot;&#123;DynamicResource buttonen&#125;&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;120,150,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;75&quot; Click=&quot;Buttonen_Click&quot;/&gt; &lt;/Grid&gt;&lt;/Window&gt; 切换语言代码如下： 123456789List&lt;ResourceDictionary&gt; dictionaryList = new List&lt;ResourceDictionary&gt;(); foreach (ResourceDictionary dictionary in Application.Current.Resources.MergedDictionaries) &#123; dictionaryList.Add(dictionary); &#125; string requestedCulture = @&quot;Resources\en-us.xaml&quot;; ResourceDictionary resourceDictionary = dictionaryList.Find(d =&gt; d.Source.OriginalString.Equals(requestedCulture)); Application.Current.Resources.MergedDictionaries.Remove(resourceDictionary); Application.Current.Resources.MergedDictionaries.Add(resourceDictionary); 测试效果如下图：]]></content>
@@ -94,8 +107,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -129,9 +142,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -142,8 +155,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -154,8 +167,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -216,8 +229,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -228,9 +241,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -254,8 +267,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -266,8 +279,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -279,8 +292,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -352,8 +365,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -365,8 +378,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -377,8 +390,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -519,8 +532,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Linux</tag>
+        <tag>Mini Pc</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>

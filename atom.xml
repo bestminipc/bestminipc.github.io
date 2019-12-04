@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-11-02T09:35:44.021Z</updated>
+  <updated>2019-12-04T09:00:34.184Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建V2Ray实现科学上网(上)</title>
+    <link href="http://minipc.netlify.com/posts/96d310/"/>
+    <id>http://minipc.netlify.com/posts/96d310/</id>
+    <published>2019-12-04T08:53:21.000Z</published>
+    <updated>2019-12-04T09:00:34.184Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        &lt;a href=&quot;https://www.v2ray.com/&quot; target=&quot;_blank&quot; rel=&quot;noopene
+      
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WPF程序实现多语言支持 动态加载资源词典</title>
     <link href="http://minipc.netlify.com/posts/a747d650/"/>
     <id>http://minipc.netlify.com/posts/a747d650/</id>
     <published>2019-11-02T09:28:01.000Z</published>
-    <updated>2019-11-02T09:35:44.021Z</updated>
+    <updated>2019-11-02T09:36:02.180Z</updated>
     
     <summary type="html">
     
@@ -229,9 +256,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -305,11 +332,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -332,9 +359,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -359,9 +386,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -493,9 +520,9 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -520,39 +547,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenWrt X86 分区扩容</title>
-    <link href="http://minipc.netlify.com/posts/3221e6f0/"/>
-    <id>http://minipc.netlify.com/posts/3221e6f0/</id>
-    <published>2019-07-03T02:45:15.000Z</published>
-    <updated>2019-08-26T15:26:09.473Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;/posts/3221e6f0/000.png&quot; alt=&quot;minipc&quot;&gt;&lt;/p&gt;
-&lt;p&gt;硬件情况：K500G6 X86&lt;a href=&quot;http://www.kansung.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;工控
-      
-    
-    </summary>
-    
-      <category term="OpenWrt" scheme="http://minipc.netlify.com/categories/OpenWrt/"/>
-    
-    
-      <category term="Router" scheme="http://minipc.netlify.com/tags/Router/"/>
-    
-      <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
-    
-      <category term="LEDE" scheme="http://minipc.netlify.com/tags/LEDE/"/>
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
