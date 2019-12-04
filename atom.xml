@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-12-04T09:00:34.184Z</updated>
+  <updated>2019-12-04T09:37:48.197Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建V2Ray实现科学上网(下)</title>
+    <link href="http://minipc.netlify.com/posts/198de251/"/>
+    <id>http://minipc.netlify.com/posts/198de251/</id>
+    <published>2019-12-04T09:11:27.000Z</published>
+    <updated>2019-12-04T09:37:48.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;VPS的购买请看上一篇文章《&lt;a href=&quot;https://bestminipc.github.io/posts/96d310/#more&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;搭建V2Ray实现科学上网(上)&lt;/a&gt;》&lt;/p&gt;
+&lt;h2 id=&quot;
+      
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>搭建V2Ray实现科学上网(上)</title>
     <link href="http://minipc.netlify.com/posts/96d310/"/>
     <id>http://minipc.netlify.com/posts/96d310/</id>
     <published>2019-12-04T08:53:21.000Z</published>
-    <updated>2019-12-04T09:00:34.184Z</updated>
+    <updated>2019-12-04T09:02:17.348Z</updated>
     
     <summary type="html">
     
@@ -523,35 +551,6 @@
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win10 Remote Ubuntu18.04</title>
-    <link href="http://minipc.netlify.com/posts/17898/"/>
-    <id>http://minipc.netlify.com/posts/17898/</id>
-    <published>2019-07-19T02:13:13.000Z</published>
-    <updated>2019-08-26T11:54:00.535Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Ubuntu设置&quot;&gt;&lt;a href=&quot;#Ubuntu设置&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu设置&quot;&gt;&lt;/a&gt;Ubuntu设置&lt;/h3&gt;&lt;p&gt;系统版本：Ubuntu 18.04.2 LTS&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;打开设置，修
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
