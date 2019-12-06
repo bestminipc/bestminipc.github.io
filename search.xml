@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[OpenWrt安装V2Ray科学上网]]></title>
+    <url>%2Fposts%2Fc019c9fa%2F</url>
+    <content type="text"><![CDATA[为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。 工控机型号：QOTOM Q3XXG4 OpenWrt系统版本如下： 进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。 设置V2Ray 打开代理 代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建VPS的配置文件提交即可，成功后运行状态会打勾。 然后在手动更新下规则 配置完后重启下V2Ray插件即可，谷歌、油管都可以上了，并且速度非常快（前提自己宽带给力）]]></content>
+      <categories>
+        <category>OpenWrt</category>
+      </categories>
+      <tags>
+        <tag>OpenWrt</tag>
+        <tag>Koolshare</tag>
+        <tag>V2Ray</tag>
+        <tag>VPN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[搭建V2Ray实现科学上网(下)]]></title>
     <url>%2Fposts%2F198de251%2F</url>
     <content type="text"><![CDATA[VPS的购买请看上一篇文章《搭建V2Ray实现科学上网(上)》 购买服务器服务器位置选择洛杉矶，速度比稳定，也可以自行测试适合自己的，下面是测试地址 数据中心 测试 IP 测试文件 演示地址 日本东京 108.61.201.151 100MB 1000MB http://hnd-jp-ping.vultr.com 新加坡 45.32.100.168 100MB 1000MB http://sgp-ping.vultr.com 荷兰阿姆斯特丹 108.61.198.102 100MB 1000MB http://ams-nl-ping.vultr.com 法国巴黎 108.61.209.127 100MB 1000MB http://par-fr-ping.vultr.com 德国法兰克福 108.61.210.117 100MB 1000MB http://fra-de-ping.vultr.com 英国伦敦 108.61.196.101 100MB 1000MB http://lon-gb-ping.vultr.com 美国达拉斯 108.61.224.175 100MB 1000MB http://tx-us-ping.vultr.com 美国西雅图 108.61.194.105 100MB 1000MB http://wa-us-ping.vultr.com 美国芝加哥 107.191.51.12 100MB 1000MB http://il-us-ping.vultr.com 美国亚特兰大 108.61.193.166 100MB 1000MB http://ga-us-ping.vultr.com 美国洛杉矶 108.61.219.200 100MB 1000MB http://lax-ca-us-ping.vultr.com 美国迈阿密 104.156.244.232 100MB 1000MB http://fl-us-ping.vultr.com 美国纽约 108.61.149.182 100MB 1000MB http://nj-us-ping.vultr.com 美国硅谷 104.156.230.107 100MB 1000MB http://sjo-ca-us-ping.vultr.com 澳大利亚悉尼 108.61.212.117 100MB 1000MB http://syd-au-ping.vultr.com 服务器选择Cent OS，因为送的$50有效期只有30天，所以这里选了$40/mo，不用白不用嘛。 账号默认root，密码是随机生成的 接下来就是登陆VPS服务器，推荐使用xshell，这个就自行百度下载了。 建立会话，配置好地址，账号密码连接即可，如下图： 安装V2ray1、安装curl 1yum update -y &amp;&amp; yum install curl -y 2、v2ray一键安装配置脚本 1bash &lt;(curl -s -L https://git.io/v2ray.sh) 3、安装步骤 选择1进行安装 传输协议默认TCP即可 端口[xxx]，默认或者自行设置 拦截广告，默认[N] 是否配置 Shadowsocks ，这里我没有配置，默认[N] 配置信息路径：/etc/v2ray/config.json 查看是否开机启动（默认v2ray开机启动） 1systemctl list-unit-files|grep v2ray 如果没有开机启动，输入下面指令 12systemctl enable v2raysystemctl start v2ray 打开防火墙v2ray的端口默认是会被防火墙拦截的，一定要添加打开端口，这个很重要 12firewall-cmd --zone=public --add-port=端口号/tcp --permanentfirewall-cmd --reload 开启BBR加速脚本需要内核为4.1以上，如果服务器类型选择cent os 8那么应该已经自带了，我选用的centos 7，这里需要安装下，输入以下命令： 123wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.shchmod +x bbr.sh./bbr.sh 安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启 lsmod|grep bbr 查看BBR是否启用，如果输出tcp_bbr模块说明BBR已启动 V2Ray客户端配置Windows客户端 V2RayW V2RayW-v1.0.0-beta2 V2RayW Git V2RayN V2RayN-v2.53 V2RayN Git V2RayS V2RayS_v1.0.0.3 V2RayS Git 安卓客户端 V2RayNG V2RayNG -v1.1.12 V2RayNG Git Mac客户端 V2RayX V2RayX- v1.5.1 V2RayX Git V2RayU V2RayU-v1.5.1 V2RayU Git 下面以Windows平台的V2RayW为例说明客户端的配置和使用方法： 打开应用后右键托盘内的V2ray图标，点击“配置” 在VMess服务器点击“增加”，在服务器信息分别输入 服务器ip、端口号、用户ID、额外ID，如下图： 右击V2ray图标，选择自动模式(PAC)，然后就可以正确的上网了。]]></content>
@@ -8,9 +22,9 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>V2Ray</tag>
         <tag>VPN</tag>
+        <tag>VPS</tag>
       </tags>
   </entry>
   <entry>
@@ -21,9 +35,9 @@
         <category>科学上网</category>
       </categories>
       <tags>
-        <tag>VPS</tag>
         <tag>V2Ray</tag>
         <tag>VPN</tag>
+        <tag>VPS</tag>
       </tags>
   </entry>
   <entry>
@@ -120,8 +134,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +182,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -180,8 +194,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -254,9 +268,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>Mini Pc</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -391,8 +405,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -403,8 +417,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>

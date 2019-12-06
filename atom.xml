@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2019-12-04T09:37:48.197Z</updated>
+  <updated>2019-12-06T02:16:46.187Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>OpenWrt安装V2Ray科学上网</title>
+    <link href="http://minipc.netlify.com/posts/c019c9fa/"/>
+    <id>http://minipc.netlify.com/posts/c019c9fa/</id>
+    <published>2019-12-05T09:49:23.000Z</published>
+    <updated>2019-12-06T02:16:46.187Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。&lt;/p&gt;
+&lt;p&gt;下图是油管一些播主的对比图，速度足足快了几倍。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/c019c9fa/v2ray_1.pn
+      
+    
+    </summary>
+    
+      <category term="OpenWrt" scheme="http://minipc.netlify.com/categories/OpenWrt/"/>
+    
+    
+      <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
+    
+      <category term="Koolshare" scheme="http://minipc.netlify.com/tags/Koolshare/"/>
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>搭建V2Ray实现科学上网(下)</title>
     <link href="http://minipc.netlify.com/posts/198de251/"/>
     <id>http://minipc.netlify.com/posts/198de251/</id>
     <published>2019-12-04T09:11:27.000Z</published>
-    <updated>2019-12-04T09:37:48.197Z</updated>
+    <updated>2019-12-04T09:38:12.409Z</updated>
     
     <summary type="html">
     
@@ -36,11 +67,11 @@
       <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
     
-      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
-    
       <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
     
       <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
     
   </entry>
   
@@ -63,11 +94,11 @@
       <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
     
-      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
-    
       <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
     
       <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
     
   </entry>
   
@@ -284,9 +315,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -387,9 +418,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -414,9 +445,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -526,31 +557,6 @@
       <category term="Pfsense" scheme="http://minipc.netlify.com/tags/Pfsense/"/>
     
       <category term="Firewall" scheme="http://minipc.netlify.com/tags/Firewall/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 18.04配置serial console</title>
-    <link href="http://minipc.netlify.com/posts/38655/"/>
-    <id>http://minipc.netlify.com/posts/38655/</id>
-    <published>2019-07-22T01:59:33.000Z</published>
-    <updated>2019-08-26T11:51:37.568Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Ubuntu串口控制台登录&quot;&gt;&lt;a href=&quot;#Ubuntu串口控制台登录&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu串口控制台登录&quot;&gt;&lt;/a&gt;Ubuntu串口控制台登录&lt;/h3&gt;&lt;p&gt;电脑硬件：&lt;a href=&quot;http://www.q
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
