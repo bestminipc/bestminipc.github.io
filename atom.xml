@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-03-25T02:36:44.351Z</updated>
+  <updated>2020-05-24T02:27:44.748Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙</title>
+    <link href="http://minipc.netlify.com/posts/c2de8ba4/"/>
+    <id>http://minipc.netlify.com/posts/c2de8ba4/</id>
+    <published>2020-05-24T02:08:17.000Z</published>
+    <updated>2020-05-24T02:27:44.748Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;注册&quot;&gt;&lt;a href=&quot;#注册&quot; class=&quot;headerlink&quot; title=&quot;注册&quot;&gt;&lt;/a&gt;注册&lt;/h2&gt;&lt;p&gt;《&lt;a href=&quot;https://bestminipc.github.io/posts/96d310/&quot; target=&quot;_blank&quot; 
+      
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
+    
+  </entry>
   
   <entry>
     <title>如何用电脑安装黑群晖NAS</title>
@@ -525,32 +552,6 @@
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="Mini PC" scheme="http://minipc.netlify.com/tags/Mini-PC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Red Hat更换Centos6源</title>
-    <link href="http://minipc.netlify.com/posts/52372/"/>
-    <id>http://minipc.netlify.com/posts/52372/</id>
-    <published>2019-07-31T02:53:56.000Z</published>
-    <updated>2019-08-26T11:51:27.068Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;RedHat使用自带的yum源是需要注册的，不想注册的可以替换本地源使用&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;工控机型号：&lt;/strong&gt; &lt;em&gt;&lt;a href=&quot;http://www.qotom.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;QOT
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Red Hat" scheme="http://minipc.netlify.com/tags/Red-Hat/"/>
     
   </entry>
   
