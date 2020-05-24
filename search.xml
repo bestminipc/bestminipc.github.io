@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[编译OpenWrt并添加passwall插件科学上网]]></title>
     <url>%2Fposts%2Fb44f0990%2F</url>
-    <content type="text"><![CDATA[代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 编译环境：Ubuntu 18.04 LTS 下载源代码 1git clone -b dev-19.07 https://github.com/Lienol/openwrt 安装若干需要的库文件 1sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf 添加第三方软件包 Lienol的passwall插件现在已经被删除了，好在我有备份修改feeds.conf.default文件如下： 123456src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07#src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-19.07src-git packages https://github.com/Lienol/openwrt-packages.git;dev-19.07src-git luci https://github.com/Lienol/openwrt-luci.git;dev-18.06src-git lienol https://github.com/Lienol/openwrt-packagesrc-git laohu https://github.com/huchanghui123/Lienol-openwrt-packages-backup#备份的passwall 执行feeds命令下载安装第三方软件包 12sudo make defconfigsudo make menuconfig 配置编译 根据自己需要勾选，LuCI&gt;Applications选的越多，需要下载的时间越长 sudo make -j8 download V=s 下载dl库 sudo make -j1 V=s（不要使用root，我编译时需要加上FORCE_UNSAFE_CONFIGURE=1） 因为Openwrt仅有编译及配置指令，各种依赖的代码包在上游网站及代码仓库里，由于GFW的原因下载很困难，所以上面两步尽量使用科学上网 编译完成后输出路径在bin/targets/x86/64 将镜像写入磁盘 1dd if=openwrt-x86-64-combined-squashfs.img of=/dev/*** 路由地址：192.168.1.1，密码需要passwd设置（忘了预置密码了） 主界面展示，主题已经切换为Argon_Dark 设置PASSWALL插件 节点列表——通过SS/SSR/V2ray链接添加节点——保存应用 基本设置——打开总开关，选择刚刚创建的节点，其他选项可以默认——保存应用 谷歌检测连接正常 油管测试正常 V2Ray节点使用WS+TLS协议（参考《如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙》），在koolshare固件上速度很不理想并且不稳定，换了这个固件后，速度有了很大的改善！！！]]></content>
+    <content type="text"><![CDATA[代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 编译环境：Ubuntu 18.04 LTS 下载源代码 1git clone -b dev-19.07 https://github.com/Lienol/openwrt 安装若干需要的库文件 1sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf 添加第三方软件包 Lienol的passwall插件现在已经被删除了，好在我有备份修改feeds.conf.default文件如下： 123456src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07#src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-19.07src-git packages https://github.com/Lienol/openwrt-packages.git;dev-19.07src-git luci https://github.com/Lienol/openwrt-luci.git;dev-18.06src-git lienol https://github.com/Lienol/openwrt-packagesrc-git laohu https://github.com/huchanghui123/Lienol-openwrt-packages-backup#备份的passwall 执行feeds命令下载安装第三方软件包 12sudo make defconfigsudo make menuconfig 配置编译 根据自己需要勾选，LuCI&gt;Applications选的越多，需要下载的时间越长 sudo make -j8 download V=s 下载dl库 sudo make -j1 V=s（不要使用root，我编译时需要加上FORCE_UNSAFE_CONFIGURE=1） 因为Openwrt仅有编译及配置指令，各种依赖的代码包在上游网站及代码仓库里，由于GFW的原因下载很困难，所以上面两步尽量使用科学上网 编译完成后输出路径在bin/targets/x86/64 将镜像写入磁盘 1dd if=openwrt-x86-64-combined-squashfs.img of=/dev/你的磁盘 路由地址：192.168.1.1，密码需要passwd设置（忘了预置密码了） 主界面展示，主题已经切换为Argon_Dark 设置PASSWALL插件 节点列表——通过SS/SSR/V2ray链接添加节点——保存应用 基本设置——打开总开关，选择刚刚创建的节点，其他选项可以默认——保存应用 谷歌检测连接正常 油管测试正常 V2Ray节点使用WS+TLS协议（参考《如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙》），在koolshare固件上速度很不理想并且不稳定，换了这个固件后，速度有了很大的改善！！！]]></content>
       <categories>
         <category>科学上网</category>
       </categories>
@@ -172,8 +172,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -220,8 +220,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -232,8 +232,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -306,9 +306,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>Mini Pc</tag>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -443,8 +443,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -455,8 +455,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
