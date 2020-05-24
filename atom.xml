@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-05-24T02:27:44.748Z</updated>
+  <updated>2020-05-24T02:40:56.765Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>编译OpenWrt并添加passwall插件科学上网</title>
+    <link href="http://minipc.netlify.com/posts/b44f0990/"/>
+    <id>http://minipc.netlify.com/posts/b44f0990/</id>
+    <published>2020-05-24T02:31:56.000Z</published>
+    <updated>2020-05-24T02:40:56.765Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;代码采用Lienol的官方Openwrt源码，感谢大佬！-！-！&quot;&gt;&lt;a href=&quot;#代码采用Lienol的官方Openwrt源码，感谢大佬！-！-！&quot; class=&quot;headerlink&quot; title=&quot;代码采用Lienol的官方Openwrt源码，感谢大佬！
+      
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+      <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="passwall" scheme="http://minipc.netlify.com/tags/passwall/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙</title>
     <link href="http://minipc.netlify.com/posts/c2de8ba4/"/>
     <id>http://minipc.netlify.com/posts/c2de8ba4/</id>
     <published>2020-05-24T02:08:17.000Z</published>
-    <updated>2020-05-24T02:27:44.748Z</updated>
+    <updated>2020-05-24T02:27:54.503Z</updated>
     
     <summary type="html">
     
@@ -367,9 +394,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -470,9 +497,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -497,9 +524,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
@@ -527,31 +554,6 @@
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="SQLServer" scheme="http://minipc.netlify.com/tags/SQLServer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QOTOM Install Windows Server 2008 r2 Datacenter</title>
-    <link href="http://minipc.netlify.com/posts/4175/"/>
-    <id>http://minipc.netlify.com/posts/4175/</id>
-    <published>2019-08-14T01:45:22.000Z</published>
-    <updated>2019-08-26T11:53:30.192Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h3&gt;&lt;p&gt;硬件：&lt;a href=&quot;http://www.qotom.com/product/59.html&quot; target=&quot;_blank&quot; rel=
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
-      <category term="Mini PC" scheme="http://minipc.netlify.com/tags/Mini-PC/"/>
     
   </entry>
   

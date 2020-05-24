@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="OpenWrt,V2Ray,passwall,">
 
 
 
@@ -90,13 +90,25 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Laohu Blog">
-<meta property="og:url" content="http://minipc.netlify.com/archives/2019/page/3/index.html">
+<meta name="description" content="代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 编译环境：Ubuntu 18">
+<meta name="keywords" content="OpenWrt,V2Ray,passwall">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译OpenWrt并添加passwall插件科学上网">
+<meta property="og:url" content="http://minipc.netlify.com/posts/b44f0990/index.html">
 <meta property="og:site_name" content="Laohu Blog">
+<meta property="og:description" content="代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 编译环境：Ubuntu 18">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall2-1024x695.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall3-1024x695.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall4-1024x698.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall5-1024x374.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall6-1024x760.png">
+<meta property="og:updated_time" content="2020-05-24T02:40:56.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laohu Blog">
+<meta name="twitter:title" content="编译OpenWrt并添加passwall插件科学上网">
+<meta name="twitter:description" content="代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 编译环境：Ubuntu 18">
+<meta name="twitter:image" content="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall.png">
 
 
 
@@ -141,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://minipc.netlify.com/archives/2019/page/3/">
+  <link rel="canonical" href="http://minipc.netlify.com/posts/b44f0990/">
 
 
 
 
 
-  <title>归档 | Laohu Blog</title>
+  <title>编译OpenWrt并添加passwall插件科学上网 | Laohu Blog</title>
   
 
 
@@ -175,7 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -321,390 +333,311 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/b44f0990/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lao hu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Laohu Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">编译OpenWrt并添加passwall插件科学上网</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-24T10:31:56+08:00">
+                2020-05-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-24T10:40:56+08:00">
+                2020-05-24
+              </time>
+            
+          </span>
+
           
-        好! 目前共计 56 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科学上网/" itemprop="url" rel="index">
+                    <span itemprop="name">科学上网</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/b44f0990/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/b44f0990/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/38655/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Ubuntu 18.04配置serial console</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  601
+                </span>
               
-            </a>
-        
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-22T09:59:33+08:00" content="2019-07-22">
-          07-22
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/17898/" itemprop="url">
-              
-                <span itemprop="name">Win10 Remote Ubuntu18.04</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-19T10:13:13+08:00" content="2019-07-19">
-          07-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/3221e6f0/" itemprop="url">
-              
-                <span itemprop="name">OpenWrt X86 分区扩容</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-03T10:45:15+08:00" content="2019-07-03">
-          07-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="代码采用Lienol的官方Openwrt源码，感谢大佬！-！-！"><a href="#代码采用Lienol的官方Openwrt源码，感谢大佬！-！-！" class="headerlink" title="代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！"></a>代码采用<a href="https://github.com/Lienol/openwrt" target="_blank" rel="noopener">Lienol</a>的官方Openwrt源码，感谢大佬！ ！ ！</h3><h2 id="注册VPS"><a href="#注册VPS" class="headerlink" title="注册VPS"></a>注册VPS</h2><p>《<a href="https://bestminipc.github.io/posts/96d310/" target="_blank" rel="noopener">搭建V2Ray科学上网上</a>》<br>《<a href="https://bestminipc.github.io/posts/198de251/" target="_blank" rel="noopener">搭建V2Ray科学上网下</a>》 (tcp协议)<br>新用户注册送$10: <strong><a href="https://www.vultr.com/?ref=8337083" target="_blank" rel="noopener">https://www.vultr.com/?ref=8337083</a></strong>（充值10$送10$）<br>新用户注册送$25: <strong><a href="https://www.vultr.com/?ref=8337083" target="_blank" rel="noopener">https://www.vultr.com/?ref=8337083</a></strong>（充值25$送25$）</p>
+<h2 id="编译环境：Ubuntu-18-04-LTS"><a href="#编译环境：Ubuntu-18-04-LTS" class="headerlink" title="编译环境：Ubuntu 18.04 LTS"></a>编译环境：Ubuntu 18.04 LTS</h2><ol>
+<li><p>下载源代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b dev-19.07 https://github.com/Lienol/openwrt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装若干需要的库文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加第三方软件包</p>
+<p>Lienol的passwall插件现在已经被删除了，好在我有备份<br>修改<strong>feeds.conf.default</strong>文件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src-git routing https://git.openwrt.org/feed/routing.git;openwrt-19.07</span><br><span class="line">#src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-19.07</span><br><span class="line">src-git packages https://github.com/Lienol/openwrt-packages.git;dev-19.07</span><br><span class="line">src-git luci https://github.com/Lienol/openwrt-luci.git;dev-18.06</span><br><span class="line">src-git lienol https://github.com/Lienol/openwrt-package</span><br><span class="line">src-git laohu https://github.com/huchanghui123/Lienol-openwrt-packages-backup#备份的passwall</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行feeds命令下载安装第三方软件包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo make defconfig</span><br><span class="line">sudo make menuconfig</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置编译</p>
+<p>根据自己需要勾选，LuCI&gt;Applications选的越多，需要下载的时间越长</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall.png" alt="img"></p>
+</li>
+<li><p>sudo make -j8 download V=s 下载dl库</p>
+</li>
+<li><p>sudo make -j1 V=s（不要使用root，我编译时需要加上FORCE_UNSAFE_CONFIGURE=1）</p>
+<p>因为Openwrt仅有编译及配置指令，各种依赖的代码包在上游网站及代码仓库里，由于GFW的原因下载很困难，所以上面两步尽量使用科学上网</p>
+</li>
+<li><p>编译完成后输出路径在bin/targets/x86/64</p>
+</li>
+<li><p>将镜像写入磁盘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=openwrt-x86-64-combined-squashfs.img of=/dev/***</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>路由地址：192.168.1.1，密码需要passwd设置（忘了预置密码了）</p>
+</li>
+<li><p>主界面展示，主题已经切换为Argon_Dark</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall2-1024x695.png" alt="img"></p>
+</li>
+<li><p>设置PASSWALL插件</p>
+<ol>
+<li><p>节点列表——通过SS/SSR/V2ray链接添加节点——保存应用</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall3-1024x695.png" alt="img"></p>
+</li>
+<li><p>基本设置——打开总开关，选择刚刚创建的节点，其他选项可以默认——保存应用</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall4-1024x698.png" alt="img"></p>
+</li>
+</ol>
+</li>
+<li><p>谷歌检测连接正常</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall5-1024x374.png" alt="img"></p>
+</li>
+<li><p>油管测试正常</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/04/make-openwrt-passwall6-1024x760.png" alt="img"></p>
+</li>
+</ol>
+<p>V2Ray节点使用WS+TLS协议（参考《<a href="http://iqotom.com/?p=1327" target="_blank" rel="noopener"><a href="https://bestminipc.github.io/posts/c2de8ba4/" target="_blank" rel="noopener">如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙</a></a>》），在koolshare固件上速度很不理想并且不稳定，换了这个固件后，速度有了很大的改善！！！</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/3b1098bd/" itemprop="url">
-              
-                <span itemprop="name">Linux Read CPU Type and Temperature</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-29T16:37:08+08:00" content="2019-06-29">
-          06-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/5c7fdca/" itemprop="url">
-              
-                <span itemprop="name">Linux Superio Read CPU FAN RPM</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-26T18:33:52+08:00" content="2019-06-26">
-          06-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/511726ae/" itemprop="url">
-              
-                <span itemprop="name">X86 Linux ITE SuperIO GPIO Control</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-05T15:28:43+08:00" content="2019-06-05">
-          06-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/1cf14ed3/" itemprop="url">
-              
-                <span itemprop="name">ESXi6.7安装ROS软路由-设置网卡桥接</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T18:33:45+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/735f53da/" itemprop="url">
-              
-                <span itemprop="name">Linux下常用压缩命令</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-27T09:57:41+08:00" content="2019-05-27">
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/dd97f106/" itemprop="url">
-              
-                <span itemprop="name">Liunx学习笔记 实现一个misc设备驱动</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-16T15:08:24+08:00" content="2019-05-16">
-          05-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/f38e199/" itemprop="url">
-              
-                <span itemprop="name">Linux学习笔记(实现一个带read,write,ioctl的字符设备驱动)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-10T17:33:41+08:00" content="2019-05-10">
-          05-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenWrt/" rel="tag"><i class="fa fa-tag"></i> OpenWrt</a>
+          
+            <a href="/tags/V2Ray/" rel="tag"><i class="fa fa-tag"></i> V2Ray</a>
+          
+            <a href="/tags/passwall/" rel="tag"><i class="fa fa-tag"></i> passwall</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/c2de8ba4/" rel="next" title="如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙">
+                <i class="fa fa-chevron-left"></i> 如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="extend next" rel="next" href="/archives/2019/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+<br>
+<div>
+	
+	<div style="text-align:center;">
+		<div class="links-of-blogroll-title">
+			<i class="fa  fa-fw fa-link"></i>
+			友情链接
+		</div>
+		<div>
+				<a href="http://www.iqotom.com/" title="老胡的博客" target="_blank">老胡的博客</a>
+				&nbsp;
+				<a href="http://www.qotom.com/" title="Qotom" target="_blank">Qotom</a>
+			
+		</div>
+	</div>
+	
+</div>
 
 
+    
+  </div>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -712,6 +645,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -732,8 +672,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -830,6 +779,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码采用Lienol的官方Openwrt源码，感谢大佬！-！-！"><span class="nav-number">1.</span> <span class="nav-text">代码采用Lienol的官方Openwrt源码，感谢大佬！ ！ ！</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#注册VPS"><span class="nav-number"></span> <span class="nav-text">注册VPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译环境：Ubuntu-18-04-LTS"><span class="nav-number"></span> <span class="nav-text">编译环境：Ubuntu 18.04 LTS</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
 	  
@@ -1001,6 +966,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
