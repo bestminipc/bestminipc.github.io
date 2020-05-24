@@ -15,7 +15,7 @@
   <entry>
     <title><![CDATA[OpenWrt安装V2Ray科学上网]]></title>
     <url>%2Fposts%2Fc019c9fa%2F</url>
-    <content type="text"><![CDATA[为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。 工控机型号：QOTOM Q3XXG4 OpenWrt系统版本如下： 进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。 设置V2Ray 打开代理 代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建VPS的配置文件提交即可，成功后运行状态会打勾。 然后在手动更新下规则 配置完后重启下V2Ray插件即可，谷歌、油管都可以上了，并且速度非常快（前提自己宽带给力）]]></content>
+    <content type="text"><![CDATA[为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。 工控机型号：QOTOM Q3XXG4 OpenWrt系统版本如下： 进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。 设置V2Ray 打开代理 代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建VPS的配置文件提交即可，成功后运行状态会打勾。 然后在手动更新下规则 配置完后重启下V2Ray插件即可，谷歌、油管都可以上了，并且速度非常快（前提自己宽带给力） V2Ray链接：https://pan.baidu.com/s/1pyEhG4cf2nkxqhHp6bb8mw提取码：2j3a]]></content>
       <categories>
         <category>OpenWrt</category>
       </categories>
@@ -442,8 +442,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>Unix</tag>
         <tag>FreeBSD</tag>
+        <tag>Unix</tag>
       </tags>
   </entry>
   <entry>
@@ -482,8 +482,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
@@ -495,8 +495,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
@@ -520,8 +520,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
