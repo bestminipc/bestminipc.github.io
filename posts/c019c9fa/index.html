@@ -90,26 +90,25 @@
 
 
 
-<meta name="description" content="为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  工控机型号：QOTOM Q3XXG4  OpenWrt系统版本如下：  进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。  设置V2Ray 打开代理   代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建">
+<meta name="description" content="前言​        为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注">
 <meta name="keywords" content="OpenWrt,Koolshare,V2Ray,VPN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenWrt安装V2Ray科学上网">
 <meta property="og:url" content="http://minipc.netlify.com/posts/c019c9fa/index.html">
 <meta property="og:site_name" content="Laohu Blog">
-<meta property="og:description" content="为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  工控机型号：QOTOM Q3XXG4  OpenWrt系统版本如下：  进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。  设置V2Ray 打开代理   代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建">
+<meta property="og:description" content="前言​        为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_1.png">
-<meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_2.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_3.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_4.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_5.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_6.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_7.png">
 <meta property="og:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_8.png">
-<meta property="og:updated_time" content="2020-05-24T02:03:42.295Z">
+<meta property="og:updated_time" content="2020-05-25T01:31:48.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenWrt安装V2Ray科学上网">
-<meta name="twitter:description" content="为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  工控机型号：QOTOM Q3XXG4  OpenWrt系统版本如下：  进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。  设置V2Ray 打开代理   代理模式设置为大陆白名单，我的服务类型为自建，然后复制自建">
+<meta name="twitter:description" content="前言​        为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。 下图是油管一些播主的对比图，速度足足快了几倍。  注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注">
 <meta name="twitter:image" content="http://minipc.netlify.com/posts/c019c9fa/v2ray_1.png">
 
 
@@ -394,8 +393,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-05-24T10:03:42+08:00">
-                2020-05-24
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-25T09:31:48+08:00">
+                2020-05-25
               </time>
             
           </span>
@@ -459,7 +458,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  221
+                  281
                 </span>
               
 
@@ -496,14 +495,13 @@
       
 
       
-        <p>为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        为什么我要在软路由中安装V2Ray，为的就是想要更方便的科学上网，脱离V2Ray客户端的束缚，并且软路由能大大提高翻墙速度。</p>
 <p>下图是油管一些播主的对比图，速度足足快了几倍。</p>
 <p><img src="/posts/c019c9fa/v2ray_1.png" alt="openert v2ray"></p>
-<p>工控机型号：<a href="http://www.qotom.com/product/4.html" target="_blank" rel="noopener">QOTOM Q3XXG4</a></p>
-<p><img src="/posts/c019c9fa/v2ray_2.png" alt="openert v2ray"></p>
+<h2 id="注册VPS"><a href="#注册VPS" class="headerlink" title="注册VPS"></a>注册VPS</h2><p>《<a href="https://bestminipc.github.io/posts/96d310/" target="_blank" rel="noopener">搭建V2Ray科学上网上</a>》<br>《<a href="https://bestminipc.github.io/posts/198de251/" target="_blank" rel="noopener">搭建V2Ray科学上网下</a>》 (tcp协议)<br>新用户注册送$10: <strong><a href="https://www.vultr.com/?ref=8337083" target="_blank" rel="noopener">https://www.vultr.com/?ref=8337083</a></strong>（充值10$送10$）<br>新用户注册送$25: <strong><a href="https://www.vultr.com/?ref=8337083" target="_blank" rel="noopener">https://www.vultr.com/?ref=8337083</a></strong>（充值25$送25$）</p>
 <p>OpenWrt系统版本如下：</p>
 <p><img src="/posts/c019c9fa/v2ray_3.png" alt="openert v2ray"></p>
-<p>进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了。</p>
+<p>进入酷软安装V2Ray，软件已经下架了，只能使用离线安装了，底部已附上链接。</p>
 <p><img src="/posts/c019c9fa/v2ray_4.png" alt="openert v2ray"></p>
 <h2 id="设置V2Ray"><a href="#设置V2Ray" class="headerlink" title="设置V2Ray"></a>设置V2Ray</h2><ol>
 <li><p>打开代理</p>
@@ -770,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置V2Ray"><span class="nav-number">1.</span> <span class="nav-text">设置V2Ray</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册VPS"><span class="nav-number">2.</span> <span class="nav-text">注册VPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置V2Ray"><span class="nav-number">3.</span> <span class="nav-text">设置V2Ray</span></a></li></ol></div>
             
 
           </div>
