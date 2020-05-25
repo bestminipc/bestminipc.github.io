@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙]]></title>
     <url>%2Fposts%2Fc2de8ba4%2F</url>
-    <content type="text"><![CDATA[注册《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》 (tcp协议)新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 如何检测VPS是否被墙通过 http://ping.pe/ 检测IP是否被墙, 输入自己服务器的IP后，点击GO按钮。如果出现以下情况，国外节点通绿色，国内节点红色，基本可以判断此IP被GWF封了。 准备一个域名 可以使用freenom注册一个免费域名 https://www.freenom.com 申请域名并去购物车 选择免费时间一年 如果是第一次用freenom，那么要验证邮箱并输入一些个人信息，这里我直接确认订单就行了 获得免费域名后进去域名管理就可查看申请的域名了 解析DNS，这里使用cloudflare的DNS解析 Services-&gt;My Domains-&gt;Manager Domain，使用自定义NS 等待几分钟时间即可在CloudFlare添加域名了 使用CloudFlare 免费CDNCloudFlare 是一家全球知名的 CDN 服务商，并且提供了免费的 CDN 套餐，而且不限流量，所以我们完全不需要花一分钱就能使用它的 CDN 服务，接下来我就说明如何注册并使用CloudFlare 。 先打开CloudFlare 官网https://www.cloudflare.com/**，注册一个账号 （ 记得激活邮箱 ）** 确保账号能在 Cloudflare 正常使用 输入之前注册的域名 选择free 添加二级域名和VPS ip 修改freenom的NS服务器 SSL使用默认Full 查看当前域名证书状态在SSL/TLS选显卡下方 Edge Certificates 菜单中：Universal Status状态需为Active 然后将Status点灰不要关闭网页，下一步去v2ray配置传输协议等 配置V2ray服务因为我之前已经安装过v2ray了，这里就不再演示了，安装过程请看《搭建V2Ray科学上网下》直接跳到配置 选择第4项，WebSocket + TLS 输入在Cloudflare新增的二级域名，回车；确认域名是正确的，按Y继续 域名解析检测正确，安装Caddy自动配置TLS，按Y继续 是否开启网站伪装和路径分流，默认否 安装完成后会自动打开v2ray配置信息 Caddy无法启动的解决方案查看Caddy运行状态 systemctl status caddy失败，一般是防火墙和证书的问题 开放v2ray端口和80、443端口 ，这里我直接关闭 Firewalld 了 1234启动： systemctl start firewalld查看状态： systemctl status firewalld 停止： systemctl disable firewalld禁用： systemctl stop firewalld 检测Caddy证书状态，先执行ulimit -n 8192，然后执行caddy -conf /etc/caddy/Caddyfile --agree （Cloudflare小黄云先点灰） 等待一段时间重启caddy后正常了，systemctl restart caddy 访问域名，显示Bad Request，这是正常的 测试使用 输入v2ray url生成vmess链接，copy链接 打开v2rayN客户端，选择导入URL，自动生成服务器 然后将HTTP代理修改为PAC模式 经测试已经可以愉快的上网了 配置LEDE软路由 打开v2rayN客户端的config.json文件，copy到软路由v2ray插件 YouTube体验截图如下，家里100M电信光纤，速度还能接受： 套了Cloudflare速度可能会比较慢，这个一般是线路问题，用电信宽带加美国西海岸的VPS可能会好点 使用遇到的问题：某天换了个环境后无法上网，ping了域名发现ip不通或者为原始ip，正常ip应该指向cloudflare，将本地电脑DNS更换为当地运营商的DNS刷新后恢复正常了]]></content>
+    <content type="text"><![CDATA[如何检测VPS是否被墙通过 http://ping.pe/ 检测IP是否被墙, 输入自己服务器的IP后，点击GO按钮。如果出现以下情况，国外节点通绿色，国内节点红色，基本可以判断此IP被GWF封了。 注册VPS《搭建V2Ray科学上网上》《搭建V2Ray科学上网下》新用户注册送$10: https://www.vultr.com/?ref=8337083（充值10$送10$）新用户注册送$25: https://www.vultr.com/?ref=8337083（充值25$送25$） 准备一个域名 可以使用freenom注册一个免费域名 https://www.freenom.com 申请域名并去购物车 选择免费时间一年 如果是第一次用freenom，那么要验证邮箱并输入一些个人信息，这里我直接确认订单就行了 获得免费域名后进去域名管理就可查看申请的域名了 解析DNS，这里使用cloudflare的DNS解析 Services-&gt;My Domains-&gt;Manager Domain，使用自定义NS 等待几分钟时间即可在CloudFlare添加域名了 使用CloudFlare 免费CDNCloudFlare 是一家全球知名的 CDN 服务商，并且提供了免费的 CDN 套餐，而且不限流量，所以我们完全不需要花一分钱就能使用它的 CDN 服务，接下来我就说明如何注册并使用CloudFlare 。 先打开CloudFlare 官网https://www.cloudflare.com/**，注册一个账号 （ 记得激活邮箱 ）** 确保账号能在 Cloudflare 正常使用 输入之前注册的域名 选择free 添加二级域名和VPS ip 修改freenom的NS服务器 SSL使用默认Full 查看当前域名证书状态在SSL/TLS选显卡下方 Edge Certificates 菜单中：Universal Status状态需为Active 然后将Status点灰不要关闭网页，下一步去v2ray配置传输协议等 配置V2ray服务因为我之前已经安装过v2ray了，这里就不再演示了，安装过程请看《搭建V2Ray科学上网下》直接跳到配置 选择第4项，WebSocket + TLS 输入在Cloudflare新增的二级域名，回车；确认域名是正确的，按Y继续 域名解析检测正确，安装Caddy自动配置TLS，按Y继续 是否开启网站伪装和路径分流，默认否 安装完成后会自动打开v2ray配置信息 Caddy无法启动的解决方案查看Caddy运行状态 systemctl status caddy失败，一般是防火墙和证书的问题 开放v2ray端口和80、443端口 ，这里我直接关闭 Firewalld 了 1234启动： systemctl start firewalld查看状态： systemctl status firewalld 停止： systemctl disable firewalld禁用： systemctl stop firewalld 检测Caddy证书状态，先执行ulimit -n 8192，然后执行caddy -conf /etc/caddy/Caddyfile --agree （Cloudflare小黄云先点灰） 等待一段时间重启caddy后正常了，systemctl restart caddy 访问域名，显示Bad Request，这是正常的 测试使用 输入v2ray url生成vmess链接，copy链接 打开v2rayN客户端，选择导入URL，自动生成服务器 然后将HTTP代理修改为PAC模式 经测试已经可以愉快的上网了 配置LEDE软路由 打开v2rayN客户端的config.json文件，copy到软路由v2ray插件 YouTube体验截图如下，家里100M电信光纤，速度还能接受： 套了Cloudflare速度可能会比较慢，这个一般是线路问题，用电信宽带加美国西海岸的VPS可能会好点 使用遇到的问题：某天换了个环境后无法上网，ping了域名发现ip不通或者为原始ip，正常ip应该指向cloudflare，将本地电脑DNS更换为当地运营商的DNS刷新后恢复正常了]]></content>
       <categories>
         <category>科学上网</category>
       </categories>
@@ -207,9 +207,9 @@
         <category>Linux</category>
       </categories>
       <tags>
+        <tag>Mini Pc</tag>
         <tag>Clonezilla</tag>
         <tag>Linux</tag>
-        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -294,8 +294,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -307,8 +307,8 @@
       </categories>
       <tags>
         <tag>Windows</tag>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -332,8 +332,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -344,8 +344,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -357,8 +357,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -430,8 +430,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -468,8 +468,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>Unix</tag>
         <tag>FreeBSD</tag>
+        <tag>Unix</tag>
       </tags>
   </entry>
   <entry>
@@ -508,8 +508,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
@@ -521,8 +521,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
@@ -546,8 +546,8 @@
       </categories>
       <tags>
         <tag>Mini Pc</tag>
-        <tag>FreeNAS</tag>
         <tag>Unix</tag>
+        <tag>FreeNAS</tag>
       </tags>
   </entry>
   <entry>
@@ -597,8 +597,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
