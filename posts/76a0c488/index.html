@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="OpenWrt,Pfsense,">
 
 
 
@@ -90,13 +90,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Laohu Blog">
-<meta property="og:url" content="http://minipc.netlify.com/archives/2019/10/index.html">
+<meta name="description" content="前言​        PC和OpenWrt的ip由主路由Pfsense分配，Openwrt（已安装科学上网）开启无线并分配IP给无线打印机和手机 ，默认这种情况PC与打印机不在同一网段，是无法访问的，配置的目的是让PC能访问OpenWrt和下面的子设备。 Pfsense硬件：Qotom 515G6OpenWrt硬件： Linksys WRT1900ACv2 网络拓扑图 Pfsense配置 添加网关">
+<meta name="keywords" content="OpenWrt,Pfsense">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pfsense添加静态路由">
+<meta property="og:url" content="http://minipc.netlify.com/posts/76a0c488/index.html">
 <meta property="og:site_name" content="Laohu Blog">
+<meta property="og:description" content="前言​        PC和OpenWrt的ip由主路由Pfsense分配，Openwrt（已安装科学上网）开启无线并分配IP给无线打印机和手机 ，默认这种情况PC与打印机不在同一网段，是无法访问的，配置的目的是让PC能访问OpenWrt和下面的子设备。 Pfsense硬件：Qotom 515G6OpenWrt硬件： Linksys WRT1900ACv2 网络拓扑图 Pfsense配置 添加网关">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/05/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/05/pfsense_001.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/05/pfsense_002.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/05/pfsense_003-1024x681.png">
+<meta property="og:image" content="http://iqotom.com/wp-content/uploads/2020/05/pfsense_004.png">
+<meta property="og:updated_time" content="2020-05-25T01:55:09.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laohu Blog">
+<meta name="twitter:title" content="Pfsense添加静态路由">
+<meta name="twitter:description" content="前言​        PC和OpenWrt的ip由主路由Pfsense分配，Openwrt（已安装科学上网）开启无线并分配IP给无线打印机和手机 ，默认这种情况PC与打印机不在同一网段，是无法访问的，配置的目的是让PC能访问OpenWrt和下面的子设备。 Pfsense硬件：Qotom 515G6OpenWrt硬件： Linksys WRT1900ACv2 网络拓扑图 Pfsense配置 添加网关">
+<meta name="twitter:image" content="http://iqotom.com/wp-content/uploads/2020/05/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE.png">
 
 
 
@@ -141,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://minipc.netlify.com/archives/2019/10/">
+  <link rel="canonical" href="http://minipc.netlify.com/posts/76a0c488/">
 
 
 
 
 
-  <title>归档 | Laohu Blog</title>
+  <title>Pfsense添加静态路由 | Laohu Blog</title>
   
 
 
@@ -175,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -321,246 +332,280 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/76a0c488/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lao hu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Laohu Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">Pfsense添加静态路由</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-25T09:49:51+08:00">
+                2020-05-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-05-25T09:55:09+08:00">
+                2020-05-25
+              </time>
+            
+          </span>
+
           
-        好! 目前共计 57 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/FreeBSD/" itemprop="url" rel="index">
+                    <span itemprop="name">FreeBSD</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/76a0c488/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/76a0c488/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/110ed71d/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">Ubuntu systemd rc.local 如何设置开机启动</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  290
+                </span>
               
-            </a>
-        
-      </h3>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-22T09:24:13+08:00" content="2019-10-22">
-          10-22
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/d0639c77/" itemprop="url">
-              
-                <span itemprop="name">Linux压力测试工具stress如何使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-21T10:42:20+08:00" content="2019-10-21">
-          10-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/eee045de/" itemprop="url">
-              
-                <span itemprop="name">如何用VS打包发布Winform程序并设置开机启动</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-17T10:44:28+08:00" content="2019-10-17">
-          10-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​        PC和OpenWrt的ip由主路由Pfsense分配，Openwrt（已安装科学上网）开启无线并分配IP给无线打印机和手机 ，默认这种情况PC与打印机不在同一网段，是无法访问的，配置的目的是让PC能访问OpenWrt和下面的子设备。</p>
+<p>Pfsense硬件：<a href="http://www.qotom.com" target="_blank" rel="noopener">Qotom</a> 515G6<br>OpenWrt硬件： Linksys WRT1900ACv2</p>
+<h2 id="网络拓扑图"><a href="#网络拓扑图" class="headerlink" title="网络拓扑图"></a>网络拓扑图</h2><p><img src="http://iqotom.com/wp-content/uploads/2020/05/%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%9B%BE.png" alt="img"></p>
+<h2 id="Pfsense配置"><a href="#Pfsense配置" class="headerlink" title="Pfsense配置"></a>Pfsense配置</h2><ol>
+<li><p>添加网关，这里Pfsnese分配给OpenWrt的地址是192.168.8.10</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/05/pfsense_001.png" alt="img"></p>
+</li>
+<li><p>添加静态路由，这里OpenWrt的Ipv4地址默认是192.168.15.1</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/05/pfsense_002.png" alt="img"></p>
+</li>
+</ol>
+<p><strong>配置成功后在浏览器就可以通过192.168.15.1访问OpenWrt的Web配置页面了</strong></p>
+<h2 id="OpenWrt配置"><a href="#OpenWrt配置" class="headerlink" title="OpenWrt配置"></a>OpenWrt配置</h2><ol>
+<li><p>防火墙太复杂我表示不懂，这里简单把数据和转发都开放就行了</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/05/pfsense_003-1024x681.png" alt="img"></p>
+</li>
+<li><p>PC端访问无线打印机正常</p>
+<p><img src="http://iqotom.com/wp-content/uploads/2020/05/pfsense_004.png" alt="img"></p>
+</li>
+</ol>
+<p><strong>手机接入OpenWrt的WIFI也能正常科学上网！</strong></p>
+<p>​        <strong>更简单的办法是OpenWrt关闭DHCP服务器，IP全部由Pfsense分配，将OpenWrt当做一个无线热点也可以达到这种效果，但这样OpenWrt本身无法获取到网络，科学上网插件无法使用，应该是配置问题，如果有大佬知道请给我留言！</strong></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/929948af/" itemprop="url">
-              
-                <span itemprop="name">Ubuntu下使用脚本打包QT程序</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-15T13:52:06+08:00" content="2019-10-15">
-          10-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/b67a6f8b/" itemprop="url">
-              
-                <span itemprop="name">WinRing0如何使用</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-13T10:18:19+08:00" content="2019-10-13">
-          10-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/fe902d45/" itemprop="url">
-              
-                <span itemprop="name">Linux系统下简单实现一个Watchdog</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-07T11:36:21+08:00" content="2019-10-07">
-          10-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OpenWrt/" rel="tag"><i class="fa fa-tag"></i> OpenWrt</a>
+          
+            <a href="/tags/Pfsense/" rel="tag"><i class="fa fa-tag"></i> Pfsense</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/b44f0990/" rel="next" title="编译OpenWrt并添加passwall插件科学上网">
+                <i class="fa fa-chevron-left"></i> 编译OpenWrt并添加passwall插件科学上网
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+  <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+<br>
+<div>
+	
+	<div style="text-align:center;">
+		<div class="links-of-blogroll-title">
+			<i class="fa  fa-fw fa-link"></i>
+			友情链接
+		</div>
+		<div>
+				<a href="http://www.iqotom.com/" title="老胡的博客" target="_blank">老胡的博客</a>
+				&nbsp;
+				<a href="http://www.qotom.com/" title="Qotom" target="_blank">Qotom</a>
+				&nbsp;
+				<a href="https://minipc.netlify.app/" title="Qotom" target="_blank">Loahu</a>
+		</div>
+	</div>
+	
+</div>
 
+
+    
+  </div>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -568,6 +613,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -588,8 +640,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -686,6 +747,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络拓扑图"><span class="nav-number">2.</span> <span class="nav-text">网络拓扑图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pfsense配置"><span class="nav-number">3.</span> <span class="nav-text">Pfsense配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenWrt配置"><span class="nav-number">4.</span> <span class="nav-text">OpenWrt配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
 	  
@@ -857,6 +934,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

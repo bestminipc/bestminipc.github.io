@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-05-24T02:44:47.750Z</updated>
+  <updated>2020-05-25T01:55:09.794Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pfsense添加静态路由</title>
+    <link href="http://minipc.netlify.com/posts/76a0c488/"/>
+    <id>http://minipc.netlify.com/posts/76a0c488/</id>
+    <published>2020-05-25T01:49:51.000Z</published>
+    <updated>2020-05-25T01:55:09.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        PC和OpenWrt的ip由主路由Pfsense分配，Openwrt（已安装科学上网）开启无线并分配IP给无线打印机和手机
+      
+    
+    </summary>
+    
+      <category term="FreeBSD" scheme="http://minipc.netlify.com/categories/FreeBSD/"/>
+    
+    
+      <category term="OpenWrt" scheme="http://minipc.netlify.com/tags/OpenWrt/"/>
+    
+      <category term="Pfsense" scheme="http://minipc.netlify.com/tags/Pfsense/"/>
+    
+  </entry>
   
   <entry>
     <title>编译OpenWrt并添加passwall插件科学上网</title>
@@ -468,11 +493,11 @@
       <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -527,31 +552,6 @@
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
       <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QOTOM Install SQLServer 2008R2</title>
-    <link href="http://minipc.netlify.com/posts/50337/"/>
-    <id>http://minipc.netlify.com/posts/50337/</id>
-    <published>2019-08-14T03:26:26.000Z</published>
-    <updated>2019-08-26T11:53:38.299Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;准备安装环境&quot;&gt;&lt;a href=&quot;#准备安装环境&quot; class=&quot;headerlink&quot; title=&quot;准备安装环境&quot;&gt;&lt;/a&gt;准备安装环境&lt;/h3&gt;&lt;p&gt;系统环境：Windows Server 2008R2 x64 8GDDR3 60G SSD CPU:I5&lt;/
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
-      <category term="SQLServer" scheme="http://minipc.netlify.com/tags/SQLServer/"/>
     
   </entry>
   
