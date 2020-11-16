@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-05-25T01:55:09.794Z</updated>
+  <updated>2020-11-16T03:02:24.402Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用AnyCast Ip提升v2ray WS TLS节点网速</title>
+    <link href="http://minipc.netlify.com/posts/5f88d797/"/>
+    <id>http://minipc.netlify.com/posts/5f88d797/</id>
+    <published>2020-11-16T01:35:54.000Z</published>
+    <updated>2020-11-16T03:02:24.402Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        流量伪装V2ray虽然可以保证VPS的安全性，但会影响科学上网的速度，使用CDN加速可以解决但是对于个人用户我还是推荐使用
+      
+    
+    </summary>
+    
+      <category term="科学上网" scheme="http://minipc.netlify.com/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    
+    
+      <category term="V2Ray" scheme="http://minipc.netlify.com/tags/V2Ray/"/>
+    
+      <category term="VPN" scheme="http://minipc.netlify.com/tags/VPN/"/>
+    
+      <category term="VPS" scheme="http://minipc.netlify.com/tags/VPS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Pfsense添加静态路由</title>
     <link href="http://minipc.netlify.com/posts/76a0c488/"/>
     <id>http://minipc.netlify.com/posts/76a0c488/</id>
     <published>2020-05-25T01:49:51.000Z</published>
-    <updated>2020-05-25T01:55:09.794Z</updated>
+    <updated>2020-05-25T01:55:23.753Z</updated>
     
     <summary type="html">
     
@@ -523,35 +550,6 @@
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>金蝶K/3 Wise v14.0安装配置</title>
-    <link href="http://minipc.netlify.com/posts/22963/"/>
-    <id>http://minipc.netlify.com/posts/22963/</id>
-    <published>2019-08-14T09:21:01.000Z</published>
-    <updated>2019-08-26T11:54:33.200Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;主机：QOTOM Q300P&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;系统：Windows Server 2008 R2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/posts/22963/001.png&quot; alt=&quot;15657751282
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-      <category term="K3" scheme="http://minipc.netlify.com/tags/K3/"/>
     
   </entry>
   
