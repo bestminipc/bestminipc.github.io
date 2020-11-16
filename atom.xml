@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-11-16T03:02:24.402Z</updated>
+  <updated>2020-11-16T03:08:31.083Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://minipc.netlify.com/posts/5f88d797/"/>
     <id>http://minipc.netlify.com/posts/5f88d797/</id>
     <published>2020-11-16T01:35:54.000Z</published>
-    <updated>2020-11-16T03:02:24.402Z</updated>
+    <updated>2020-11-16T03:08:31.083Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        流量伪装V2ray虽然可以保证VPS的安全性，但会影响科学上网的速度，使用CDN加速可以解决但是对于个人用户我还是推荐使用
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;​        流量伪装V2ray虽然可以保证VPS的安全性，但会影响科学上网的速度，使用免费的CDN加速也不能很好的解决，对于个人用户我
       
     
     </summary>
