@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-11-16T03:08:31.083Z</updated>
+  <updated>2020-12-24T01:16:15.534Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WPF打包dll到exe程序</title>
+    <link href="http://minipc.netlify.com/posts/a9a825c7/"/>
+    <id>http://minipc.netlify.com/posts/a9a825c7/</id>
+    <published>2020-12-24T01:08:31.000Z</published>
+    <updated>2020-12-24T01:16:15.534Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考：&lt;a href=&quot;https://blog.csdn.net/m0_37862405/article/details/81532077&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://blog.csdn.net/m0_37862405/
+      
+    
+    </summary>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
+    
+    
+      <category term="C#" scheme="http://minipc.netlify.com/tags/C/"/>
+    
+      <category term="WPF" scheme="http://minipc.netlify.com/tags/WPF/"/>
+    
+  </entry>
   
   <entry>
     <title>使用AnyCast Ip提升v2ray WS TLS节点网速</title>
@@ -444,9 +469,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
-    
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
+    
+      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
   </entry>
   
@@ -523,31 +548,6 @@
       <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
     
       <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>向WIN7 USB安装盘中添加USB3.0驱动</title>
-    <link href="http://minipc.netlify.com/posts/3911/"/>
-    <id>http://minipc.netlify.com/posts/3911/</id>
-    <published>2019-08-21T07:53:26.000Z</published>
-    <updated>2019-08-26T11:54:54.657Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;WIN7原版映像中添加USB3-0驱动程序&quot;&gt;&lt;a href=&quot;#WIN7原版映像中添加USB3-0驱动程序&quot; class=&quot;headerlink&quot; title=&quot;WIN7原版映像中添加USB3.0驱动程序&quot;&gt;&lt;/a&gt;WIN7原版映像中添加USB3.0驱动程序&lt;/
-      
-    
-    </summary>
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
-    
-    
-      <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bestminipc.github.io/posts/a9a825c7/</loc>
+    
+    <lastmod>2020-12-24T01:16:15.534Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bestminipc.github.io/posts/5f88d797/</loc>
     
     <lastmod>2020-11-16T03:08:31.083Z</lastmod>
@@ -415,14 +422,14 @@
   </url>
   
   <url>
-    <loc>http://bestminipc.github.io/tags/index.html</loc>
+    <loc>http://bestminipc.github.io/categories/index-1.html</loc>
     
     <lastmod>2019-04-04T08:50:52.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://bestminipc.github.io/categories/index-1.html</loc>
+    <loc>http://bestminipc.github.io/404/index.html</loc>
     
     <lastmod>2019-04-04T08:50:52.000Z</lastmod>
     
@@ -443,7 +450,7 @@
   </url>
   
   <url>
-    <loc>http://bestminipc.github.io/404/index.html</loc>
+    <loc>http://bestminipc.github.io/tags/index.html</loc>
     
     <lastmod>2019-04-04T08:50:52.000Z</lastmod>
     

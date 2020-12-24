@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[WPF打包dll到exe程序]]></title>
+    <url>%2Fposts%2Fa9a825c7%2F</url>
+    <content type="text"><![CDATA[参考：https://blog.csdn.net/m0_37862405/article/details/81532077 在WPF中，将dll作为嵌入的资源打包到exe中的步骤：注：该方法不能将非C#类型的dll（比如：C++编译的dll）打包到exe 添加以下代码段到WPF项目的.csproj文件中（需添加到节点“Import”的后面）。个人理解这段代码的作用：设置项目引用的dll为嵌入的资源（经测试，单独手动设置dll为嵌入的资源无效，必须添加这段代码到项目文件中，且需在节点“Import”的后面） 1234567&lt;Target Name=&quot;AfterResolveReferences&quot;&gt; &lt;ItemGroup&gt; &lt;EmbeddedResource Include=&quot;@(ReferenceCopyLocalPaths)&quot; Condition=&quot;&apos;%(ReferenceCopyLocalPaths.Extension)&apos; == &apos;.dll&apos;&quot;&gt; &lt;LogicalName&gt;%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)&lt;/LogicalName&gt; &lt;/EmbeddedResource&gt; &lt;/ItemGroup&gt; &lt;/Target&gt; 添加以下代码到Program.cs（若没有Program.cs，可以新建一个） 123456789101112131415161718192021222324252627282930313233343536373839public class Program &#123; /// &lt;summary&gt; /// 使用静态构造函数来绑定解析程序集失败事件 /// &lt;/summary&gt; static Program() &#123; AppDomain.CurrentDomain.AssemblyResolve += OnResolveAssembly; &#125; [STAThreadAttribute] public static void Main() &#123; App.Main(); //启动WPF项目 &#125; //解析程序集失败，会加载对应的程序集 private static Assembly OnResolveAssembly(object sender, ResolveEventArgs args) &#123; Assembly executingAssembly = Assembly.GetExecutingAssembly(); AssemblyName assemblyName = new AssemblyName(args.Name); var path = assemblyName.Name + &quot;.dll&quot;; //判断程序集的区域性 if (!assemblyName.CultureInfo.Equals(CultureInfo.InvariantCulture)) &#123; path = string.Format(@&quot;&#123;0&#125;\&#123;1&#125;&quot;, assemblyName.CultureInfo, path); &#125; using (Stream stream = executingAssembly.GetManifestResourceStream(path)) &#123; if (stream == null) return null; var assemblyRawBytes = new byte[stream.Length]; stream.Read(assemblyRawBytes, 0, assemblyRawBytes.Length); return Assembly.Load(assemblyRawBytes); &#125; &#125; &#125; 在项目属性中，修改项目的启动对象为Program.cs]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>WPF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用AnyCast Ip提升v2ray WS TLS节点网速]]></title>
     <url>%2Fposts%2F5f88d797%2F</url>
     <content type="text"><![CDATA[前言​ 流量伪装V2ray虽然可以保证VPS的安全性，但会影响科学上网的速度，使用免费的CDN加速也不能很好的解决，对于个人用户我还是倾向下面这种方式（我是白嫖党） 测速bash &lt;(curl -Lso- https://git.io/superspeed) 根据运营商选择类型，这里我是3，测试时间有点长 油管播放速度，不稳定，有时候会降到几百 域名解析V2Ray安装请看《如何使用V2ray+Cloudflare+Caddy+WS+LTS科学上网防止被墙》 Cloudflare Worker反代理项目地址：https://github.com/siemenstutorials/better-cloudflare-ip 创建Workers，将Cloidflare反代脚本粘贴进来，将hostname修改为你解析的域名 保存并部署 返回，复制新生成的子域名 克隆V2ray-VMess服务器，修改伪装域名 服务器地址可以使用cloudflare.com也可以使用better-cloudflare-ip筛选一个高速ip地址 使用管理员身份运行cf脚本，这里输入的值要比理论带宽低 将最优的IP地址填入，然后启动服务器，测试油管播放速度有巨大的提升]]></content>
@@ -197,8 +209,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -245,8 +257,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -257,8 +269,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -331,9 +343,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -468,8 +480,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -480,8 +492,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
         <tag>Mini Pc</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
