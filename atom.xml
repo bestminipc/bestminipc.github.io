@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://minipc.netlify.com/"/>
-  <updated>2020-12-24T01:16:15.534Z</updated>
+  <updated>2021-11-26T01:26:58.352Z</updated>
   <id>http://minipc.netlify.com/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter)</title>
+    <link href="http://minipc.netlify.com/posts/a4ad8720/"/>
+    <id>http://minipc.netlify.com/posts/a4ad8720/</id>
+    <published>2021-11-25T09:14:03.000Z</published>
+    <updated>2021-11-26T01:26:58.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;FreeBSD-freebsd-13-0-RELEASE&quot;&gt;&lt;a href=&quot;#FreeBSD-freebsd-13-0-RELEASE&quot; class=&quot;headerlink&quot; title=&quot;FreeBSD freebsd 13.0-RELEASE&quot;&gt;&lt;/a&gt;Fr
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>WPF打包dll到exe程序</title>
     <link href="http://minipc.netlify.com/posts/a9a825c7/"/>
     <id>http://minipc.netlify.com/posts/a9a825c7/</id>
     <published>2020-12-24T01:08:31.000Z</published>
-    <updated>2020-12-24T01:16:15.534Z</updated>
+    <updated>2020-12-24T01:17:13.778Z</updated>
     
     <summary type="html">
     
@@ -469,9 +488,9 @@
       <category term="Windows" scheme="http://minipc.netlify.com/categories/Windows/"/>
     
     
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
-    
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
+    
+      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   
@@ -522,34 +541,6 @@
       <category term="Windows" scheme="http://minipc.netlify.com/tags/Windows/"/>
     
       <category term="C#" scheme="http://minipc.netlify.com/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Clonezilla备份还原系统</title>
-    <link href="http://minipc.netlify.com/posts/3390c071/"/>
-    <id>http://minipc.netlify.com/posts/3390c071/</id>
-    <published>2019-08-26T04:32:53.000Z</published>
-    <updated>2019-08-26T11:37:47.701Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;http://clonezilla.nchc.org.tw/clonezilla-live/download/download.php&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Clonezilla Download&lt;/a&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/categories/Linux/"/>
-    
-    
-      <category term="Clonezilla" scheme="http://minipc.netlify.com/tags/Clonezilla/"/>
-    
-      <category term="Linux" scheme="http://minipc.netlify.com/tags/Linux/"/>
-    
-      <category term="Mini Pc" scheme="http://minipc.netlify.com/tags/Mini-Pc/"/>
     
   </entry>
   

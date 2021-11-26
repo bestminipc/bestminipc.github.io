@@ -90,13 +90,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Laohu Blog">
-<meta property="og:url" content="http://minipc.netlify.com/categories/Windows/page/2/index.html">
+<meta name="description" content="FreeBSD freebsd 13.0-RELEASE手动编译igc驱动，并添加到系统1.下载源码 freebsd/freebsd-src: FreeBSD src tree (read-only mirror) (github.com) 2.格式化一个FAT32格式的U盘 3.将下载好的igc驱动代码放入U盘 12/usr/src/dev/igc/usr/src/modules/igc  4.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter)">
+<meta property="og:url" content="http://minipc.netlify.com/posts/a4ad8720/index.html">
 <meta property="og:site_name" content="Laohu Blog">
+<meta property="og:description" content="FreeBSD freebsd 13.0-RELEASE手动编译igc驱动，并添加到系统1.下载源码 freebsd/freebsd-src: FreeBSD src tree (read-only mirror) (github.com) 2.格式化一个FAT32格式的U盘 3.将下载好的igc驱动代码放入U盘 12/usr/src/dev/igc/usr/src/modules/igc  4.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-11-26T01:26:58.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Laohu Blog">
+<meta name="twitter:title" content="FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter)">
+<meta name="twitter:description" content="FreeBSD freebsd 13.0-RELEASE手动编译igc驱动，并添加到系统1.下载源码 freebsd/freebsd-src: FreeBSD src tree (read-only mirror) (github.com) 2.格式化一个FAT32格式的U盘 3.将下载好的igc驱动代码放入U盘 12/usr/src/dev/igc/usr/src/modules/igc  4.">
 
 
 
@@ -141,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="http://minipc.netlify.com/categories/Windows/page/2/">
+  <link rel="canonical" href="http://minipc.netlify.com/posts/a4ad8720/">
 
 
 
 
 
-  <title>分类: Windows | Laohu Blog</title>
+  <title>FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter) | Laohu Blog</title>
   
 
 
@@ -175,7 +179,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -321,83 +325,249 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Windows<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://minipc.netlify.com/posts/a4ad8720/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lao hu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Laohu Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/412022ec/" itemprop="url">
-              
-                <span itemprop="name">QOTOM MiniPc Window Server 2008 r2 I211AT网卡驱动安装</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter)</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-30T11:27:41+08:00" content="2019-04-30">
-          04-30
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-11-25T17:14:03+08:00">
+                2021-11-25
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-11-26T09:26:58+08:00">
+                2021-11-26
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/a4ad8720/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/a4ad8720/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读次数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  592
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="FreeBSD-freebsd-13-0-RELEASE"><a href="#FreeBSD-freebsd-13-0-RELEASE" class="headerlink" title="FreeBSD freebsd 13.0-RELEASE"></a>FreeBSD freebsd 13.0-RELEASE</h1><h3 id="手动编译igc驱动，并添加到系统"><a href="#手动编译igc驱动，并添加到系统" class="headerlink" title="手动编译igc驱动，并添加到系统"></a>手动编译igc驱动，并添加到系统</h3><p><strong>1.下载源码</strong></p>
+<p><a href="https://github.com/freebsd/freebsd-src" target="_blank" rel="noopener">freebsd/freebsd-src: FreeBSD src tree (read-only mirror) (github.com)</a></p>
+<p><strong>2.格式化一个FAT32格式的U盘</strong></p>
+<p><strong>3.将下载好的igc驱动代码放入U盘</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/usr/src/dev/igc</span><br><span class="line">/usr/src/modules/igc</span><br></pre></td></tr></table></figure>
 
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/posts/73f08017/" itemprop="url">
-              
-                <span itemprop="name">QOTOM MiniPc Windows Server 2016 驱动安装</span>
-              
-            </a>
-        
-      </h3>
+<p><strong>4.挂载U盘到系统</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FreeBSD会将USB挂载为SCSI设备，在/dev目录可查看,这里U盘名为da0</span><br><span class="line">查看U盘信息	gpart show da0</span><br><span class="line">查看U盘格式	fstyp da0p1，这里是msdosfs</span><br><span class="line">新建文件夹	mkdir /mnt/usb</span><br><span class="line">挂载U盘到文件夹	mout_msdosfs /dev/da0p1 /mnt/usb</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-26T11:23:09+08:00" content="2019-04-26">
-          04-26
-        </time>
-      </div>
+<p><strong>5.将驱动文件复制到源码目录</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -rf /mnt/usb/dev/igc /usr/src/dev/igc</span><br><span class="line">cp -rf /mnt/usb/modules/igc /usr/src/dev/igc</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<p><strong>6.编译驱动</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/src/sys/modules/igc</span><br><span class="line">编译</span><br><span class="line">make</span><br><span class="line">搜索生成的驱动文件</span><br><span class="line">find / -name if_igc.ko</span><br><span class="line">将if_igc.ko复制到安装目录</span><br><span class="line">/boot/modules/if_igc.ko</span><br><span class="line">加载驱动</span><br><span class="line">kldload if_igc (重启失效)</span><br></pre></td></tr></table></figure>
+
+<p><strong>7.配置网络</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">让系统自动加载</span><br><span class="line">ee /boot/loader.conf</span><br><span class="line">if_igc_load=&quot;YES&quot;</span><br><span class="line">配置连接方式</span><br><span class="line">ee /etc/rc.conf</span><br><span class="line">ifconfig_igc0=&quot;DHCP&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>8.完成</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br><span class="line">FreeBSD freebsd 13.0-RELEASE FreeBSD 13.0-RELEASE #0 releng/13.0-n244733-ea31abc261f: Fri Apr  9 04:24:09 UTC 2021     root@releng1.nyi.freebsd.org:/usr/obj/usr/src/amd64.amd64/sys/GENERIC  amd64</span><br><span class="line"></span><br><span class="line">pciconf -lv</span><br><span class="line">...</span><br><span class="line">igc0@pci0:1:0:0:	class=0x020000 rev=0x03 hdr=0x00 vendor=0x8086 device=0x15f3 subvendor=0x8086 subdevice=0x0000</span><br><span class="line">    vendor     = &apos;Intel Corporation&apos;</span><br><span class="line">    device     = &apos;Ethernet Controller I225-V&apos;</span><br><span class="line">    class      = network</span><br><span class="line">    subclass   = ethernet</span><br><span class="line">igc1@pci0:2:0:0:	class=0x020000 rev=0x03 hdr=0x00 vendor=0x8086 device=0x15f3 subvendor=0x8086 subdevice=0x0000</span><br><span class="line">    vendor     = &apos;Intel Corporation&apos;</span><br><span class="line">    device     = &apos;Ethernet Controller I225-V&apos;</span><br><span class="line">    class      = network</span><br><span class="line">    subclass   = ethernet</span><br><span class="line">nvme0@pci0:3:0:0:	class=0x010802 rev=0x03 hdr=0x00 vendor=0x126f device=0x2263 subvendor=0x126f subdevice=0x2263</span><br><span class="line">    vendor     = &apos;Silicon Motion, Inc.&apos;</span><br><span class="line">    device     = &apos;SM2263EN/SM2263XT SSD Controller&apos;</span><br><span class="line">    class      = mass storage</span><br><span class="line">    subclass   = NVM</span><br><span class="line"></span><br><span class="line">ifconfig igc0</span><br><span class="line">igc0: flags=8863&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; metric 0 mtu 1500</span><br><span class="line">	options=4e527bb&lt;RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,TSO4,TSO6,LRO,WOL_MAGIC,VLAN_HWFILTER,VLAN_HWTSO,RXCSUM_IPV6,TXCSUM_IPV6,NOMAP&gt;</span><br><span class="line">	ether 00:a0:c9:00:00:0a</span><br><span class="line">	inet 192.168.8.193 netmask 0xffffff00 broadcast 192.168.8.255</span><br><span class="line">	media: Ethernet autoselect (1000baseT &lt;full-duplex&gt;)</span><br><span class="line">	status: active</span><br><span class="line">	nd6 options=29&lt;PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL&gt;</span><br><span class="line"></span><br><span class="line">ping www.baidu.com</span><br><span class="line"></span><br><span class="line">PING www.a.shifen.com (14.215.177.38): 56 data bytes</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=0 ttl=56 time=6.775 ms</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=1 ttl=56 time=6.860 ms</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=2 ttl=56 time=5.945 ms</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=3 ttl=56 time=6.736 ms</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=4 ttl=56 time=6.511 ms</span><br><span class="line">64 bytes from 14.215.177.38: icmp_seq=5 ttl=56 time=6.360 ms</span><br><span class="line"></span><br><span class="line">--- www.a.shifen.com ping statistics ---</span><br><span class="line">6 packets transmitted, 6 packets received, 0.0% packet loss</span><br><span class="line">round-trip min/avg/max/stddev = 5.945/6.531/6.860/0.312 ms</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/a9a825c7/" rel="next" title="WPF打包dll到exe程序">
+                <i class="fa fa-chevron-left"></i> WPF打包dll到exe程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/Windows/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/Windows/">1</a><span class="page-number current">2</span>
-  </nav>
+  <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+<br>
+<div>
+	
+	<div style="text-align:center;">
+		<div class="links-of-blogroll-title">
+			<i class="fa  fa-fw fa-link"></i>
+			友情链接
+		</div>
+		<div>
+				<a href="http://www.iqotom.com/" title="老胡的博客" target="_blank">老胡的博客</a>
+				&nbsp;
+				<a href="http://www.qotom.com/" title="Qotom" target="_blank">Qotom</a>
+				&nbsp;
+				<a href="https://minipc.netlify.app/" title="Qotom" target="_blank">Loahu</a>
+		</div>
+	</div>
+	
+</div>
 
 
+    
+  </div>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -405,6 +575,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -425,8 +602,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -523,6 +709,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FreeBSD-freebsd-13-0-RELEASE"><span class="nav-number">1.</span> <span class="nav-text">FreeBSD freebsd 13.0-RELEASE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动编译igc驱动，并添加到系统"><span class="nav-number">1.0.1.</span> <span class="nav-text">手动编译igc驱动，并添加到系统</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
 	  
@@ -694,6 +896,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

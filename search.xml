@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[FreeBSD 13.0-Release Add IGC Driver (Intel I225-V Network Adapter)]]></title>
+    <url>%2Fposts%2Fa4ad8720%2F</url>
+    <content type="text"><![CDATA[FreeBSD freebsd 13.0-RELEASE手动编译igc驱动，并添加到系统1.下载源码 freebsd/freebsd-src: FreeBSD src tree (read-only mirror) (github.com) 2.格式化一个FAT32格式的U盘 3.将下载好的igc驱动代码放入U盘 12/usr/src/dev/igc/usr/src/modules/igc 4.挂载U盘到系统 12345FreeBSD会将USB挂载为SCSI设备，在/dev目录可查看,这里U盘名为da0查看U盘信息 gpart show da0查看U盘格式 fstyp da0p1，这里是msdosfs新建文件夹 mkdir /mnt/usb挂载U盘到文件夹 mout_msdosfs /dev/da0p1 /mnt/usb 5.将驱动文件复制到源码目录 12cp -rf /mnt/usb/dev/igc /usr/src/dev/igccp -rf /mnt/usb/modules/igc /usr/src/dev/igc 6.编译驱动 123456789cd /usr/src/sys/modules/igc编译make搜索生成的驱动文件find / -name if_igc.ko将if_igc.ko复制到安装目录/boot/modules/if_igc.ko加载驱动kldload if_igc (重启失效) 7.配置网络 123456让系统自动加载ee /boot/loader.confif_igc_load=&quot;YES&quot;配置连接方式ee /etc/rc.confifconfig_igc0=&quot;DHCP&quot; 8.完成 12345678910111213141516171819202122232425262728293031323334353637383940414243uname -aFreeBSD freebsd 13.0-RELEASE FreeBSD 13.0-RELEASE #0 releng/13.0-n244733-ea31abc261f: Fri Apr 9 04:24:09 UTC 2021 root@releng1.nyi.freebsd.org:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64pciconf -lv...igc0@pci0:1:0:0: class=0x020000 rev=0x03 hdr=0x00 vendor=0x8086 device=0x15f3 subvendor=0x8086 subdevice=0x0000 vendor = &apos;Intel Corporation&apos; device = &apos;Ethernet Controller I225-V&apos; class = network subclass = ethernetigc1@pci0:2:0:0: class=0x020000 rev=0x03 hdr=0x00 vendor=0x8086 device=0x15f3 subvendor=0x8086 subdevice=0x0000 vendor = &apos;Intel Corporation&apos; device = &apos;Ethernet Controller I225-V&apos; class = network subclass = ethernetnvme0@pci0:3:0:0: class=0x010802 rev=0x03 hdr=0x00 vendor=0x126f device=0x2263 subvendor=0x126f subdevice=0x2263 vendor = &apos;Silicon Motion, Inc.&apos; device = &apos;SM2263EN/SM2263XT SSD Controller&apos; class = mass storage subclass = NVMifconfig igc0igc0: flags=8863&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; metric 0 mtu 1500 options=4e527bb&lt;RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING,JUMBO_MTU,VLAN_HWCSUM,TSO4,TSO6,LRO,WOL_MAGIC,VLAN_HWFILTER,VLAN_HWTSO,RXCSUM_IPV6,TXCSUM_IPV6,NOMAP&gt; ether 00:a0:c9:00:00:0a inet 192.168.8.193 netmask 0xffffff00 broadcast 192.168.8.255 media: Ethernet autoselect (1000baseT &lt;full-duplex&gt;) status: active nd6 options=29&lt;PERFORMNUD,IFDISABLED,AUTO_LINKLOCAL&gt;ping www.baidu.comPING www.a.shifen.com (14.215.177.38): 56 data bytes64 bytes from 14.215.177.38: icmp_seq=0 ttl=56 time=6.775 ms64 bytes from 14.215.177.38: icmp_seq=1 ttl=56 time=6.860 ms64 bytes from 14.215.177.38: icmp_seq=2 ttl=56 time=5.945 ms64 bytes from 14.215.177.38: icmp_seq=3 ttl=56 time=6.736 ms64 bytes from 14.215.177.38: icmp_seq=4 ttl=56 time=6.511 ms64 bytes from 14.215.177.38: icmp_seq=5 ttl=56 time=6.360 ms--- www.a.shifen.com ping statistics ---6 packets transmitted, 6 packets received, 0.0% packet lossround-trip min/avg/max/stddev = 5.945/6.531/6.860/0.312 ms]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[WPF打包dll到exe程序]]></title>
     <url>%2Fposts%2Fa9a825c7%2F</url>
     <content type="text"><![CDATA[参考：https://blog.csdn.net/m0_37862405/article/details/81532077 在WPF中，将dll作为嵌入的资源打包到exe中的步骤：注：该方法不能将非C#类型的dll（比如：C++编译的dll）打包到exe 添加以下代码段到WPF项目的.csproj文件中（需添加到节点“Import”的后面）。个人理解这段代码的作用：设置项目引用的dll为嵌入的资源（经测试，单独手动设置dll为嵌入的资源无效，必须添加这段代码到项目文件中，且需在节点“Import”的后面） 1234567&lt;Target Name=&quot;AfterResolveReferences&quot;&gt; &lt;ItemGroup&gt; &lt;EmbeddedResource Include=&quot;@(ReferenceCopyLocalPaths)&quot; Condition=&quot;&apos;%(ReferenceCopyLocalPaths.Extension)&apos; == &apos;.dll&apos;&quot;&gt; &lt;LogicalName&gt;%(ReferenceCopyLocalPaths.DestinationSubDirectory)%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)&lt;/LogicalName&gt; &lt;/EmbeddedResource&gt; &lt;/ItemGroup&gt; &lt;/Target&gt; 添加以下代码到Program.cs（若没有Program.cs，可以新建一个） 123456789101112131415161718192021222324252627282930313233343536373839public class Program &#123; /// &lt;summary&gt; /// 使用静态构造函数来绑定解析程序集失败事件 /// &lt;/summary&gt; static Program() &#123; AppDomain.CurrentDomain.AssemblyResolve += OnResolveAssembly; &#125; [STAThreadAttribute] public static void Main() &#123; App.Main(); //启动WPF项目 &#125; //解析程序集失败，会加载对应的程序集 private static Assembly OnResolveAssembly(object sender, ResolveEventArgs args) &#123; Assembly executingAssembly = Assembly.GetExecutingAssembly(); AssemblyName assemblyName = new AssemblyName(args.Name); var path = assemblyName.Name + &quot;.dll&quot;; //判断程序集的区域性 if (!assemblyName.CultureInfo.Equals(CultureInfo.InvariantCulture)) &#123; path = string.Format(@&quot;&#123;0&#125;\&#123;1&#125;&quot;, assemblyName.CultureInfo, path); &#125; using (Stream stream = executingAssembly.GetManifestResourceStream(path)) &#123; if (stream == null) return null; var assemblyRawBytes = new byte[stream.Length]; stream.Read(assemblyRawBytes, 0, assemblyRawBytes.Length); return Assembly.Load(assemblyRawBytes); &#125; &#125; &#125; 在项目属性中，修改项目的启动对象为Program.cs]]></content>
@@ -209,8 +214,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -244,9 +249,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Clonezilla</tag>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
+        <tag>Clonezilla</tag>
       </tags>
   </entry>
   <entry>
@@ -257,8 +262,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -269,8 +274,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
         <tag>K3</tag>
       </tags>
   </entry>
@@ -331,8 +336,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -343,9 +348,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -369,8 +374,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -381,8 +386,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -394,8 +399,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>SuperIO</tag>
       </tags>
   </entry>
@@ -467,8 +472,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
@@ -480,8 +485,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -492,8 +497,8 @@
         <category>Windows</category>
       </categories>
       <tags>
-        <tag>Mini Pc</tag>
         <tag>Windows</tag>
+        <tag>Mini Pc</tag>
       </tags>
   </entry>
   <entry>
@@ -634,8 +639,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>Mini Pc</tag>
+        <tag>Linux</tag>
         <tag>Ubuntu</tag>
       </tags>
   </entry>
